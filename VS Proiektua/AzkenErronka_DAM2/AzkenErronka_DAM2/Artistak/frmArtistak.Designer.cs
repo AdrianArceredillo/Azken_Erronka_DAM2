@@ -34,12 +34,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAtzera = new System.Windows.Forms.ToolStripButton();
             this.p1_Filtros = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtArtistaIzena = new System.Windows.Forms.TextBox();
+            this.txtArtistaKodea = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,11 +50,16 @@
             this.panel_GENERAL = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Inferior = new System.Windows.Forms.Panel();
+            this.dgArtistas = new System.Windows.Forms.DataGridView();
+            this.pctArtistaMota = new System.Windows.Forms.PictureBox();
             this.panel0_SALIR.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.p1_Filtros.SuspendLayout();
             this.panel_SUPERIOR.SuspendLayout();
+            this.panel_Izquierdo.SuspendLayout();
             this.panel_GENERAL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,12 +104,15 @@
             // p1_Filtros
             // 
             this.p1_Filtros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.p1_Filtros.Controls.Add(this.pctArtistaMota);
+            this.p1_Filtros.Controls.Add(this.btnLimpiar);
+            this.p1_Filtros.Controls.Add(this.btnAceptar);
             this.p1_Filtros.Controls.Add(this.label6);
             this.p1_Filtros.Controls.Add(this.textBox4);
             this.p1_Filtros.Controls.Add(this.textBox3);
             this.p1_Filtros.Controls.Add(this.label5);
-            this.p1_Filtros.Controls.Add(this.textBox2);
-            this.p1_Filtros.Controls.Add(this.textBox1);
+            this.p1_Filtros.Controls.Add(this.txtArtistaIzena);
+            this.p1_Filtros.Controls.Add(this.txtArtistaKodea);
             this.p1_Filtros.Controls.Add(this.label4);
             this.p1_Filtros.Controls.Add(this.label3);
             this.p1_Filtros.Controls.Add(this.label2);
@@ -111,6 +121,25 @@
             this.p1_Filtros.Name = "p1_Filtros";
             this.p1_Filtros.Size = new System.Drawing.Size(1294, 155);
             this.p1_Filtros.TabIndex = 1;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(385, 111);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(385, 83);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label6
             // 
@@ -145,19 +174,19 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Izena:";
             // 
-            // textBox2
+            // txtArtistaIzena
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtArtistaIzena.Location = new System.Drawing.Point(118, 40);
+            this.txtArtistaIzena.Name = "txtArtistaIzena";
+            this.txtArtistaIzena.Size = new System.Drawing.Size(208, 20);
+            this.txtArtistaIzena.TabIndex = 4;
             // 
-            // textBox1
+            // txtArtistaKodea
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtArtistaKodea.Location = new System.Drawing.Point(118, 18);
+            this.txtArtistaKodea.Name = "txtArtistaKodea";
+            this.txtArtistaKodea.Size = new System.Drawing.Size(47, 20);
+            this.txtArtistaKodea.TabIndex = 3;
             // 
             // label4
             // 
@@ -199,6 +228,7 @@
             // panel_Izquierdo
             // 
             this.panel_Izquierdo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_Izquierdo.Controls.Add(this.dgArtistas);
             this.panel_Izquierdo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Izquierdo.Location = new System.Drawing.Point(0, 0);
             this.panel_Izquierdo.Name = "panel_Izquierdo";
@@ -220,7 +250,6 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(847, 0);
@@ -239,6 +268,33 @@
             this.panel_Inferior.Size = new System.Drawing.Size(1294, 94);
             this.panel_Inferior.TabIndex = 0;
             // 
+            // dgArtistas
+            // 
+            this.dgArtistas.AllowUserToAddRows = false;
+            this.dgArtistas.AllowUserToDeleteRows = false;
+            this.dgArtistas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgArtistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgArtistas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgArtistas.Location = new System.Drawing.Point(0, 0);
+            this.dgArtistas.MultiSelect = false;
+            this.dgArtistas.Name = "dgArtistas";
+            this.dgArtistas.ReadOnly = true;
+            this.dgArtistas.Size = new System.Drawing.Size(843, 328);
+            this.dgArtistas.TabIndex = 0;
+            this.dgArtistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistas_CellClick);
+            // 
+            // pctArtistaMota
+            // 
+            this.pctArtistaMota.BackColor = System.Drawing.Color.Black;
+            this.pctArtistaMota.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctArtistaMota.BackgroundImage")));
+            this.pctArtistaMota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctArtistaMota.Location = new System.Drawing.Point(333, 18);
+            this.pctArtistaMota.Name = "pctArtistaMota";
+            this.pctArtistaMota.Size = new System.Drawing.Size(19, 16);
+            this.pctArtistaMota.TabIndex = 11;
+            this.pctArtistaMota.TabStop = false;
+            this.pctArtistaMota.Click += new System.EventHandler(this.pctArtistaMota_Click);
+            // 
             // frmArtistak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +311,7 @@
             this.Name = "frmArtistak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Artistak - Musika Bilduma";
+            this.Load += new System.EventHandler(this.frmArtistak_Load);
             this.panel0_SALIR.ResumeLayout(false);
             this.panel0_SALIR.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -262,7 +319,10 @@
             this.p1_Filtros.ResumeLayout(false);
             this.p1_Filtros.PerformLayout();
             this.panel_SUPERIOR.ResumeLayout(false);
+            this.panel_Izquierdo.ResumeLayout(false);
             this.panel_GENERAL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,8 +338,8 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtArtistaIzena;
+        private System.Windows.Forms.TextBox txtArtistaKodea;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -289,5 +349,9 @@
         private System.Windows.Forms.Panel panel_GENERAL;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_Inferior;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.DataGridView dgArtistas;
+        private System.Windows.Forms.PictureBox pctArtistaMota;
     }
 }
