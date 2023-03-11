@@ -1,0 +1,9 @@
+use MusikaBilduma
+
+CREATE TABLE Kideak (
+    KodKidea int,
+    KodArtista int NOT NULL,
+    IzenaKidea varchar (100) NOT NULL,
+
+	primary key (KodKidea, KodArtista, IzenaKidea)
+);

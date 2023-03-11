@@ -1,0 +1,12 @@
+use MusikaBilduma
+
+CREATE TABLE ArtistaMota (
+	KodMota int,
+	MotaIzena varchar(100) NOT NULL,
+	Deskribapena varchar(2000) DEFAULT '',
+	MotaInfoGehiago varchar(200) DEFAULT '',
+
+	primary key (KodMota, MotaIzena)
+);
+
+

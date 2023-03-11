@@ -1,0 +1,12 @@
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\bin\Debug\AzkenErronka_DAM2.exe.config
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\bin\Debug\AzkenErronka_DAM2.exe
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\bin\Debug\AzkenErronka_DAM2.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.csproj.AssemblyReference.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.csproj.SuggestedBindingRedirects.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.frmNagusia.resources
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.Properties.Resources.resources
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.csproj.GenerateResource.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.csproj.CoreCompileInputs.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.exe
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.Artistak.frmArtistak.resources

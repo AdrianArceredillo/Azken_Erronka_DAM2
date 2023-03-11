@@ -1,0 +1,15 @@
+use MusikaBilduma
+
+CREATE TABLE Artista (
+	KodArtista int,
+	IzenaArtista varchar(200) NOT NULL,
+	KodArtistaMota int NOT NULL,
+	Nazionalitatea varchar(50) NOT NULL,
+	Deskribapena varchar(2000) DEFAULT '',
+	KideKopurua int NOT NULL,
+	FundazioData Date NOT NULL,
+	Egoera char(1) DEFAULT 'Y',
+	ArtistaInfoGehiago varchar(200) DEFAULT '',
+
+	primary key (KodArtista, IzenaArtista, KodArtistaMota)
+);
