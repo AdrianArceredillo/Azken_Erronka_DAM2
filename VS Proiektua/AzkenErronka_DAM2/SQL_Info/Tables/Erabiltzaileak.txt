@@ -1,0 +1,11 @@
+use MusikaBilduma
+
+CREATE TABLE Erabiltzaileak (
+	KodUser int,
+	EmailUser varchar(100) NOT NULL,
+	IzenaUser varchar(100) NOT NULL,
+	PasswordUser varchar(100) NOT NULL,
+	Adina int NOT NULL,
+
+	primary key (KodUser, EmailUser, IzenaUser)
+);
