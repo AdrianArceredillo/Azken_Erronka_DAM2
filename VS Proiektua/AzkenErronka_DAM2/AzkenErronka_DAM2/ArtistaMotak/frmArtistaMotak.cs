@@ -20,11 +20,17 @@ namespace AzkenErronka_DAM2.ArtistaMotak
         #region "DECLARACIONES"
         SqlConnection con;
         ArtistaMota clsArtistaMota = new ArtistaMota();
+        
+        public Int32 aukeraturiko_mota_kodea = 0;
+        public String aukeraturiko_mota_izena = "";
+
+        frmArtistak owner_form = null;
         #endregion
 
         public frmArtistaMotak()
         {
             InitializeComponent();
+            this.owner_form = owner_form;
         }
 
         private void frmArtistaMotak_Load(object sender, EventArgs e)
@@ -53,7 +59,8 @@ namespace AzkenErronka_DAM2.ArtistaMotak
             string deskribapena_value = Convert.ToString(initial_row.Cells["Deskribapena"].Value);
             string infoGehiago_value = Convert.ToString(initial_row.Cells["MotaInfoGehiago"].Value);
 
-            this.lblDeskribapena.Text = deskribapena_value.Trim();
+            //this.lblDeskribapena.Text = deskribapena_value.Trim();
+            this.txtDeskribapena.Text = deskribapena_value.Trim();
             this.lblInformazioGehiago.Text = infoGehiago_value.Trim();
 
             dgArtistaMota.Refresh();
@@ -74,7 +81,8 @@ namespace AzkenErronka_DAM2.ArtistaMotak
             string deskribapena_value = Convert.ToString(selectedRow.Cells["Deskribapena"].Value);
             string infoGehiago_value = Convert.ToString(selectedRow.Cells["MotaInfoGehiago"].Value);
 
-            this.lblDeskribapena.Text = deskribapena_value.Trim();
+            //this.lblDeskribapena.Text = deskribapena_value.Trim();
+            this.txtDeskribapena.Text = deskribapena_value.Trim();
             this.lblInformazioGehiago.Text = infoGehiago_value.Trim();
 
         }
@@ -95,13 +103,27 @@ namespace AzkenErronka_DAM2.ArtistaMotak
             this.dgArtistaMota.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistaMota.Columns[1].HeaderText = "Motaren Izena";
             this.dgArtistaMota.Columns[1].Width = 375;
+
             //Deskribapena
             this.dgArtistaMota.Columns["Deskribapena"].Visible = false;
+
             //MotaInfoGehiago
             this.dgArtistaMota.Columns["MotaInfoGehiago"].Visible = false;
         }
 
+        private void dgArtistaMota_DoubleClick(object sender, EventArgs e)
+        {
+            int index = this.dgArtistaMota.CurrentRow.Index;
+            DataGridViewRow selectedRow = dgArtistaMota.Rows[index];
 
+            string mota_izena_str = Convert.ToString(selectedRow.Cells["MotaIzena"].Value);
+            string mota_kod_str = Convert.ToString(selectedRow.Cells["KodMota"].Value);
+            int kod_mota = Int32.Parse(mota_kod_str);
 
+            aukeraturiko_mota_kodea = kod_mota;
+            aukeraturiko_mota_izena = mota_izena_str;
+
+            this.Close();
+        }
     }
 }

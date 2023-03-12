@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.btnSartu = new System.Windows.Forms.Button();
+            this.btnIrten = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +78,22 @@
             this.btnSartu.UseVisualStyleBackColor = true;
             this.btnSartu.Click += new System.EventHandler(this.btnSartu_Click);
             // 
+            // btnIrten
+            // 
+            this.btnIrten.Location = new System.Drawing.Point(550, 250);
+            this.btnIrten.Name = "btnIrten";
+            this.btnIrten.Size = new System.Drawing.Size(75, 23);
+            this.btnIrten.TabIndex = 5;
+            this.btnIrten.Text = "Irten";
+            this.btnIrten.UseVisualStyleBackColor = true;
+            this.btnIrten.Click += new System.EventHandler(this.btnIrten_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnIrten);
             this.Controls.Add(this.btnSartu);
             this.Controls.Add(this.txtLoginPassword);
             this.Controls.Add(this.label2);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLoginPassword;
         private System.Windows.Forms.Button btnSartu;
+        private System.Windows.Forms.Button btnIrten;
     }
 }

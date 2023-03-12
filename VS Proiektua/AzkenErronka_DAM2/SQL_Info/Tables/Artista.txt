@@ -7,9 +7,16 @@ CREATE TABLE Artista (
 	Nazionalitatea varchar(50) NOT NULL,
 	Deskribapena varchar(2000) DEFAULT '',
 	KideKopurua int NOT NULL,
-	FundazioData Date NOT NULL,
+	FundazioUrtea int NOT NULL,
 	Egoera char(1) DEFAULT 'Y',
 	ArtistaInfoGehiago varchar(200) DEFAULT '',
 
 	primary key (KodArtista, IzenaArtista, KodArtistaMota)
 );
+
+
+
+
+
+
+	

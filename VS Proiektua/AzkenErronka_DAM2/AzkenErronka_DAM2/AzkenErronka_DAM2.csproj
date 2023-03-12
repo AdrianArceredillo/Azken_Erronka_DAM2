@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,11 +70,18 @@
     <Compile Include="Klaseak\ArtistaMota.cs" />
     <Compile Include="Klaseak\Erabiltzaileak.cs" />
     <Compile Include="Klaseak\konexioa.cs" />
+    <Compile Include="Klaseak\Nazionalitatea.cs" />
     <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nazionalitateak\frmNazionalitateak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nazionalitateak\frmNazionalitateak.Designer.cs">
+      <DependentUpon>frmNazionalitateak.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nazionalitateak\frmNazionalitateak.resx">
+      <DependentUpon>frmNazionalitateak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

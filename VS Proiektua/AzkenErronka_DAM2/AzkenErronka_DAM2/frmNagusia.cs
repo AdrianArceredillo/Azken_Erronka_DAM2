@@ -73,12 +73,14 @@ namespace AzkenErronka_DAM2
             frmLogin _frmLogin = new frmLogin();
             _frmLogin.ShowDialog();
 
+            this.Close();
         }
 
 
 
         private static void ReadSingleRow(IDataRecord dataRecord)
         {
+            //Console.WriteLine(String.Format("{0}, {1}, {2}", dataRecord[0], dataRecord[1], dataRecord[2]));
             Console.WriteLine(String.Format("{0}, {1}, {2}", dataRecord[0], dataRecord[1], dataRecord[2]));
         }
 
@@ -100,3 +102,6 @@ namespace AzkenErronka_DAM2
 //REPORTS: https://stackoverflow.com/questions/9700840/how-to-print-a-report-from-an-sql-database-using-visual-basic
 //Save data in DataGridView: https://www.c-sharpcorner.com/article/display-data-in-a-datagridview-C-Sharp-6/
 //Ejemplos procedimientos SQL: https://www.srcodigofuente.es/aprender-sql/ejemplos-de-procedimientos-almacenados-sencillos
+//Enviar datos entre formularios: https://stackoverflow.com/questions/7886544/passing-a-value-from-one-form-to-another-form
+//Update datagridview using textbox: https://www.c-sharpcorner.com/UploadFile/718fc8/updating-datagridviews-record-using-textbox/
+//Allow numbers only: https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers

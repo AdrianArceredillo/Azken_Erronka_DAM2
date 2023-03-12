@@ -1,0 +1,296 @@
+use MusikaBilduma
+
+CREATE TABLE Nazionalitateak (
+	IdNazioa char(2) NOT NULL,
+	NazioaIzena varchar(100) NOT NULL,
+
+	primary key (IdNazioa, NazioaIzena)
+);
+
+
+AD	Andorra
+AE	Emiratos Árabes Unidos
+AF	Afganistán
+AG	Antigua y Barbuda
+AI	Anguilla
+AL	Albania
+AM	Armenia
+AN	Antillas Holandesas
+AO	Angola 
+AQ	Antártida
+AR	Argentina
+AS	Samoa Americana
+AT	Austria 
+AU	Australia
+AW	Aruba
+AZ	Azerbayán
+BA	Bosnia-Herzegovina
+BB	Barbados
+BD	Bangladesh
+BE	Bélgica
+BF	Burkina Faso
+BG	Bulgaria
+BH	Bahrain
+BI	Burundi
+BJ	Benín
+BM	Islas Bermudas
+BN	Brunei Darussalam
+BO	Bolivia
+BR	Brasil
+BT	Bahamas
+BS	Bután
+BV	Islas Buvet
+BW	Botswana
+BY	Bielorrusia
+BZ	Belice
+CA	Canadá
+CC	Isla de Cocos
+CD	República Democrática del Congo 
+CF	República Centroafricana
+CG	República del Congo
+CH	Suiza
+CI	Costa de marfil
+CK	Islas Cook
+CL	Chile
+CM	Camerún
+CN	China
+CO	Colombia
+CR	Costa Rica
+CS	Checoslovaquia (antiguo país)
+CU	Cuba
+CV	Cabo Verde
+CX	Islas Christmas
+CY	Chipre
+CZ	República Checa
+DE	Alemania
+DJ	Djibouti
+DK	Dinamarca
+DM	Dominica
+DO	República Dominicana
+DZ	Argelia
+EC	Ecuador
+EE	Estonia
+EG	Egipto
+EH	Sáhara Occidental
+ER	Eritrea
+ES	España
+ET	Etiopía
+FI	Finlandia
+FJ	Fiji
+FK	Islas Malvinas
+FM	Micronesia
+FO	Islas Feroe
+FR	Francia
+GA	Gabón
+GD	Granada
+GE	Georgia
+GF	Guyana Francesa
+GG	Guernsey
+GH	Ghana
+GI	Gibraltar
+GL	Groenlandia
+GM	Gambia
+GN	Guinea
+GP	Guadalupe
+GQ	Guinea Ecuatorial
+GR	Grecia
+GS	Islas Georgias y Sandwich del Sur
+GT	Guatemala
+GU	Guam
+GW	Guinea-Bissau
+GY	Guayana
+HK	Hong Kong
+HM	Islas Heard y McDonald
+HN	Honduras
+HR	Croacia
+HT	Haití
+HU	Hungría
+ID	Indonesia
+IE	Irlanda
+IL	Israel
+IM	Isla de Man
+IN	India
+IO	Territorio británico del Océano Índico
+IQ	Iraq
+IR	Irán
+IS	Islandia
+IT	Italia
+JM	Jamaica
+JE	Jersey
+JO	Jordania
+JP	Japón
+KE	Kenia
+KG	Kyrgystán
+KH	Camboya
+KI	Kiribati
+KM	Islas Comores
+KN	San Kitts y Nevis
+KP	Corea del Norte
+KR	Corea del Sur
+KW	Kuwait
+KY	Islas Caimán
+KZ	Kazajistán
+LA	Laos
+LB	Líbano
+LC	Santa Lucía
+LI	Liechtenstein
+LK	Sri Lanka
+LR	Liberia
+LS	Lesoto
+LT	Lituania
+LU	Luxemburgo
+LV	Letonia
+LY	Libia
+MA	Marruecos
+MC	Mónaco
+MD	Moldavia
+MG	Madagascar
+MK	Macedonia
+MH	Islas Marshall
+ML	Mali
+MM	Birmania
+MN	Mongolia
+MO	Macao
+MP	Islas Marianas
+MQ	Martinica
+MR	Mauritania
+MS	Montserrat
+MT	Malta
+MU	Mauricio
+MV	Maldivas
+MW	Malawi
+MX	México
+MY	Malasia
+MZ	Mozambique
+NA	Namibia
+NC	Nueva Caledonia
+NE	Níger
+NF	Islas Norfolk
+NG	Nigeria
+NI	Nicaragua
+NL	Países Bajos
+NO	Noruega
+NP	Nepal
+NR	Nauru
+NT	Zona Neutral
+NU	Niue
+NZ	Nueva Zelanda
+OM	Omán
+PA	Panamá
+PE	Perú
+PF	Polinesia Francesa
+PG	Papúa Nueva Guinea
+PH	Filipinas
+PK	Pakistán
+PL	Polonia
+PM	San Pedro y Miquelón
+PN	Pitcairn
+PR	Puerto Rico
+PS	Territorios Palestinos
+PT	Portugal
+PW	Palau
+PY	Paraguay
+QA	Qatar
+RE	Isla Reunión
+RO	Rumanía
+RU	Rusia
+RW	Ruanda
+SA	Arabia Saudí
+SB	Islas Salomón
+SC	Islas Seychelles
+SD	Sudán
+SE	Suecia
+SG	Singapur
+SH	Santa Helena
+SI	Eslovenia
+SJ	Islas Svalbard y Jan Mayens
+SK	Eslovaquia
+SL	Sierra Leona
+SM	San Marino
+SN	Senegal
+SO	Somalia
+SR	Surinam
+SU	URSS
+ST	Santo Tomé y Príncipe
+SV	El Salvador
+SY	Siria
+SZ	Suazilandia
+TC	Islas Turks y Caicos
+TD	Chad
+TF	Tierras Australes y Antárticas Francesas
+TG	Togo
+TH	Tailandia
+TJ	Tayikistán
+TK	Tokelau
+TM	Turkmenistán
+TN	Túnez
+TO	Tonga
+TP	Timor Oriental
+TR	Turquía
+TT	Trinidad y Tobago
+TV	Tuvalu
+TW	Taiwán
+TZ	Tanzania
+UA	Ucrania
+UG	Uganda
+UK	Reino Unido
+UM	Islas Ultramarinas de Estados Unidos 
+US	Estados Unidos de América
+UY	Uruguay
+UZ	Uzbekistán
+VA	Vaticano
+VC	San Vicente y las Granadinas
+VE	Venezuela
+VG	Islas Vírgenes Británicas
+VI	Islas Vírgenes Americanas
+VN	Vietnam
+VU	Vanuatu
+WF	Islas Wallis y Futuna
+WS	Samoa
+YE	Yemen
+YT	Mayotte
+YU	Yugoslavia (antiguo país)
+ZA	Sudáfrica
+ZM	Zambia
+ZR	Zaire (antiguo país)
+ZW	Zimbabwe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

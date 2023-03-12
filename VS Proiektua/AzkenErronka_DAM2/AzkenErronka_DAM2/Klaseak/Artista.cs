@@ -11,6 +11,10 @@ namespace AzkenErronka_DAM2.Klaseak
     public class Artista
     {
 
+        #region "DECLARACIONES"
+
+        #endregion
+
 
         public SqlDataReader getArtistak(SqlConnection conn, String parametro)
         {

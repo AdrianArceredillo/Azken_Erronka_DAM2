@@ -36,18 +36,28 @@ namespace AzkenErronka_DAM2.Login
 
         private void btnSartu_Click(object sender, EventArgs e)
         {
+            //this.Hide();
+
             username = this.txtLoginUsername.Text.Trim();
             password = this.txtLoginPassword.Text.Trim();
 
             String parametro_login = " ";
 
-            frmArtistak _frmArtistak = new frmArtistak();
-            _frmArtistak.ShowDialog();
 
-            this.Close();
+            
+
+            frmArtistak _frmArtistak = new frmArtistak();
+            
+            _frmArtistak.ShowDialog();
+            //this.Hide();
+            //this.Close();
         }
 
-
+        private void btnIrten_Click(object sender, EventArgs e)
+        {
+            con.Close();
+            this.Close();
+        }
 
         private void Conexion()
         {
@@ -55,19 +65,19 @@ namespace AzkenErronka_DAM2.Login
             con.Open();
         }
 
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            //https://www.youtube.com/watch?v=0M0C_d5dxSQ
-            //SqlConnection con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True");
-            con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True");
+        //private void btnConectar_Click(object sender, EventArgs e)
+        //{
+        //    //https://www.youtube.com/watch?v=0M0C_d5dxSQ
+        //    //SqlConnection con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True");
+        //    con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True");
 
-            con.Open();
-            MessageBox.Show("sql is connected");
+        //    con.Open();
+        //    MessageBox.Show("sql is connected");
 
-            frmLogin frmLogin = new frmLogin();
-            frmLogin.Show();
+        //    frmLogin frmLogin = new frmLogin();
+        //    frmLogin.Show();
 
-        }
+        //}
 
     }
 }
