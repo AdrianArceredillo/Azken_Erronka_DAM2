@@ -40,7 +40,7 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            String parametro = " where KodArtista != -1 ";
+            String parametro = " and KodArtista != -1 ";
 
             //artistaren kodea
             if (this.txtArtistaKodea.Text != "")
@@ -57,15 +57,20 @@ namespace AzkenErronka_DAM2.Artistak
             //artista-mota
             if (this.txtArtistaMotaKodea.Text != "")
             {
-                parametro = parametro + " and KodArtistaMota = " + Int32.Parse(this.txtArtistaMotaKodea.Text.Trim()) + "";
+                parametro = parametro + " and Artista.KodArtistaMota = " + Int32.Parse(this.txtArtistaMotaKodea.Text.Trim()) + "";
             }
 
             //artista-deskribapena
             if (this.txtArtistaDeskribapena.Text != "")
             {
-                parametro = parametro + " and Deskribapena LIKE '%" + this.txtArtistaDeskribapena.Text.Trim() + "%'";
+                parametro = parametro + " and Artista.Deskribapena LIKE '%" + this.txtArtistaDeskribapena.Text.Trim() + "%'";
             }
 
+            //nazionalitatea
+            if (this.txtNazionalitateKodea.Text != "")
+            {
+                parametro = parametro + " and Nazionalitatea LIKE '%" + this.txtNazionalitateIzena.Text.Trim() + "%'";
+            }
 
             //kide kopurua
             if (this.numKideKopurua.Value != null)
@@ -80,17 +85,21 @@ namespace AzkenErronka_DAM2.Artistak
                 }
             }
 
+
             //hasiera-urtea
-            if (this.cbHasieraUrtea.Text != null)
+            if (this.cbHasieraUrtea.SelectedItem != null)
             {
-                int cb_urtea = Int32.Parse(this.cbHasieraUrtea.Text.Trim());
-                parametro = parametro + " and FundazioUrtea = " + cb_urtea;
+                if (this.cbHasieraUrtea.SelectedItem == "Zehaztu gabe" || this.cbHasieraUrtea.SelectedItem == "")
+                {
+                    parametro = parametro + " and FundazioUrtea > 0";
+                }
+                else
+                {
+                    int cb_urtea = Int32.Parse(this.cbHasieraUrtea.SelectedItem.ToString());
+                    parametro = parametro + " and FundazioUrtea = " + cb_urtea;
+                }
             }
-            //else if (this.cbHasieraUrtea.SelectedValue != null)
-            //{
-            //    Int32 urtea_hasiera = Int32.Parse(this.cbHasieraUrtea.SelectedValue.ToString());
-            //    parametro = parametro + " and FundazioUrtea = " + urtea_hasiera;
-            //}
+
 
             //egoera
             if (this.rdbJardunean.Checked == true)
@@ -106,22 +115,126 @@ namespace AzkenErronka_DAM2.Artistak
                 parametro = parametro + " and Egoera = 'D'";
             }
 
-
-
-
             parametro = parametro + " order by KodArtista asc";
 
 
-            //SqlDataReader reader = clsArtista.getArtistak(con, parametro);
-            reader = clsArtista.getArtistak(con, parametro);
+
+            ////SqlDataReader reader = clsArtista.getArtistak(con, parametro);
+            //reader = clsArtista.getArtistak_completo(con, parametro);
+            reader = clsArtista.getArtistak_grid_artistak(con, parametro);
 
 
             DataTable dt = new DataTable();
             dt.Load(reader);
 
             dgArtistas.DataSource = dt;
+
+            itxura_aldatu();
+
+
             dgArtistas.Refresh();
-            //con.Close();
+        }
+
+        private void itxura_aldatu()
+        {
+            //KodArtista
+            this.dgArtistas.Columns["KodArtista"].Visible = false;
+            this.dgArtistas.Columns["KodArtista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[0].HeaderText = "Kodea";
+            this.dgArtistas.Columns[0].Width = 0;
+
+            //IzenaArtista
+            this.dgArtistas.Columns["IzenaArtista"].Visible = true;
+            this.dgArtistas.Columns["IzenaArtista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgArtistas.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[1].HeaderText = "Izena";
+            this.dgArtistas.Columns[1].Width = 200;
+
+
+            String sql = "select " +
+                "KodArtista, " +
+                "IzenaArtista, " +
+                "Artista.Deskribapena," +
+                "Nazionalitateak.IdNazioa, " +
+
+                "ArtistaMota.MotaIzena as Mota, " +
+                "KideKopurua, " +
+                "FundazioUrtea, " +
+                "ArtistaEgoera.EgoeraDeskribapena as Egoera, "
+
+
+                //"ArtistaInfoGehiago, " +
+                //"Adina " +
+                ;
+
+
+
+            //deskribapena
+            this.dgArtistas.Columns["Deskribapena"].Visible = true;
+            this.dgArtistas.Columns["Deskribapena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgArtistas.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[2].HeaderText = "Deskribapena";
+            this.dgArtistas.Columns[2].Width = 260;
+
+
+            //nazionalitatea
+            this.dgArtistas.Columns["IdNazioa"].Visible = true;
+            this.dgArtistas.Columns["IdNazioa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[3].HeaderText = "Nazionalitatea";
+            this.dgArtistas.Columns[3].Width = 80;
+
+            //artista-motaren izena
+            this.dgArtistas.Columns["Mota"].Visible = true;
+            this.dgArtistas.Columns["Mota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgArtistas.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[4].HeaderText = "Mota";
+            this.dgArtistas.Columns[4].Width = 90;
+
+
+            //kide-kopurua
+            this.dgArtistas.Columns["KideKopurua"].Visible = true;
+            this.dgArtistas.Columns["KideKopurua"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[5].HeaderText = "Kideak";
+            this.dgArtistas.Columns[5].Width = 40;
+
+
+            //sortze-data
+            this.dgArtistas.Columns["FundazioUrtea"].Visible = true;
+            this.dgArtistas.Columns["FundazioUrtea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[6].HeaderText = "Urtea";
+            this.dgArtistas.Columns[6].Width = 40;
+
+
+            //egoera
+            this.dgArtistas.Columns["EgoeraDeskribapena"].Visible = true;
+            this.dgArtistas.Columns["EgoeraDeskribapena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[7].HeaderText = "Egoera";
+            this.dgArtistas.Columns[7].Width = 90;
+
+
+            //UUUU
+
+
+            ////kide-kopurua
+            //this.dgArtistas.Columns["KideKopurua"].Visible = true;
+            //this.dgArtistas.Columns["KideKopurua"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistas.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistas.Columns[4].HeaderText = "Kideak";
+            //this.dgArtistas.Columns[4].Width = 70;
+
+
+            ////sortze-data
+            //this.dgArtistas.Columns["FundazioUrtea"].Visible = true;
+            //this.dgArtistas.Columns["FundazioUrtea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistas.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistas.Columns[5].HeaderText = "Sortze-Data";
+            //this.dgArtistas.Columns[5].Width = 80;
+
         }
 
         private void dgArtistas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -159,11 +272,18 @@ namespace AzkenErronka_DAM2.Artistak
             //reader.Close();
 
             //this.cbHasieraUrtea.ResetText();
-            this.cbHasieraUrtea.Text = "";
+            //this.cbHasieraUrtea.Select = 15;
+
+            ////FindStringExact
+
+
+
+            this.cbHasieraUrtea.SelectedItem = "";
 
             limpiar_contenido_filtros();
 
-            SqlDataReader reader2 = clsArtista.getArtistak(con, " where KodArtista = -90");
+            //SqlDataReader reader2 = clsArtista.getArtistak_completo(con, " where KodArtista = -90");
+            SqlDataReader reader2 = clsArtista.getArtistak_grid_artistak(con, " and KodArtista = -90");
 
             DataTable dt2 = new DataTable();
             dt2.Load(reader2);
@@ -176,17 +296,18 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void limpiar_contenido_filtros()
         {
-            //this.txtArtistaKodea.Text = "";
-            //this.txtArtistaIzena.Text = "";
-            //this.txtArtistaMotaKodea.Text = "";
-            //this.txtArtistaMotaIzena.Text = "";
-            //this.txtArtistaDeskribapena.Text = "";
-            //this.txtNazionalitateKodea.Text = "";
-            //this.txtNazionalitateIzena.Text = "";
-            //this.numKideKopurua.Value = 0;
+            this.txtArtistaKodea.Text = "";
+            this.txtArtistaIzena.Text = "";
+            this.txtArtistaMotaKodea.Text = "";
+            this.txtArtistaMotaIzena.Text = "";
+            this.txtArtistaDeskribapena.Text = "";
+            this.txtNazionalitateKodea.Text = "";
+            this.txtNazionalitateIzena.Text = "";
+            this.numKideKopurua.Value = 0;
 
-            
-            //this.cbHasieraUrtea.Text = "";
+            this.cbHasieraUrtea.SelectedItem = "";
+            //this.cbHasieraUrtea.SelectedIndex = cbHasieraUrtea.FindStringExact("Zehaztu gabe");
+
             this.rdbGuztiak.Checked = true;
         }
 

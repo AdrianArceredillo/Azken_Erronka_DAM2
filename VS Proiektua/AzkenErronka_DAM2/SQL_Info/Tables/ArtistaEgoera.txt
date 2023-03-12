@@ -1,0 +1,14 @@
+use MusikaBilduma
+
+CREATE TABLE ArtistaEgoera (
+	KodEgoera char(1) NOT NULL,
+	EgoeraDeskribapena varchar(100) NOT NULL,
+	
+	primary key (KodEgoera, EgoeraDeskribapena)
+);
+
+
+A	Atsedenaldian
+D	Ezezaguna
+R	Erretiratua
+S	Jardueran

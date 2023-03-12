@@ -46,7 +46,6 @@
             this.txtNazionalitateIzena = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numKideKopurua = new System.Windows.Forms.NumericUpDown();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.txtArtistaMotaKodea = new System.Windows.Forms.TextBox();
             this.pctArtistaMota = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -67,6 +66,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Inferior = new System.Windows.Forms.Panel();
             this.txtKideKopurua = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblAlbumKopurua = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblAbestiKopurua = new System.Windows.Forms.Label();
             this.panel0_SALIR.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.p1_Filtros.SuspendLayout();
@@ -78,6 +81,7 @@
             this.panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
             this.panel_GENERAL.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel_Inferior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +136,6 @@
             this.p1_Filtros.Controls.Add(this.txtNazionalitateIzena);
             this.p1_Filtros.Controls.Add(this.label7);
             this.p1_Filtros.Controls.Add(this.numKideKopurua);
-            this.p1_Filtros.Controls.Add(this.monthCalendar1);
             this.p1_Filtros.Controls.Add(this.txtArtistaMotaKodea);
             this.p1_Filtros.Controls.Add(this.pctArtistaMota);
             this.p1_Filtros.Controls.Add(this.btnLimpiar);
@@ -158,9 +161,9 @@
             this.gbEgoera.Controls.Add(this.rdbErretiratuta);
             this.gbEgoera.Controls.Add(this.rdbEzezaguna);
             this.gbEgoera.Controls.Add(this.rdbJardunean);
-            this.gbEgoera.Location = new System.Drawing.Point(845, 18);
+            this.gbEgoera.Location = new System.Drawing.Point(899, 18);
             this.gbEgoera.Name = "gbEgoera";
-            this.gbEgoera.Size = new System.Drawing.Size(159, 116);
+            this.gbEgoera.Size = new System.Drawing.Size(349, 43);
             this.gbEgoera.TabIndex = 23;
             this.gbEgoera.TabStop = false;
             this.gbEgoera.Text = "Egoera:";
@@ -168,7 +171,7 @@
             // rdbGuztiak
             // 
             this.rdbGuztiak.AutoSize = true;
-            this.rdbGuztiak.Location = new System.Drawing.Point(35, 88);
+            this.rdbGuztiak.Location = new System.Drawing.Point(253, 19);
             this.rdbGuztiak.Name = "rdbGuztiak";
             this.rdbGuztiak.Size = new System.Drawing.Size(85, 17);
             this.rdbGuztiak.TabIndex = 2;
@@ -178,7 +181,7 @@
             // rdbErretiratuta
             // 
             this.rdbErretiratuta.AutoSize = true;
-            this.rdbErretiratuta.Location = new System.Drawing.Point(35, 42);
+            this.rdbErretiratuta.Location = new System.Drawing.Point(171, 19);
             this.rdbErretiratuta.Name = "rdbErretiratuta";
             this.rdbErretiratuta.Size = new System.Drawing.Size(76, 17);
             this.rdbErretiratuta.TabIndex = 1;
@@ -189,7 +192,7 @@
             // rdbEzezaguna
             // 
             this.rdbEzezaguna.AutoSize = true;
-            this.rdbEzezaguna.Location = new System.Drawing.Point(35, 65);
+            this.rdbEzezaguna.Location = new System.Drawing.Point(87, 19);
             this.rdbEzezaguna.Name = "rdbEzezaguna";
             this.rdbEzezaguna.Size = new System.Drawing.Size(78, 17);
             this.rdbEzezaguna.TabIndex = 3;
@@ -201,7 +204,7 @@
             // 
             this.rdbJardunean.AutoSize = true;
             this.rdbJardunean.Checked = true;
-            this.rdbJardunean.Location = new System.Drawing.Point(35, 19);
+            this.rdbJardunean.Location = new System.Drawing.Point(6, 19);
             this.rdbJardunean.Name = "rdbJardunean";
             this.rdbJardunean.Size = new System.Drawing.Size(75, 17);
             this.rdbJardunean.TabIndex = 0;
@@ -215,6 +218,8 @@
             this.cbHasieraUrtea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHasieraUrtea.FormattingEnabled = true;
             this.cbHasieraUrtea.Items.AddRange(new object[] {
+            "",
+            "Zehaztu gabe",
             "1980",
             "1981",
             "1982",
@@ -259,7 +264,7 @@
             "2021",
             "2022",
             "2023"});
-            this.cbHasieraUrtea.Location = new System.Drawing.Point(520, 40);
+            this.cbHasieraUrtea.Location = new System.Drawing.Point(535, 40);
             this.cbHasieraUrtea.MaxDropDownItems = 5;
             this.cbHasieraUrtea.Name = "cbHasieraUrtea";
             this.cbHasieraUrtea.Size = new System.Drawing.Size(98, 21);
@@ -269,7 +274,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(437, 43);
+            this.label8.Location = new System.Drawing.Point(452, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 21;
@@ -278,7 +283,7 @@
             // txtNazionalitateKodea
             // 
             this.txtNazionalitateKodea.Enabled = false;
-            this.txtNazionalitateKodea.Location = new System.Drawing.Point(520, 18);
+            this.txtNazionalitateKodea.Location = new System.Drawing.Point(535, 18);
             this.txtNazionalitateKodea.Name = "txtNazionalitateKodea";
             this.txtNazionalitateKodea.Size = new System.Drawing.Size(47, 20);
             this.txtNazionalitateKodea.TabIndex = 20;
@@ -288,7 +293,7 @@
             this.pctNazionalitatea.BackColor = System.Drawing.Color.Black;
             this.pctNazionalitatea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctNazionalitatea.BackgroundImage")));
             this.pctNazionalitatea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctNazionalitatea.Location = new System.Drawing.Point(782, 18);
+            this.pctNazionalitatea.Location = new System.Drawing.Point(823, 18);
             this.pctNazionalitatea.Name = "pctNazionalitatea";
             this.pctNazionalitatea.Size = new System.Drawing.Size(20, 20);
             this.pctNazionalitatea.TabIndex = 19;
@@ -298,15 +303,15 @@
             // txtNazionalitateIzena
             // 
             this.txtNazionalitateIzena.Enabled = false;
-            this.txtNazionalitateIzena.Location = new System.Drawing.Point(573, 18);
+            this.txtNazionalitateIzena.Location = new System.Drawing.Point(588, 18);
             this.txtNazionalitateIzena.Name = "txtNazionalitateIzena";
-            this.txtNazionalitateIzena.Size = new System.Drawing.Size(203, 20);
+            this.txtNazionalitateIzena.Size = new System.Drawing.Size(225, 20);
             this.txtNazionalitateIzena.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(437, 21);
+            this.label7.Location = new System.Drawing.Point(452, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 17;
@@ -314,19 +319,12 @@
             // 
             // numKideKopurua
             // 
-            this.numKideKopurua.Location = new System.Drawing.Point(755, 41);
+            this.numKideKopurua.Location = new System.Drawing.Point(782, 41);
             this.numKideKopurua.Name = "numKideKopurua";
-            this.numKideKopurua.ReadOnly = true;
-            this.numKideKopurua.Size = new System.Drawing.Size(47, 20);
+            this.numKideKopurua.Size = new System.Drawing.Size(61, 20);
             this.numKideKopurua.TabIndex = 16;
             this.numKideKopurua.Tag = "";
             this.numKideKopurua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(1027, -9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 15;
             // 
             // txtArtistaMotaKodea
             // 
@@ -350,7 +348,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(543, 111);
+            this.btnLimpiar.Location = new System.Drawing.Point(611, 111);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 10;
@@ -360,7 +358,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(462, 111);
+            this.btnAceptar.Location = new System.Drawing.Point(520, 111);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 9;
@@ -371,7 +369,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(676, 43);
+            this.label6.Location = new System.Drawing.Point(703, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 8;
@@ -495,6 +493,10 @@
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lblAbestiKopurua);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblAlbumKopurua);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(847, 0);
             this.panel1.Name = "panel1";
@@ -520,6 +522,42 @@
             this.txtKideKopurua.Name = "txtKideKopurua";
             this.txtKideKopurua.Size = new System.Drawing.Size(75, 20);
             this.txtKideKopurua.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(54, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Artistaren albumak:";
+            // 
+            // lblAlbumKopurua
+            // 
+            this.lblAlbumKopurua.AutoSize = true;
+            this.lblAlbumKopurua.Location = new System.Drawing.Point(190, 22);
+            this.lblAlbumKopurua.Name = "lblAlbumKopurua";
+            this.lblAlbumKopurua.Size = new System.Drawing.Size(43, 13);
+            this.lblAlbumKopurua.TabIndex = 1;
+            this.lblAlbumKopurua.Text = "alb Kop";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(57, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Artista honen abestiak:";
+            // 
+            // lblAbestiKopurua
+            // 
+            this.lblAbestiKopurua.AutoSize = true;
+            this.lblAbestiKopurua.Location = new System.Drawing.Point(190, 51);
+            this.lblAbestiKopurua.Name = "lblAbestiKopurua";
+            this.lblAbestiKopurua.Size = new System.Drawing.Size(47, 13);
+            this.lblAbestiKopurua.TabIndex = 3;
+            this.lblAbestiKopurua.Text = "abe Kop";
             // 
             // frmArtistak
             // 
@@ -552,6 +590,8 @@
             this.panel_Izquierdo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).EndInit();
             this.panel_GENERAL.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel_Inferior.ResumeLayout(false);
             this.panel_Inferior.PerformLayout();
             this.ResumeLayout(false);
@@ -585,7 +625,6 @@
         private System.Windows.Forms.PictureBox pctArtistaMota;
         private System.Windows.Forms.TextBox txtArtistaMotaKodea;
         private System.Windows.Forms.TextBox txtKideKopurua;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.NumericUpDown numKideKopurua;
         private System.Windows.Forms.TextBox txtNazionalitateIzena;
         private System.Windows.Forms.Label label7;
@@ -598,5 +637,9 @@
         private System.Windows.Forms.RadioButton rdbErretiratuta;
         private System.Windows.Forms.RadioButton rdbJardunean;
         private System.Windows.Forms.RadioButton rdbEzezaguna;
+        private System.Windows.Forms.Label lblAbestiKopurua;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblAlbumKopurua;
+        private System.Windows.Forms.Label label9;
     }
 }
