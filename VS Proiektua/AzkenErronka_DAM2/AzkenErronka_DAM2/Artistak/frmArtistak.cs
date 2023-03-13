@@ -337,6 +337,21 @@ namespace AzkenErronka_DAM2.Artistak
             //    e.Handled = true;
             //}
         }
+
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            //con.Close();
+            //con.Open();
+
+            //int ultimo_artista = clsArtista.getArtistak_MaxCode(con, "");
+
+            clsArtista.getArtistak_MaxCode(con, "");
+            this.txtKodeaEdicion.Text = Artista.prueba_enviar.ToString();
+
+
+
+            //this.txtKodeaEdicion.Text = ultimo_artista.ToString();
+        }
     }
 }
 
