@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,7 +111,7 @@ namespace AzkenErronka_DAM2.Artistak
             {
                 parametro = parametro + " and Egoera = 'R'";
             }
-            else if (this.rdbEzezaguna.Checked == true)
+            else if (this.rdbAtsedenaldia.Checked == true)
             {
                 parametro = parametro + " and Egoera = 'D'";
             }
@@ -346,11 +347,114 @@ namespace AzkenErronka_DAM2.Artistak
             //int ultimo_artista = clsArtista.getArtistak_MaxCode(con, "");
 
             clsArtista.getArtistak_MaxCode(con, "");
-            this.txtKodeaEdicion.Text = Artista.prueba_enviar.ToString();
+            this.txtEdicionKodea.Text = Artista.prueba_enviar.ToString();
 
 
 
             //this.txtKodeaEdicion.Text = ultimo_artista.ToString();
+        }
+
+        private void btnOnartu_Click(object sender, EventArgs e)
+        {
+            Int32 kodea = 0;
+            String izena = "";
+            Int32 kod_mota = 0;
+            String nazionalitatea = "";
+            String deskribapena = "";
+            Int32 kide_kopurua = 0;
+            Int32 fundazio_urtea = 0;
+            String egoera = "";
+            String artista_info_gehiago = "";
+
+            //+++++++++++++
+            kodea = Int32.Parse(this.txtEdicionKodea.Text);
+
+
+            if (this.txtEdicionIzena.Text != "")
+            {
+                izena = this.txtEdicionIzena.Text;
+            } else
+            {
+                MessageBox.Show("Artistaren izena beharrezkoa da.", "Kontuz!");
+                return;
+            }
+
+            
+
+            //artista-mota
+            if (this.txtEdicionArtistaMotaKodea.Text != "")
+            {
+                kod_mota = Int32.Parse(this.txtEdicionArtistaMotaKodea.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ez da artista-mota zehaztu.", "Kontuz!");
+                return;
+            }
+
+            //nazionalitatea
+            if (this.txtEdicionNazionalitateaKodea.Text != "")
+            {
+                nazionalitatea = this.txtEdicionNazionalitateaKodea.ToString().Trim();
+            }
+            else
+            {
+                MessageBox.Show("Artistaren nazionalitatea zehaztu behar da", "Kontuz!");
+                return;
+            }
+
+            //deskribapena
+            if (this.txtEdicionDeskribapena.Text != "")
+            {
+                deskribapena = this.txtEdicionDeskribapena.Text.Trim();
+            }
+            else
+            {
+                deskribapena = "";
+            }
+
+            //kide-kopurua
+            if (this.numEdicionKideak.Value != null)
+            {
+                if (this.numEdicionKideak.Value == 0)
+                {
+                    MessageBox.Show("Artista-kopurua ezin da 0 izan. Gutxienez 1 izan behar du", "Kontuz!");
+                    return;
+                }
+                else
+                {
+                    kide_kopurua = Int32.Parse(this.numEdicionKideak.Value.ToString());
+                }
+            }
+
+            //fundazio-urtea
+            if (this.txtEdicionFundazioUrtea.Text != "")
+            {
+                fundazio_urtea = Int32.Parse(this.txtEdicionFundazioUrtea.Text.Trim());
+            }
+            else
+            {
+                MessageBox.Show("Artistaren hasiera-urtea zehaztu behar duzu", "Kontuz!");
+                return;
+            }
+
+            //egoera
+            if (this.rdbEdicionJardueran.Checked == true)
+            {
+                egoera = "S";
+            }
+            else if (this.rdbEdicionErretiratuta.Checked == true)
+            {
+                egoera = "R";
+            }
+            else if (this.rdbEdicionAtsedenaldia.Checked == true)
+            {
+                egoera = "A";
+            }
+
+
+
+            //Artista.new_artista();
         }
     }
 }

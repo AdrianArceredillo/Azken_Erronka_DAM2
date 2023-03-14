@@ -1,0 +1,21 @@
+USE [MusikaBilduma]
+GO
+/****** Object:  StoredProcedure [dbo].[maxArtistaCodigo]    Script Date: 14/03/2023 19:34:48 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[new_artista] (@kodartista int, @izenaArtista varchar(200), @KodArtistaMota int, @Nazionalitatea varchar(50), @Deskribapena varchar(2000), @KideKopurua int, @FundazioUrtea int, @Egoera char(1), @ArtistaInfoGehiago varchar(200)) 
+
+AS
+
+BEGIN
+   IF NOT EXISTS (SELECT * FROM Artista 
+                   WHERE kodartista = @kodartista
+                   AND izenaArtista = @izenaArtista
+                   AND KodArtistaMota = @KodArtistaMota)
+   BEGIN
+       INSERT INTO Artista (kodartista, izenaArtista, KodArtistaMota, Nazionalitatea, Deskribapena, KideKopurua, FundazioUrtea, Egoera, ArtistaInfoGehiago)
+       VALUES (@kodartista, @izenaArtista, @KodArtistaMota,@Nazionalitatea,@Deskribapena,@KideKopurua,@FundazioUrtea,@Egoera,@ArtistaInfoGehiago)
+   END
+END

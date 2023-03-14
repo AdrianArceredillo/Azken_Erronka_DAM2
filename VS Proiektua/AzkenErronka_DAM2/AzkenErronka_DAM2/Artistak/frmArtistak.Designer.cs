@@ -44,28 +44,27 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel_edicion_artista = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btnPruebas = new System.Windows.Forms.Button();
+            this.txtEdicionDeskribapena = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEdicionNazionalitateaDesk = new System.Windows.Forms.TextBox();
+            this.txtEdicionNazionalitateaKodea = new System.Windows.Forms.TextBox();
+            this.txtEdicionArtistaMotaDesk = new System.Windows.Forms.TextBox();
+            this.txtEdicionArtistaMotaKodea = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.rdbEdicionErretiratuta = new System.Windows.Forms.RadioButton();
+            this.rdbEdicionJardueran = new System.Windows.Forms.RadioButton();
+            this.rdbEdicionAtsedenaldia = new System.Windows.Forms.RadioButton();
+            this.txtEdicionFundazioUrtea = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numEdicionKideak = new System.Windows.Forms.NumericUpDown();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtKodeaEdicion = new System.Windows.Forms.TextBox();
+            this.txtEdicionIzena = new System.Windows.Forms.TextBox();
+            this.txtEdicionKodea = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel_botonera_edicion = new System.Windows.Forms.Panel();
@@ -77,7 +76,7 @@
             this.gbEgoera = new System.Windows.Forms.GroupBox();
             this.rdbGuztiak = new System.Windows.Forms.RadioButton();
             this.rdbErretiratuta = new System.Windows.Forms.RadioButton();
-            this.rdbEzezaguna = new System.Windows.Forms.RadioButton();
+            this.rdbAtsedenaldia = new System.Windows.Forms.RadioButton();
             this.rdbJardunean = new System.Windows.Forms.RadioButton();
             this.cbHasieraUrtea = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -100,7 +99,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_SUPERIOR = new System.Windows.Forms.Panel();
-            this.btnPruebas = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnBerria = new System.Windows.Forms.ToolStripButton();
+            this.btnEditatu = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnOnartu = new System.Windows.Forms.ToolStripButton();
             this.panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
             this.panel_GENERAL.SuspendLayout();
@@ -114,9 +117,10 @@
             this.panel3.SuspendLayout();
             this.panel_edicion_artista.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdicionKideak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_botonera_edicion.SuspendLayout();
             this.panel0_SALIR.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.p1_Filtros.SuspendLayout();
@@ -125,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numKideKopurua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).BeginInit();
             this.panel_SUPERIOR.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Izquierdo
@@ -280,25 +285,23 @@
             // panel_edicion_artista
             // 
             this.panel_edicion_artista.Controls.Add(this.btnPruebas);
-            this.panel_edicion_artista.Controls.Add(this.textBox9);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionDeskribapena);
             this.panel_edicion_artista.Controls.Add(this.label17);
-            this.panel_edicion_artista.Controls.Add(this.textBox6);
-            this.panel_edicion_artista.Controls.Add(this.textBox5);
-            this.panel_edicion_artista.Controls.Add(this.textBox4);
-            this.panel_edicion_artista.Controls.Add(this.textBox3);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionNazionalitateaDesk);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionNazionalitateaKodea);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionArtistaMotaDesk);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionArtistaMotaKodea);
             this.panel_edicion_artista.Controls.Add(this.groupBox1);
-            this.panel_edicion_artista.Controls.Add(this.textBox8);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionFundazioUrtea);
             this.panel_edicion_artista.Controls.Add(this.label16);
-            this.panel_edicion_artista.Controls.Add(this.textBox7);
-            this.panel_edicion_artista.Controls.Add(this.label15);
             this.panel_edicion_artista.Controls.Add(this.label14);
-            this.panel_edicion_artista.Controls.Add(this.numericUpDown1);
+            this.panel_edicion_artista.Controls.Add(this.numEdicionKideak);
             this.panel_edicion_artista.Controls.Add(this.pictureBox2);
             this.panel_edicion_artista.Controls.Add(this.pictureBox1);
             this.panel_edicion_artista.Controls.Add(this.label12);
             this.panel_edicion_artista.Controls.Add(this.label13);
-            this.panel_edicion_artista.Controls.Add(this.textBox2);
-            this.panel_edicion_artista.Controls.Add(this.txtKodeaEdicion);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionIzena);
+            this.panel_edicion_artista.Controls.Add(this.txtEdicionKodea);
             this.panel_edicion_artista.Controls.Add(this.label10);
             this.panel_edicion_artista.Controls.Add(this.label9);
             this.panel_edicion_artista.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -307,13 +310,23 @@
             this.panel_edicion_artista.Size = new System.Drawing.Size(1294, 115);
             this.panel_edicion_artista.TabIndex = 1;
             // 
-            // textBox9
+            // btnPruebas
             // 
-            this.textBox9.Location = new System.Drawing.Point(995, 17);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(287, 81);
-            this.textBox9.TabIndex = 40;
+            this.btnPruebas.Location = new System.Drawing.Point(916, 45);
+            this.btnPruebas.Name = "btnPruebas";
+            this.btnPruebas.Size = new System.Drawing.Size(73, 23);
+            this.btnPruebas.TabIndex = 41;
+            this.btnPruebas.Text = "Máx. Cód.:";
+            this.btnPruebas.UseVisualStyleBackColor = true;
+            this.btnPruebas.Click += new System.EventHandler(this.btnPruebas_Click);
+            // 
+            // txtEdicionDeskribapena
+            // 
+            this.txtEdicionDeskribapena.Location = new System.Drawing.Point(995, 17);
+            this.txtEdicionDeskribapena.Multiline = true;
+            this.txtEdicionDeskribapena.Name = "txtEdicionDeskribapena";
+            this.txtEdicionDeskribapena.Size = new System.Drawing.Size(287, 81);
+            this.txtEdicionDeskribapena.TabIndex = 40;
             // 
             // label17
             // 
@@ -324,39 +337,39 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Deskribapena:";
             // 
-            // textBox6
+            // txtEdicionNazionalitateaDesk
             // 
-            this.textBox6.Location = new System.Drawing.Point(508, 71);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(193, 20);
-            this.textBox6.TabIndex = 38;
+            this.txtEdicionNazionalitateaDesk.Location = new System.Drawing.Point(508, 71);
+            this.txtEdicionNazionalitateaDesk.Name = "txtEdicionNazionalitateaDesk";
+            this.txtEdicionNazionalitateaDesk.Size = new System.Drawing.Size(193, 20);
+            this.txtEdicionNazionalitateaDesk.TabIndex = 38;
             // 
-            // textBox5
+            // txtEdicionNazionalitateaKodea
             // 
-            this.textBox5.Location = new System.Drawing.Point(468, 71);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(34, 20);
-            this.textBox5.TabIndex = 37;
+            this.txtEdicionNazionalitateaKodea.Location = new System.Drawing.Point(468, 71);
+            this.txtEdicionNazionalitateaKodea.Name = "txtEdicionNazionalitateaKodea";
+            this.txtEdicionNazionalitateaKodea.Size = new System.Drawing.Size(34, 20);
+            this.txtEdicionNazionalitateaKodea.TabIndex = 37;
             // 
-            // textBox4
+            // txtEdicionArtistaMotaDesk
             // 
-            this.textBox4.Location = new System.Drawing.Point(508, 44);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 36;
+            this.txtEdicionArtistaMotaDesk.Location = new System.Drawing.Point(508, 44);
+            this.txtEdicionArtistaMotaDesk.Name = "txtEdicionArtistaMotaDesk";
+            this.txtEdicionArtistaMotaDesk.Size = new System.Drawing.Size(193, 20);
+            this.txtEdicionArtistaMotaDesk.TabIndex = 36;
             // 
-            // textBox3
+            // txtEdicionArtistaMotaKodea
             // 
-            this.textBox3.Location = new System.Drawing.Point(468, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 20);
-            this.textBox3.TabIndex = 35;
+            this.txtEdicionArtistaMotaKodea.Location = new System.Drawing.Point(468, 44);
+            this.txtEdicionArtistaMotaKodea.Name = "txtEdicionArtistaMotaKodea";
+            this.txtEdicionArtistaMotaKodea.Size = new System.Drawing.Size(34, 20);
+            this.txtEdicionArtistaMotaKodea.TabIndex = 35;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.rdbEdicionErretiratuta);
+            this.groupBox1.Controls.Add(this.rdbEdicionJardueran);
+            this.groupBox1.Controls.Add(this.rdbEdicionAtsedenaldia);
             this.groupBox1.Location = new System.Drawing.Point(752, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(143, 92);
@@ -364,46 +377,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Egoera:";
             // 
-            // radioButton2
+            // rdbEdicionErretiratuta
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(25, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Erretiratuta";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbEdicionErretiratuta.AutoSize = true;
+            this.rdbEdicionErretiratuta.Location = new System.Drawing.Point(25, 42);
+            this.rdbEdicionErretiratuta.Name = "rdbEdicionErretiratuta";
+            this.rdbEdicionErretiratuta.Size = new System.Drawing.Size(76, 17);
+            this.rdbEdicionErretiratuta.TabIndex = 1;
+            this.rdbEdicionErretiratuta.TabStop = true;
+            this.rdbEdicionErretiratuta.Text = "Erretiratuta";
+            this.rdbEdicionErretiratuta.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdbEdicionJardueran
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(25, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(75, 17);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Jardunean";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdbEdicionJardueran.AutoSize = true;
+            this.rdbEdicionJardueran.Checked = true;
+            this.rdbEdicionJardueran.Location = new System.Drawing.Point(25, 19);
+            this.rdbEdicionJardueran.Name = "rdbEdicionJardueran";
+            this.rdbEdicionJardueran.Size = new System.Drawing.Size(75, 17);
+            this.rdbEdicionJardueran.TabIndex = 0;
+            this.rdbEdicionJardueran.TabStop = true;
+            this.rdbEdicionJardueran.Text = "Jardunean";
+            this.rdbEdicionJardueran.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdbEdicionAtsedenaldia
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(25, 65);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(78, 17);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Ezezaguna";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbEdicionAtsedenaldia.AutoSize = true;
+            this.rdbEdicionAtsedenaldia.Location = new System.Drawing.Point(25, 65);
+            this.rdbEdicionAtsedenaldia.Name = "rdbEdicionAtsedenaldia";
+            this.rdbEdicionAtsedenaldia.Size = new System.Drawing.Size(86, 17);
+            this.rdbEdicionAtsedenaldia.TabIndex = 3;
+            this.rdbEdicionAtsedenaldia.TabStop = true;
+            this.rdbEdicionAtsedenaldia.Text = "Atsedenaldia";
+            this.rdbEdicionAtsedenaldia.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtEdicionFundazioUrtea
             // 
-            this.textBox8.Location = new System.Drawing.Point(281, 71);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(64, 20);
-            this.textBox8.TabIndex = 34;
+            this.txtEdicionFundazioUrtea.Location = new System.Drawing.Point(281, 71);
+            this.txtEdicionFundazioUrtea.Name = "txtEdicionFundazioUrtea";
+            this.txtEdicionFundazioUrtea.Size = new System.Drawing.Size(64, 20);
+            this.txtEdicionFundazioUrtea.TabIndex = 34;
             // 
             // label16
             // 
@@ -414,22 +427,6 @@
             this.label16.TabIndex = 33;
             this.label16.Text = "Hasiera-urtea:";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(468, 17);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 20);
-            this.textBox7.TabIndex = 30;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(380, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 13);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "Fundazio Urtea:";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -439,14 +436,14 @@
             this.label14.TabIndex = 28;
             this.label14.Text = "Kide kopurua:";
             // 
-            // numericUpDown1
+            // numEdicionKideak
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(112, 72);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown1.TabIndex = 24;
-            this.numericUpDown1.Tag = "";
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numEdicionKideak.Location = new System.Drawing.Point(112, 72);
+            this.numEdicionKideak.Name = "numEdicionKideak";
+            this.numEdicionKideak.Size = new System.Drawing.Size(61, 20);
+            this.numEdicionKideak.TabIndex = 24;
+            this.numEdicionKideak.Tag = "";
+            this.numEdicionKideak.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox2
             // 
@@ -488,19 +485,19 @@
             this.label13.TabIndex = 24;
             this.label13.Text = "Nazionalitatea:";
             // 
-            // textBox2
+            // txtEdicionIzena
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 20);
-            this.textBox2.TabIndex = 2;
+            this.txtEdicionIzena.Location = new System.Drawing.Point(112, 44);
+            this.txtEdicionIzena.Name = "txtEdicionIzena";
+            this.txtEdicionIzena.Size = new System.Drawing.Size(233, 20);
+            this.txtEdicionIzena.TabIndex = 2;
             // 
-            // txtKodeaEdicion
+            // txtEdicionKodea
             // 
-            this.txtKodeaEdicion.Location = new System.Drawing.Point(112, 17);
-            this.txtKodeaEdicion.Name = "txtKodeaEdicion";
-            this.txtKodeaEdicion.Size = new System.Drawing.Size(64, 20);
-            this.txtKodeaEdicion.TabIndex = 0;
+            this.txtEdicionKodea.Location = new System.Drawing.Point(112, 17);
+            this.txtEdicionKodea.Name = "txtEdicionKodea";
+            this.txtEdicionKodea.Size = new System.Drawing.Size(64, 20);
+            this.txtEdicionKodea.TabIndex = 0;
             // 
             // label10
             // 
@@ -523,6 +520,7 @@
             // panel_botonera_edicion
             // 
             this.panel_botonera_edicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_botonera_edicion.Controls.Add(this.toolStrip2);
             this.panel_botonera_edicion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_botonera_edicion.Location = new System.Drawing.Point(0, 0);
             this.panel_botonera_edicion.Name = "panel_botonera_edicion";
@@ -604,11 +602,11 @@
             // 
             this.gbEgoera.Controls.Add(this.rdbGuztiak);
             this.gbEgoera.Controls.Add(this.rdbErretiratuta);
-            this.gbEgoera.Controls.Add(this.rdbEzezaguna);
+            this.gbEgoera.Controls.Add(this.rdbAtsedenaldia);
             this.gbEgoera.Controls.Add(this.rdbJardunean);
             this.gbEgoera.Location = new System.Drawing.Point(899, 18);
             this.gbEgoera.Name = "gbEgoera";
-            this.gbEgoera.Size = new System.Drawing.Size(349, 43);
+            this.gbEgoera.Size = new System.Drawing.Size(365, 43);
             this.gbEgoera.TabIndex = 23;
             this.gbEgoera.TabStop = false;
             this.gbEgoera.Text = "Egoera:";
@@ -616,7 +614,7 @@
             // rdbGuztiak
             // 
             this.rdbGuztiak.AutoSize = true;
-            this.rdbGuztiak.Location = new System.Drawing.Point(253, 19);
+            this.rdbGuztiak.Location = new System.Drawing.Point(274, 19);
             this.rdbGuztiak.Name = "rdbGuztiak";
             this.rdbGuztiak.Size = new System.Drawing.Size(85, 17);
             this.rdbGuztiak.TabIndex = 2;
@@ -626,7 +624,7 @@
             // rdbErretiratuta
             // 
             this.rdbErretiratuta.AutoSize = true;
-            this.rdbErretiratuta.Location = new System.Drawing.Point(171, 19);
+            this.rdbErretiratuta.Location = new System.Drawing.Point(192, 19);
             this.rdbErretiratuta.Name = "rdbErretiratuta";
             this.rdbErretiratuta.Size = new System.Drawing.Size(76, 17);
             this.rdbErretiratuta.TabIndex = 1;
@@ -634,22 +632,22 @@
             this.rdbErretiratuta.Text = "Erretiratuta";
             this.rdbErretiratuta.UseVisualStyleBackColor = true;
             // 
-            // rdbEzezaguna
+            // rdbAtsedenaldia
             // 
-            this.rdbEzezaguna.AutoSize = true;
-            this.rdbEzezaguna.Location = new System.Drawing.Point(87, 19);
-            this.rdbEzezaguna.Name = "rdbEzezaguna";
-            this.rdbEzezaguna.Size = new System.Drawing.Size(78, 17);
-            this.rdbEzezaguna.TabIndex = 3;
-            this.rdbEzezaguna.TabStop = true;
-            this.rdbEzezaguna.Text = "Ezezaguna";
-            this.rdbEzezaguna.UseVisualStyleBackColor = true;
+            this.rdbAtsedenaldia.AutoSize = true;
+            this.rdbAtsedenaldia.Location = new System.Drawing.Point(94, 19);
+            this.rdbAtsedenaldia.Name = "rdbAtsedenaldia";
+            this.rdbAtsedenaldia.Size = new System.Drawing.Size(92, 17);
+            this.rdbAtsedenaldia.TabIndex = 3;
+            this.rdbAtsedenaldia.TabStop = true;
+            this.rdbAtsedenaldia.Text = "Atsedenaldian";
+            this.rdbAtsedenaldia.UseVisualStyleBackColor = true;
             // 
             // rdbJardunean
             // 
             this.rdbJardunean.AutoSize = true;
             this.rdbJardunean.Checked = true;
-            this.rdbJardunean.Location = new System.Drawing.Point(6, 19);
+            this.rdbJardunean.Location = new System.Drawing.Point(13, 19);
             this.rdbJardunean.Name = "rdbJardunean";
             this.rdbJardunean.Size = new System.Drawing.Size(75, 17);
             this.rdbJardunean.TabIndex = 0;
@@ -897,15 +895,54 @@
             this.panel_SUPERIOR.Size = new System.Drawing.Size(1294, 180);
             this.panel_SUPERIOR.TabIndex = 1;
             // 
-            // btnPruebas
+            // toolStrip2
             // 
-            this.btnPruebas.Location = new System.Drawing.Point(916, 45);
-            this.btnPruebas.Name = "btnPruebas";
-            this.btnPruebas.Size = new System.Drawing.Size(73, 23);
-            this.btnPruebas.TabIndex = 41;
-            this.btnPruebas.Text = "Máx. Cód.:";
-            this.btnPruebas.UseVisualStyleBackColor = true;
-            this.btnPruebas.Click += new System.EventHandler(this.btnPruebas_Click);
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBerria,
+            this.btnEditatu,
+            this.toolStripSeparator1,
+            this.btnOnartu});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1292, 27);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnBerria
+            // 
+            this.btnBerria.BackColor = System.Drawing.Color.Black;
+            this.btnBerria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnBerria.Image = ((System.Drawing.Image)(resources.GetObject("btnBerria.Image")));
+            this.btnBerria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBerria.Name = "btnBerria";
+            this.btnBerria.Size = new System.Drawing.Size(23, 24);
+            this.btnBerria.Text = "Berria";
+            // 
+            // btnEditatu
+            // 
+            this.btnEditatu.BackColor = System.Drawing.Color.DimGray;
+            this.btnEditatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEditatu.Image = ((System.Drawing.Image)(resources.GetObject("btnEditatu.Image")));
+            this.btnEditatu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditatu.Name = "btnEditatu";
+            this.btnEditatu.Size = new System.Drawing.Size(23, 24);
+            this.btnEditatu.Text = "Editatu";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // btnOnartu
+            // 
+            this.btnOnartu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOnartu.Image = ((System.Drawing.Image)(resources.GetObject("btnOnartu.Image")));
+            this.btnOnartu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOnartu.Name = "btnOnartu";
+            this.btnOnartu.Size = new System.Drawing.Size(23, 24);
+            this.btnOnartu.ToolTipText = "Onartu";
+            this.btnOnartu.Click += new System.EventHandler(this.btnOnartu_Click);
             // 
             // frmArtistak
             // 
@@ -939,9 +976,11 @@
             this.panel_edicion_artista.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdicionKideak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_botonera_edicion.ResumeLayout(false);
+            this.panel_botonera_edicion.PerformLayout();
             this.panel0_SALIR.ResumeLayout(false);
             this.panel0_SALIR.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -954,6 +993,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numKideKopurua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).EndInit();
             this.panel_SUPERIOR.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -974,29 +1015,27 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel_edicion_artista;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEdicionIzena;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel_botonera_edicion;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numEdicionKideak;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.RadioButton rdbEdicionErretiratuta;
+        private System.Windows.Forms.RadioButton rdbEdicionAtsedenaldia;
+        private System.Windows.Forms.RadioButton rdbEdicionJardueran;
+        private System.Windows.Forms.TextBox txtEdicionFundazioUrtea;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtEdicionArtistaMotaDesk;
+        private System.Windows.Forms.TextBox txtEdicionArtistaMotaKodea;
+        private System.Windows.Forms.TextBox txtEdicionNazionalitateaDesk;
+        private System.Windows.Forms.TextBox txtEdicionNazionalitateaKodea;
+        private System.Windows.Forms.TextBox txtEdicionDeskribapena;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel0_SALIR;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -1006,7 +1045,7 @@
         private System.Windows.Forms.GroupBox gbEgoera;
         private System.Windows.Forms.RadioButton rdbGuztiak;
         private System.Windows.Forms.RadioButton rdbErretiratuta;
-        private System.Windows.Forms.RadioButton rdbEzezaguna;
+        private System.Windows.Forms.RadioButton rdbAtsedenaldia;
         private System.Windows.Forms.RadioButton rdbJardunean;
         private System.Windows.Forms.ComboBox cbHasieraUrtea;
         private System.Windows.Forms.Label label8;
@@ -1030,6 +1069,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_SUPERIOR;
         private System.Windows.Forms.Button btnPruebas;
-        public System.Windows.Forms.TextBox txtKodeaEdicion;
+        public System.Windows.Forms.TextBox txtEdicionKodea;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btnBerria;
+        private System.Windows.Forms.ToolStripButton btnEditatu;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnOnartu;
     }
 }

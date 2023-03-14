@@ -122,7 +122,7 @@ namespace AzkenErronka_DAM2.Klaseak
 
                     prueba_enviar = Int32.Parse(read[0].ToString());
                 }
-                
+
                 con.Close();
             }
 
@@ -142,8 +142,50 @@ namespace AzkenErronka_DAM2.Klaseak
         }
 
 
+        //public void new_artista(SqlConnection conn, String parametro)
+        public void new_artista(SqlConnection conn,
+            int kodartista, String izenaArtista, int kodartistaMota, String nazionalitatea, String deskribapena,
+            int kideKopurua, int fundazioUrtea, String egoera, String artistaInfoGehiago
+            )
+        {
+            int a = 0;
+
+            using (SqlConnection con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True"))
+            {
+                con.Open();
+                SqlCommand sql_cmnd = new SqlCommand("new_artista", con);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+
+                sql_cmnd.Parameters.AddWithValue("@kodartista", SqlDbType.Int).Value = kodartista;
+                sql_cmnd.Parameters.AddWithValue("@izenaArtista", SqlDbType.VarChar).Value = izenaArtista;
+                sql_cmnd.Parameters.AddWithValue("@KodArtistaMota", SqlDbType.Int).Value = kodartistaMota;
+                sql_cmnd.Parameters.AddWithValue("@Nazionalitatea", SqlDbType.VarChar).Value = nazionalitatea;
+                sql_cmnd.Parameters.AddWithValue("@Deskribapena", SqlDbType.VarChar).Value = deskribapena;
+                sql_cmnd.Parameters.AddWithValue("@KideKopurua", SqlDbType.Int).Value = kideKopurua;
+                sql_cmnd.Parameters.AddWithValue("@FundazioUrtea", SqlDbType.Int).Value = fundazioUrtea;
+                sql_cmnd.Parameters.AddWithValue("@Egoera", SqlDbType.Char).Value = egoera;
+                sql_cmnd.Parameters.AddWithValue("@ArtistaInfoGehiago", SqlDbType.VarChar).Value = artistaInfoGehiago;
+                //sql_cmnd.Parameters.AddWithValue("@LAST_NAME", SqlDbType.NVarChar).Value = lastName;
+                //sql_cmnd.Parameters.AddWithValue("@AGE", SqlDbType.Int).Value = age;
+                sql_cmnd.ExecuteNonQuery();
+
+                //SqlDataReader read = sql_cmnd.ExecuteReader();
+                //while (read.Read())
+                //{
+                //    ReadSingleRow((IDataRecord)read);//irakurri lerro bakar bat
+
+                //    prueba_enviar = Int32.Parse(read[0].ToString());
+                //}
+
+                con.Close();
+            }
+
+            //return a;
+        }
+
     }
 }
 
 
 //Stored procedures: https://www.c-sharpcorner.com/article/execute-a-stored-procedure-programmatically/
+//insert into: https://stackoverflow.com/questions/20971680/sql-server-insert-if-not-exists
