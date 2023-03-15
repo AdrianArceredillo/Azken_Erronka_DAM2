@@ -19,6 +19,15 @@ namespace AzkenErronka_DAM2.Klaseak
             return reader;
         }
 
+        public SqlDataReader getArtistaMotak_Concreto(SqlConnection conn, String parametro)
+        {
+            String sql = "select ArtistaMota.KodMota, ArtistaMota.MotaIzena from ArtistaMota" + parametro;
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            return reader;
+        }
+
 
         public int getArtistaMota_MaxCode(SqlConnection conn, String parametro)
         {

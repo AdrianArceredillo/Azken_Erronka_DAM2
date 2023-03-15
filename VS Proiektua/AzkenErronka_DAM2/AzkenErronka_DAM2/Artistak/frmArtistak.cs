@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Messaging;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace AzkenErronka_DAM2.Artistak
         #region "DECLARACIONES"
         SqlConnection con;
         Artista clsArtista = new Artista();
+        ArtistaMota clsArtistaMota = new ArtistaMota();
         SqlDataReader reader;
         #endregion
 
@@ -218,6 +220,22 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistas.Columns[7].Width = 90;
 
 
+            //KodArtistaMota
+            this.dgArtistas.Columns["KodArtistaMota"].Visible = false;
+            this.dgArtistas.Columns["KodArtistaMota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[8].HeaderText = "Mota Kodea";
+            this.dgArtistas.Columns[8].Width = 0;
+
+
+            //NazioaIzena
+            this.dgArtistas.Columns["NazioaIzena"].Visible = false;
+            this.dgArtistas.Columns["NazioaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgArtistas.Columns[8].HeaderText = "Nazioa";
+            this.dgArtistas.Columns[8].Width = 0;
+
+
             //UUUU
 
 
@@ -247,6 +265,48 @@ namespace AzkenErronka_DAM2.Artistak
 
             int index = e.RowIndex;
             dgArtistas.Rows[index].Selected = true;
+
+
+            cargar_artista();
+
+            //dgvName.Rows(yourRowIndex).Cells(yourColumnIndex).Value
+
+        }
+
+        private void cargar_artista()
+        {
+            //FundazioUrtea
+            this.txtEdicionKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtista"].Value.ToString();
+            this.txtEdicionIzena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IzenaArtista"].Value.ToString();
+            this.numEdicionKideak.Value = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KideKopurua"].Value.ToString());
+            this.txtEdicionFundazioUrtea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["FundazioUrtea"].Value.ToString();
+
+
+            String egoera_cargar = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["EgoeraDeskribapena"].Value.ToString();
+            if (egoera_cargar == "Jardueran")
+            {
+                this.rdbEdicionJardueran.Checked = true;
+            }
+            else if (egoera_cargar == "Erretiratua")
+            {
+                this.rdbEdicionErretiratuta.Checked = true;
+            }
+            else if (egoera_cargar == "Atsedenaldian")
+            {
+                this.rdbEdicionAtsedenaldia.Checked = true;
+            }
+
+            //artista-mota
+            this.txtEdicionArtistaMotaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtistaMota"].Value.ToString();
+            this.txtEdicionArtistaMotaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Mota"].Value.ToString();
+
+            //nazionalitatea
+            this.txtEdicionNazionalitateaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IdNazioa"].Value.ToString();
+            this.txtEdicionNazionalitateaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["NazioaIzena"].Value.ToString();
+
+            //deskribapena
+            this.txtEdicionDeskribapena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Deskribapena"].Value.ToString();
+
         }
 
         private void pctArtistaMota_Click(object sender, EventArgs e)
@@ -373,13 +433,12 @@ namespace AzkenErronka_DAM2.Artistak
             if (this.txtEdicionIzena.Text != "")
             {
                 izena = this.txtEdicionIzena.Text;
-            } else
+            }
+            else
             {
                 MessageBox.Show("Artistaren izena beharrezkoa da.", "Kontuz!");
                 return;
             }
-
-            
 
             //artista-mota
             if (this.txtEdicionArtistaMotaKodea.Text != "")
@@ -452,10 +511,59 @@ namespace AzkenErronka_DAM2.Artistak
                 egoera = "A";
             }
 
-
-
-            //Artista.new_artista();
         }
+
+
+
+
+        private void btnBerria_Click(object sender, EventArgs e)
+        {
+            limpiar_panel_edicion();
+            cambiar_estado_panel_inferior(true);
+        }
+
+        private void limpiar_panel_edicion()
+        {
+            this.txtEdicionIzena.Text = "";
+            this.numEdicionKideak.Value = 0;
+            this.txtEdicionFundazioUrtea.Text = "";
+
+            this.txtEdicionArtistaMotaKodea.Text = "";
+            this.txtEdicionArtistaMotaDesk.Text = "";
+
+            this.txtEdicionNazionalitateaKodea.Text = "";
+            this.txtEdicionNazionalitateaDesk.Text = "";
+
+            this.rdbEdicionJardueran.Checked = true;    //activar por defecto
+
+            this.txtEdicionDeskribapena.Text = "";
+        }
+
+        private void cambiar_estado_panel_inferior(bool est)
+        {
+            ////enabled
+            //this.txtEdicionIzena.Enabled = est;
+            //this.numEdicionKideak.Enabled = est;
+            //this.pctEdicionArtistaMota.Enabled = est;
+            //this.txtEdicionFundazioUrtea.Enabled = est;
+            //this.txtEdicionIzena.Enabled = est;
+            //this.pctEdicionNazionalitatea.Enabled = est;
+            //this.gbEdicionArtistaEgoera.Enabled = est;
+            //this.txtEdicionDeskribapena.Enabled = est;
+
+            //readonly
+            this.txtEdicionIzena.Enabled = est;
+            this.numEdicionKideak.Enabled = est;
+            this.txtEdicionFundazioUrtea.Enabled = est;
+            this.pctEdicionArtistaMota.Enabled = est;
+            this.pctEdicionNazionalitatea.Enabled = est;
+            this.gbEdicionArtistaEgoera.Enabled = est;
+            this.txtEdicionDeskribapena.Enabled = est;
+
+        }
+
+
+
     }
 }
 

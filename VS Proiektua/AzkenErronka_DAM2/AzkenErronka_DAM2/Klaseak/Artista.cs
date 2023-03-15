@@ -38,10 +38,15 @@ namespace AzkenErronka_DAM2.Klaseak
                 "Artista.Deskribapena," +
                 "Nazionalitateak.IdNazioa, " +
 
+                
+
                 "ArtistaMota.MotaIzena as Mota, " +
                 "KideKopurua, " +
                 "FundazioUrtea, " +
-                "ArtistaEgoera.EgoeraDeskribapena " +
+                "ArtistaEgoera.EgoeraDeskribapena, " +
+
+                "Artista.KodArtistaMota, " +
+                "Nazionalitateak.NazioaIzena " +
 
 
                 //"ArtistaInfoGehiago, " +
