@@ -525,7 +525,7 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void btnOnartu_Click(object sender, EventArgs e)
         {
-            Int32 kodea = 0;
+             Int32 kodea = 0;
             String izena = "";
             Int32 kod_mota = 0;
             String nazionalitatea = "";
@@ -771,6 +771,7 @@ namespace AzkenErronka_DAM2.Artistak
         {
             limpiar_panel_edicion();
             cambiar_estado_panel_inferior(false);
+            this.txtEdicionKodea.Text = "";
         }
 
         private void txtEdicionFundazioUrtea_KeyPress(object sender, KeyPressEventArgs e)

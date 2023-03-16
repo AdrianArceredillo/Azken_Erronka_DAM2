@@ -73,6 +73,7 @@
             this.btnEditatu = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnOnartu = new System.Windows.Forms.ToolStripButton();
+            this.btnEzeztatu = new System.Windows.Forms.ToolStripButton();
             this.panel0_SALIR = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAtzera = new System.Windows.Forms.ToolStripButton();
@@ -104,7 +105,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_SUPERIOR = new System.Windows.Forms.Panel();
-            this.btnEzeztatu = new System.Windows.Forms.ToolStripButton();
             this.panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
             this.panel_GENERAL.SuspendLayout();
@@ -601,6 +601,17 @@
             this.btnOnartu.ToolTipText = "Onartu";
             this.btnOnartu.Click += new System.EventHandler(this.btnOnartu_Click);
             // 
+            // btnEzeztatu
+            // 
+            this.btnEzeztatu.BackColor = System.Drawing.Color.Red;
+            this.btnEzeztatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEzeztatu.Enabled = false;
+            this.btnEzeztatu.Image = ((System.Drawing.Image)(resources.GetObject("btnEzeztatu.Image")));
+            this.btnEzeztatu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEzeztatu.Name = "btnEzeztatu";
+            this.btnEzeztatu.Size = new System.Drawing.Size(23, 24);
+            this.btnEzeztatu.Click += new System.EventHandler(this.btnEzeztatu_Click);
+            // 
             // panel0_SALIR
             // 
             this.panel0_SALIR.Controls.Add(this.toolStrip1);
@@ -969,16 +980,6 @@
             this.panel_SUPERIOR.Name = "panel_SUPERIOR";
             this.panel_SUPERIOR.Size = new System.Drawing.Size(1294, 180);
             this.panel_SUPERIOR.TabIndex = 1;
-            // 
-            // btnEzeztatu
-            // 
-            this.btnEzeztatu.BackColor = System.Drawing.Color.Red;
-            this.btnEzeztatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEzeztatu.Image = ((System.Drawing.Image)(resources.GetObject("btnEzeztatu.Image")));
-            this.btnEzeztatu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEzeztatu.Name = "btnEzeztatu";
-            this.btnEzeztatu.Size = new System.Drawing.Size(23, 24);
-            this.btnEzeztatu.Click += new System.EventHandler(this.btnEzeztatu_Click);
             // 
             // frmArtistak
             // 
