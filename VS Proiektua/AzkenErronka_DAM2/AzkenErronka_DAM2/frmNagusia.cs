@@ -106,3 +106,4 @@ namespace AzkenErronka_DAM2
 //Update datagridview using textbox: https://www.c-sharpcorner.com/UploadFile/718fc8/updating-datagridviews-record-using-textbox/
 //Allow numbers only: https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
 //Combobox change selected item: https://stackoverflow.com/questions/450059/how-do-i-set-the-selected-item-in-a-combobox-to-match-my-string-using-c
+//allow only numbers and only one decimal point: https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers

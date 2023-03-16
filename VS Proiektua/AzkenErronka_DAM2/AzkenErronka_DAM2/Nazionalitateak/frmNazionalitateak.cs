@@ -60,6 +60,7 @@ namespace AzkenErronka_DAM2.Nazionalitateak
             string izena_nazioa = Convert.ToString(initial_row.Cells["NazioaIzena"].Value);
 
             dgNazionalitateak.Refresh();
+            dgNazionalitateak.Rows[0].Selected = true;
             //con.Close();
         }
 

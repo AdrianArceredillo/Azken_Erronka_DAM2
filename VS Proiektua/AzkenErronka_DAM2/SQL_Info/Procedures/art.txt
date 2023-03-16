@@ -1,0 +1,22 @@
+KodArtista, IzenaArtista, 
+Artista.Deskribapena, 
+Nazionalitateak.IdNazioa, 
+ArtistaMota.MotaIzena as Mota, 
+                KideKopurua, 
+                FundazioUrtea, 
+                ArtistaEgoera.EgoeraDeskribapena, 
+
+                Artista.KodArtistaMota,
+                Nazionalitateak.NazioaIzena 
+
+
+                --"ArtistaInfoGehiago, " +
+                --"Adina " +
+
+                from 
+                Artista, ArtistaMota, Nazionalitateak, ArtistaEgoera 
+
+                where 
+                Artista.KodArtistaMota = ArtistaMota.KodMota 
+                and Artista.Nazionalitatea = Nazionalitateak.IdNazioa 
+                and Artista.Egoera = ArtistaEgoera.KodEgoera

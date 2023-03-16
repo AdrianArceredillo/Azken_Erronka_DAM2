@@ -104,6 +104,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_SUPERIOR = new System.Windows.Forms.Panel();
+            this.btnEzeztatu = new System.Windows.Forms.ToolStripButton();
             this.panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
             this.panel_GENERAL.SuspendLayout();
@@ -156,6 +157,8 @@
             this.dgArtistas.Size = new System.Drawing.Size(843, 309);
             this.dgArtistas.TabIndex = 0;
             this.dgArtistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistas_CellClick);
+            this.dgArtistas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyDown);
+            this.dgArtistas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyUp);
             // 
             // panel_GENERAL
             // 
@@ -424,6 +427,7 @@
             this.txtEdicionFundazioUrtea.Name = "txtEdicionFundazioUrtea";
             this.txtEdicionFundazioUrtea.Size = new System.Drawing.Size(64, 20);
             this.txtEdicionFundazioUrtea.TabIndex = 34;
+            this.txtEdicionFundazioUrtea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdicionFundazioUrtea_KeyPress);
             // 
             // label16
             // 
@@ -458,24 +462,28 @@
             this.pctEdicionNazionalitatea.BackColor = System.Drawing.Color.Black;
             this.pctEdicionNazionalitatea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctEdicionNazionalitatea.BackgroundImage")));
             this.pctEdicionNazionalitatea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctEdicionNazionalitatea.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctEdicionNazionalitatea.Enabled = false;
             this.pctEdicionNazionalitatea.Location = new System.Drawing.Point(707, 71);
             this.pctEdicionNazionalitatea.Name = "pctEdicionNazionalitatea";
             this.pctEdicionNazionalitatea.Size = new System.Drawing.Size(20, 20);
             this.pctEdicionNazionalitatea.TabIndex = 26;
             this.pctEdicionNazionalitatea.TabStop = false;
+            this.pctEdicionNazionalitatea.Click += new System.EventHandler(this.pctEdicionNazionalitatea_Click);
             // 
             // pctEdicionArtistaMota
             // 
             this.pctEdicionArtistaMota.BackColor = System.Drawing.Color.Black;
             this.pctEdicionArtistaMota.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctEdicionArtistaMota.BackgroundImage")));
             this.pctEdicionArtistaMota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctEdicionArtistaMota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctEdicionArtistaMota.Enabled = false;
             this.pctEdicionArtistaMota.Location = new System.Drawing.Point(707, 44);
             this.pctEdicionArtistaMota.Name = "pctEdicionArtistaMota";
             this.pctEdicionArtistaMota.Size = new System.Drawing.Size(20, 20);
             this.pctEdicionArtistaMota.TabIndex = 25;
             this.pctEdicionArtistaMota.TabStop = false;
+            this.pctEdicionArtistaMota.Click += new System.EventHandler(this.pctEdicionArtistaMota_Click);
             // 
             // label12
             // 
@@ -547,7 +555,8 @@
             this.btnBerria,
             this.btnEditatu,
             this.toolStripSeparator1,
-            this.btnOnartu});
+            this.btnOnartu,
+            this.btnEzeztatu});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(1292, 27);
@@ -582,7 +591,9 @@
             // 
             // btnOnartu
             // 
+            this.btnOnartu.BackColor = System.Drawing.Color.Green;
             this.btnOnartu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOnartu.Enabled = false;
             this.btnOnartu.Image = ((System.Drawing.Image)(resources.GetObject("btnOnartu.Image")));
             this.btnOnartu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOnartu.Name = "btnOnartu";
@@ -959,6 +970,16 @@
             this.panel_SUPERIOR.Size = new System.Drawing.Size(1294, 180);
             this.panel_SUPERIOR.TabIndex = 1;
             // 
+            // btnEzeztatu
+            // 
+            this.btnEzeztatu.BackColor = System.Drawing.Color.Red;
+            this.btnEzeztatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEzeztatu.Image = ((System.Drawing.Image)(resources.GetObject("btnEzeztatu.Image")));
+            this.btnEzeztatu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEzeztatu.Name = "btnEzeztatu";
+            this.btnEzeztatu.Size = new System.Drawing.Size(23, 24);
+            this.btnEzeztatu.Click += new System.EventHandler(this.btnEzeztatu_Click);
+            // 
             // frmArtistak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1090,5 +1111,6 @@
         private System.Windows.Forms.ToolStripButton btnEditatu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnOnartu;
+        private System.Windows.Forms.ToolStripButton btnEzeztatu;
     }
 }

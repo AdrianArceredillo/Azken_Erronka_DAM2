@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Messaging;
+using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,95 @@ namespace AzkenErronka_DAM2.Artistak
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //String parametro = " and KodArtista != -1 ";
+
+            ////artistaren kodea
+            //if (this.txtArtistaKodea.Text != "")
+            //{
+            //    parametro = parametro + " and KodArtista = " + Int32.Parse(this.txtArtistaKodea.Text.Trim());
+            //}
+
+            ////artistaren izena
+            //if (this.txtArtistaIzena.Text != "")
+            //{
+            //    parametro = parametro + " and IzenaArtista LIKE '%" + this.txtArtistaIzena.Text.Trim() + "%'";
+            //}
+
+            ////artista-mota
+            //if (this.txtArtistaMotaKodea.Text != "")
+            //{
+            //    parametro = parametro + " and Artista.KodArtistaMota = " + Int32.Parse(this.txtArtistaMotaKodea.Text.Trim()) + "";
+            //}
+
+            ////artista-deskribapena
+            //if (this.txtArtistaDeskribapena.Text != "")
+            //{
+            //    parametro = parametro + " and Artista.Deskribapena LIKE '%" + this.txtArtistaDeskribapena.Text.Trim() + "%'";
+            //}
+
+            ////nazionalitatea
+            //if (this.txtNazionalitateKodea.Text != "")
+            //{
+            //    parametro = parametro + " and Nazionalitatea LIKE '%" + this.txtNazionalitateIzena.Text.Trim() + "%'";
+            //}
+
+            ////kide kopurua
+            //if (this.numKideKopurua.Value != null)
+            //{
+            //    if (this.numKideKopurua.Value == 0)
+            //    {
+            //        parametro = parametro + " and KideKopurua > 0";
+            //    }
+            //    else
+            //    {
+            //        parametro = parametro + " and KideKopurua = " + this.numKideKopurua.Value + "";
+            //    }
+            //}
+
+
+            ////hasiera-urtea
+            //if (this.cbHasieraUrtea.SelectedItem != null)
+            //{
+            //    if (this.cbHasieraUrtea.SelectedItem == "Zehaztu gabe" || this.cbHasieraUrtea.SelectedItem == "")
+            //    {
+            //        parametro = parametro + " and FundazioUrtea > 0";
+            //    }
+            //    else
+            //    {
+            //        int cb_urtea = Int32.Parse(this.cbHasieraUrtea.SelectedItem.ToString());
+            //        parametro = parametro + " and FundazioUrtea = " + cb_urtea;
+            //    }
+            //}
+
+
+            ////egoera
+            //if (this.rdbJardunean.Checked == true)
+            //{
+            //    parametro = parametro + " and Egoera = 'S'";
+            //}
+            //else if (this.rdbErretiratuta.Checked == true)
+            //{
+            //    parametro = parametro + " and Egoera = 'R'";
+            //}
+            //else if (this.rdbAtsedenaldia.Checked == true)
+            //{
+            //    parametro = parametro + " and Egoera = 'D'";
+            //}
+
+            //parametro = parametro + " order by KodArtista asc";
+
+
+
+
+            String param = comprobar_parametros();
+            freskatu_artisten_datuak(con, param);
+
+            
+        }
+
+
+        private String comprobar_parametros()
         {
             String parametro = " and KodArtista != -1 ";
 
@@ -121,22 +211,24 @@ namespace AzkenErronka_DAM2.Artistak
             parametro = parametro + " order by KodArtista asc";
 
 
+            return parametro;
+        }
 
-            ////SqlDataReader reader = clsArtista.getArtistak(con, parametro);
-            //reader = clsArtista.getArtistak_completo(con, parametro);
+        private void freskatu_artisten_datuak(SqlConnection con, String parametro)
+        {
             reader = clsArtista.getArtistak_grid_artistak(con, parametro);
-
 
             DataTable dt = new DataTable();
             dt.Load(reader);
-
             dgArtistas.DataSource = dt;
 
             itxura_aldatu();
+            //dgArtistas.Refresh();
 
 
-            dgArtistas.Refresh();
+            //lehenengoa_aukeratu();//lehenengo datua hautatu
         }
+
 
         private void itxura_aldatu()
         {
@@ -275,39 +367,56 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void cargar_artista()
         {
-            //FundazioUrtea
-            this.txtEdicionKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtista"].Value.ToString();
-            this.txtEdicionIzena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IzenaArtista"].Value.ToString();
-            this.numEdicionKideak.Value = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KideKopurua"].Value.ToString());
-            this.txtEdicionFundazioUrtea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["FundazioUrtea"].Value.ToString();
-
-
-            String egoera_cargar = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["EgoeraDeskribapena"].Value.ToString();
-            if (egoera_cargar == "Jardueran")
+            if (this.dgArtistas.Rows.Count != 0)
             {
-                this.rdbEdicionJardueran.Checked = true;
-            }
-            else if (egoera_cargar == "Erretiratua")
-            {
-                this.rdbEdicionErretiratuta.Checked = true;
-            }
-            else if (egoera_cargar == "Atsedenaldian")
-            {
-                this.rdbEdicionAtsedenaldia.Checked = true;
+                //FundazioUrtea
+                this.txtEdicionKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtista"].Value.ToString();
+                this.txtEdicionIzena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IzenaArtista"].Value.ToString();
+                this.numEdicionKideak.Value = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KideKopurua"].Value.ToString());
+                this.txtEdicionFundazioUrtea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["FundazioUrtea"].Value.ToString();
+
+
+                String egoera_cargar = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["EgoeraDeskribapena"].Value.ToString();
+                if (egoera_cargar == "Jardueran")
+                {
+                    this.rdbEdicionJardueran.Checked = true;
+                }
+                else if (egoera_cargar == "Erretiratua")
+                {
+                    this.rdbEdicionErretiratuta.Checked = true;
+                }
+                else if (egoera_cargar == "Atsedenaldian")
+                {
+                    this.rdbEdicionAtsedenaldia.Checked = true;
+                }
+
+                //artista-mota
+                this.txtEdicionArtistaMotaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtistaMota"].Value.ToString();
+                this.txtEdicionArtistaMotaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Mota"].Value.ToString();
+
+                //nazionalitatea
+                this.txtEdicionNazionalitateaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IdNazioa"].Value.ToString();
+                this.txtEdicionNazionalitateaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["NazioaIzena"].Value.ToString();
+
+                //deskribapena
+                this.txtEdicionDeskribapena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Deskribapena"].Value.ToString();
             }
 
-            //artista-mota
-            this.txtEdicionArtistaMotaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["KodArtistaMota"].Value.ToString();
-            this.txtEdicionArtistaMotaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Mota"].Value.ToString();
 
-            //nazionalitatea
-            this.txtEdicionNazionalitateaKodea.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["IdNazioa"].Value.ToString();
-            this.txtEdicionNazionalitateaDesk.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["NazioaIzena"].Value.ToString();
 
-            //deskribapena
-            this.txtEdicionDeskribapena.Text = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells["Deskribapena"].Value.ToString();
+            
 
         }
+
+
+        private void lehenengoa_aukeratu()
+        {
+            if (dgArtistas.Rows.Count != 0)
+            {
+                dgArtistas.Rows[0].Selected = true;
+            }
+        }
+
 
         private void pctArtistaMota_Click(object sender, EventArgs e)
         {
@@ -454,7 +563,7 @@ namespace AzkenErronka_DAM2.Artistak
             //nazionalitatea
             if (this.txtEdicionNazionalitateaKodea.Text != "")
             {
-                nazionalitatea = this.txtEdicionNazionalitateaKodea.ToString().Trim();
+                nazionalitatea = this.txtEdicionNazionalitateaKodea.Text.ToString().Trim();
             }
             else
             {
@@ -511,6 +620,54 @@ namespace AzkenErronka_DAM2.Artistak
                 egoera = "A";
             }
 
+
+
+            String param = comprobar_parametros();
+
+
+            //+++++++++++++
+
+            //int kodartista, String izenaArtista, int kodartistaMota, String nazionalitatea, String deskribapena,
+            //int kideKopurua, int fundazioUrtea, String egoera, String artistaInfoGehiago
+
+            bool sarrera_egiaztatu = clsArtista.new_artista_2(
+                kodea, izena, kod_mota, nazionalitatea, deskribapena,
+                kide_kopurua, fundazio_urtea, egoera, artista_info_gehiago
+                );
+
+            if (sarrera_egiaztatu == true)
+            {
+                cambiar_estado_panel_inferior(false);
+                limpiar_panel_edicion();
+
+                //freskatu_artisten_datuak(con, "");
+                freskatu_artisten_datuak(con, param);
+
+                lehenengoa_aukeratu();
+                //dgArtistas.Refresh();//datu guztiak freskatu
+                //reader = clsArtista.getArtistak_grid_artistak(con, "");
+
+
+                
+
+
+                foreach (DataGridViewRow row in dgArtistas.Rows)    //bilatu orain sartu dugun artista eta lerro hori hautatu
+                {
+                    if (kodea == Int32.Parse(row.Cells["KodArtista"].Value.ToString()))
+                    {
+                        row.Selected = true;
+                        this.dgArtistas.Rows[row.Index].Selected = true;
+                        String a = this.dgArtistas.Rows[row.Index].Cells["Deskribapena"].Value.ToString();
+                        Console.WriteLine(a);
+
+                        //dgArtistas.Rows[row.Index].Selected = true;
+
+                        //cargar_artista();
+                    }
+                }
+                
+            }
+
         }
 
 
@@ -518,8 +675,14 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void btnBerria_Click(object sender, EventArgs e)
         {
+
+
             limpiar_panel_edicion();
             cambiar_estado_panel_inferior(true);
+
+
+            clsArtista.getArtistak_MaxCode(con, "");
+            this.txtEdicionKodea.Text = Artista.prueba_enviar.ToString();
         }
 
         private void limpiar_panel_edicion()
@@ -551,7 +714,15 @@ namespace AzkenErronka_DAM2.Artistak
             //this.gbEdicionArtistaEgoera.Enabled = est;
             //this.txtEdicionDeskribapena.Enabled = est;
 
-            //readonly
+            this.dgArtistas.Enabled = !est;
+
+            this.btnBerria.Enabled = !est;
+            this.btnEditatu.Enabled = !est;
+
+            this.btnOnartu.Enabled = est;
+            this.btnEzeztatu.Enabled = est;
+
+
             this.txtEdicionIzena.Enabled = est;
             this.numEdicionKideak.Enabled = est;
             this.txtEdicionFundazioUrtea.Enabled = est;
@@ -562,7 +733,58 @@ namespace AzkenErronka_DAM2.Artistak
 
         }
 
+        private void pctEdicionArtistaMota_Click(object sender, EventArgs e)
+        {
+            frmArtistaMotak _frmArtistaMotak = new frmArtistaMotak();
+            _frmArtistaMotak.ShowDialog();
 
+            if (_frmArtistaMotak.aukeraturiko_mota_kodea != null)
+            {
+                this.txtEdicionArtistaMotaKodea.Text = _frmArtistaMotak.aukeraturiko_mota_kodea.ToString();
+                this.txtEdicionArtistaMotaDesk.Text = _frmArtistaMotak.aukeraturiko_mota_izena.ToString();
+            }
+        }
+
+        private void pctEdicionNazionalitatea_Click(object sender, EventArgs e)
+        {
+            frmNazionalitateak _frmNazionalitateak = new frmNazionalitateak();
+            _frmNazionalitateak.ShowDialog();
+
+            if (_frmNazionalitateak.nazionalitate_kodea != "-?")
+            {
+                this.txtEdicionNazionalitateaKodea.Text = _frmNazionalitateak.nazionalitate_kodea.ToString();
+                this.txtEdicionNazionalitateaDesk.Text = _frmNazionalitateak.nazionalitate_izena.ToString();
+            }
+        }
+
+        private void dgArtistas_KeyDown(object sender, KeyEventArgs e)
+        {
+            cargar_artista();
+        }
+
+        private void dgArtistas_KeyUp(object sender, KeyEventArgs e)
+        {
+            cargar_artista();
+        }
+
+        private void btnEzeztatu_Click(object sender, EventArgs e)
+        {
+            limpiar_panel_edicion();
+            cambiar_estado_panel_inferior(false);
+        }
+
+        private void txtEdicionFundazioUrtea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.' || e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
 
     }
 }

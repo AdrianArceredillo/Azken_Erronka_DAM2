@@ -9,6 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Drawing;
 using AzkenErronka_DAM2.Artistak;
 using System.Windows.Forms.VisualStyles;
+using System.Windows.Forms;
 
 namespace AzkenErronka_DAM2.Klaseak
 {
@@ -38,7 +39,7 @@ namespace AzkenErronka_DAM2.Klaseak
                 "Artista.Deskribapena," +
                 "Nazionalitateak.IdNazioa, " +
 
-                
+
 
                 "ArtistaMota.MotaIzena as Mota, " +
                 "KideKopurua, " +
@@ -126,6 +127,8 @@ namespace AzkenErronka_DAM2.Klaseak
                     ReadSingleRow((IDataRecord)read);//irakurri lerro bakar bat
 
                     prueba_enviar = Int32.Parse(read[0].ToString());
+                    prueba_enviar = prueba_enviar + 1;
+                    
                 }
 
                 con.Close();
@@ -170,22 +173,63 @@ namespace AzkenErronka_DAM2.Klaseak
                 sql_cmnd.Parameters.AddWithValue("@FundazioUrtea", SqlDbType.Int).Value = fundazioUrtea;
                 sql_cmnd.Parameters.AddWithValue("@Egoera", SqlDbType.Char).Value = egoera;
                 sql_cmnd.Parameters.AddWithValue("@ArtistaInfoGehiago", SqlDbType.VarChar).Value = artistaInfoGehiago;
-                //sql_cmnd.Parameters.AddWithValue("@LAST_NAME", SqlDbType.NVarChar).Value = lastName;
-                //sql_cmnd.Parameters.AddWithValue("@AGE", SqlDbType.Int).Value = age;
+
                 sql_cmnd.ExecuteNonQuery();
-
-                //SqlDataReader read = sql_cmnd.ExecuteReader();
-                //while (read.Read())
-                //{
-                //    ReadSingleRow((IDataRecord)read);//irakurri lerro bakar bat
-
-                //    prueba_enviar = Int32.Parse(read[0].ToString());
-                //}
 
                 con.Close();
             }
 
-            //return a;
+        }
+
+
+        public bool new_artista_2(
+            int kodartista, String izenaArtista, int kodartistaMota, String nazionalitatea, String deskribapena,
+            int kideKopurua, int fundazioUrtea, String egoera, String artistaInfoGehiago
+            )
+        {
+            bool sartuta = false;
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            using (SqlConnection con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True"))
+            {
+                con.Open();
+                SqlCommand sql_cmnd = new SqlCommand("new_artista", con);
+                sql_cmnd.CommandType = CommandType.StoredProcedure;
+
+                sql_cmnd.Parameters.AddWithValue("@kodartista", SqlDbType.Int).Value = kodartista;
+                sql_cmnd.Parameters.AddWithValue("@izenaArtista", SqlDbType.VarChar).Value = izenaArtista;
+                sql_cmnd.Parameters.AddWithValue("@KodArtistaMota", SqlDbType.Int).Value = kodartistaMota;
+                sql_cmnd.Parameters.AddWithValue("@Nazionalitatea", SqlDbType.VarChar).Value = nazionalitatea;
+                sql_cmnd.Parameters.AddWithValue("@Deskribapena", SqlDbType.VarChar).Value = deskribapena;
+                sql_cmnd.Parameters.AddWithValue("@KideKopurua", SqlDbType.Int).Value = kideKopurua;
+                sql_cmnd.Parameters.AddWithValue("@FundazioUrtea", SqlDbType.Int).Value = fundazioUrtea;
+                sql_cmnd.Parameters.AddWithValue("@Egoera", SqlDbType.Char).Value = egoera;
+                sql_cmnd.Parameters.AddWithValue("@ArtistaInfoGehiago", SqlDbType.VarChar).Value = artistaInfoGehiago;
+
+                // Let's ask the db to execute the query
+                int rowsAdded = sql_cmnd.ExecuteNonQuery();
+                if (rowsAdded > 0)
+                {
+                    MessageBox.Show("Row inserted!!");
+                    sartuta = true;
+                }
+                else
+                {
+                    // Well this should never really happen
+                    MessageBox.Show("No row inserted");
+
+                    sartuta = false;
+                }
+
+
+
+                //sql_cmnd.ExecuteNonQuery();
+
+                con.Close();
+            }
+
+            return sartuta;
         }
 
     }
@@ -194,3 +238,4 @@ namespace AzkenErronka_DAM2.Klaseak
 
 //Stored procedures: https://www.c-sharpcorner.com/article/execute-a-stored-procedure-programmatically/
 //insert into: https://stackoverflow.com/questions/20971680/sql-server-insert-if-not-exists
+//inser into 2: https://stackoverflow.com/questions/12142806/how-to-insert-records-in-database-using-c-sharp-language

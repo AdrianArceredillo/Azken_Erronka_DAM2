@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBilatu = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgNazionalitateak = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBilatu = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgNazionalitateak)).BeginInit();
@@ -53,6 +53,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 262);
             this.panel1.TabIndex = 1;
+            // 
+            // txtBilatu
+            // 
+            this.txtBilatu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBilatu.Location = new System.Drawing.Point(91, 48);
+            this.txtBilatu.Name = "txtBilatu";
+            this.txtBilatu.Size = new System.Drawing.Size(157, 20);
+            this.txtBilatu.TabIndex = 3;
+            this.txtBilatu.TextChanged += new System.EventHandler(this.txtBilatu_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(49, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Izena:";
             // 
             // panel2
             // 
@@ -106,26 +124,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(49, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Aukeratu nazionalitate bat:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Bilatu:";
-            // 
-            // txtBilatu
-            // 
-            this.txtBilatu.Location = new System.Drawing.Point(91, 48);
-            this.txtBilatu.Name = "txtBilatu";
-            this.txtBilatu.Size = new System.Drawing.Size(157, 20);
-            this.txtBilatu.TabIndex = 3;
-            this.txtBilatu.TextChanged += new System.EventHandler(this.txtBilatu_TextChanged);
+            this.label1.Text = "Bilatu nazionalitate bat:";
             // 
             // frmNazionalitateak
             // 

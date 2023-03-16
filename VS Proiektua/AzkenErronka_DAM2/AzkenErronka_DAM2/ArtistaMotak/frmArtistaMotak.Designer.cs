@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 232);
+            this.panel1.Size = new System.Drawing.Size(535, 232);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -62,7 +62,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 184);
+            this.panel2.Size = new System.Drawing.Size(535, 184);
             this.panel2.TabIndex = 1;
             // 
             // dgArtistaMota
@@ -77,7 +77,7 @@
             this.dgArtistaMota.Name = "dgArtistaMota";
             this.dgArtistaMota.ReadOnly = true;
             this.dgArtistaMota.ShowEditingIcon = false;
-            this.dgArtistaMota.Size = new System.Drawing.Size(520, 156);
+            this.dgArtistaMota.Size = new System.Drawing.Size(535, 156);
             this.dgArtistaMota.TabIndex = 1;
             this.dgArtistaMota.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistaMota_CellClick);
             this.dgArtistaMota.DoubleClick += new System.EventHandler(this.dgArtistaMota_DoubleClick);
@@ -89,7 +89,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(520, 28);
+            this.panel3.Size = new System.Drawing.Size(535, 28);
             this.panel3.TabIndex = 0;
             // 
             // label2
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 503);
+            this.ClientSize = new System.Drawing.Size(535, 503);
             this.Controls.Add(this.txtDeskribapena);
             this.Controls.Add(this.lblInformazioGehiago);
             this.Controls.Add(this.label4);
