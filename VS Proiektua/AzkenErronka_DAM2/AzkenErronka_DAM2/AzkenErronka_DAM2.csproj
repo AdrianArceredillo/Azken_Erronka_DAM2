@@ -60,6 +60,12 @@
     <Compile Include="ArtistaMotak\frmArtistaMotak.Designer.cs">
       <DependentUpon>frmArtistaMotak.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edukia\frmEdukiaArtista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edukia\frmEdukiaArtista.Designer.cs">
+      <DependentUpon>frmEdukiaArtista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNagusia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <EmbeddedResource Include="ArtistaMotak\frmArtistaMotak.resx">
       <DependentUpon>frmArtistaMotak.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edukia\frmEdukiaArtista.resx">
+      <DependentUpon>frmEdukiaArtista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNagusia.resx">
       <DependentUpon>frmNagusia.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsKlasea\clsKlasea.csproj">
+      <Project>{527a7f44-b7ed-4237-976b-9b41ba8115bf}</Project>
+      <Name>clsKlasea</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

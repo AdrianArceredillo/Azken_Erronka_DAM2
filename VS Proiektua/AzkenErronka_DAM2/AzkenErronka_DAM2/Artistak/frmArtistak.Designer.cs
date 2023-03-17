@@ -157,6 +157,7 @@
             this.dgArtistas.Size = new System.Drawing.Size(843, 309);
             this.dgArtistas.TabIndex = 0;
             this.dgArtistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistas_CellClick);
+            this.dgArtistas.DoubleClick += new System.EventHandler(this.dgArtistas_DoubleClick);
             this.dgArtistas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyDown);
             this.dgArtistas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyUp);
             // 

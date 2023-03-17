@@ -1,0 +1,9 @@
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\bin\Debug\Klasea.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\bin\Debug\Klasea.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\obj\Debug\Klasea.csproj.AssemblyReference.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\obj\Debug\Klasea.csproj.CoreCompileInputs.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\obj\Debug\Klasea.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\obj\Debug\Klasea.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\bin\Debug\System.Data.SqlClient.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\bin\Debug\System.Data.SqlClient.xml
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\Klasea\obj\Debug\Klasea.csproj.CopyComplete

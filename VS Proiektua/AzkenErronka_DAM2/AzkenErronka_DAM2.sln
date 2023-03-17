@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzkenErronka_DAM2", "AzkenErronka_DAM2\AzkenErronka_DAM2.csproj", "{3DF468F7-D4B9-4FFF-8C67-7DDBB1E86F2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klasea", "Klasea\Klasea.csproj", "{8CC9C238-BF22-48CF-AB3A-5E2EB944BE49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clsKlasea", "clsKlasea\clsKlasea.csproj", "{527A7F44-B7ED-4237-976B-9B41BA8115BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3DF468F7-D4B9-4FFF-8C67-7DDBB1E86F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DF468F7-D4B9-4FFF-8C67-7DDBB1E86F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DF468F7-D4B9-4FFF-8C67-7DDBB1E86F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC9C238-BF22-48CF-AB3A-5E2EB944BE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC9C238-BF22-48CF-AB3A-5E2EB944BE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC9C238-BF22-48CF-AB3A-5E2EB944BE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC9C238-BF22-48CF-AB3A-5E2EB944BE49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{527A7F44-B7ED-4237-976B-9B41BA8115BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{527A7F44-B7ED-4237-976B-9B41BA8115BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{527A7F44-B7ED-4237-976B-9B41BA8115BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{527A7F44-B7ED-4237-976B-9B41BA8115BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

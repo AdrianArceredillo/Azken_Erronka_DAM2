@@ -14,8 +14,10 @@ using System.Windows.Forms;
 
 using AzkenErronka_DAM2.Artistak;
 using AzkenErronka_DAM2.ArtistaMotak;
+using AzkenErronka_DAM2.Edukia;
 using AzkenErronka_DAM2.Klaseak;
 using AzkenErronka_DAM2.Nazionalitateak;
+using clsKlasea;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AzkenErronka_DAM2.Artistak
@@ -25,9 +27,16 @@ namespace AzkenErronka_DAM2.Artistak
 
         #region "DECLARACIONES"
         SqlConnection con;
+        SqlDataReader reader;
+
+
+        public static int kod_art;
+
         Artista clsArtista = new Artista();
         ArtistaMota clsArtistaMota = new ArtistaMota();
-        SqlDataReader reader;
+        clsAlbuma clsAlbuma_2 = new clsAlbuma();
+
+        
         #endregion
 
         public frmArtistak()
@@ -787,6 +796,22 @@ namespace AzkenErronka_DAM2.Artistak
             }
         }
 
+        private void dgArtistas_DoubleClick(object sender, EventArgs e)
+        {
+            int kodea_artista = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells[0].Value.ToString());
+            //clsAlbuma pasa = new clsAlbuma(kodea_artista);
+
+            kod_art = kodea_artista;
+
+            frmEdukiaArtista _frmEdukiaArtista = new frmEdukiaArtista();
+            _frmEdukiaArtista.ShowDialog();
+
+
+            
+
+
+
+        }
     }
 }
 

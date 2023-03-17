@@ -4,13 +4,8 @@ CREATE TABLE Albumak (
 	KodAlb int,
 	AlbumaIzena varchar(200) NOT NULL,
 	ArtistaKodea int NOT NULL,
-
-	Nazionalitatea varchar(50) NOT NULL,
-	Deskribapena varchar(2000) DEFAULT '',
-	KideKopurua int NOT NULL,
-	FundazioUrtea int NOT NULL,
-	Egoera char(1) DEFAULT 'Y',
-	ArtistaInfoGehiago varchar(200) DEFAULT '',
+	AbestiKopurua int NOT NULL,
+	Urtea int NOT NULL
 
 	primary key (KodAlb, AlbumaIzena, ArtistaKodea)
 );

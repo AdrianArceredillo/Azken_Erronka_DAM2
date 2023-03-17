@@ -1,0 +1,9 @@
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\bin\Debug\clsKlasea.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\bin\Debug\clsKlasea.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\bin\Debug\Klasea.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\bin\Debug\Klasea.pdb
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\obj\Debug\clsKlasea.csproj.AssemblyReference.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\obj\Debug\clsKlasea.csproj.CoreCompileInputs.cache
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\obj\Debug\clsKlasea.csproj.CopyComplete
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\obj\Debug\clsKlasea.dll
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\clsKlasea\obj\Debug\clsKlasea.pdb
