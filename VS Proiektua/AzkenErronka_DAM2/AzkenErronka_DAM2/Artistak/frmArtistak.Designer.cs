@@ -157,6 +157,7 @@
             this.dgArtistas.Size = new System.Drawing.Size(843, 309);
             this.dgArtistas.TabIndex = 0;
             this.dgArtistas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistas_CellClick);
+            this.dgArtistas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistas_CellDoubleClick);
             this.dgArtistas.DoubleClick += new System.EventHandler(this.dgArtistas_DoubleClick);
             this.dgArtistas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyDown);
             this.dgArtistas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgArtistas_KeyUp);
@@ -874,6 +875,7 @@
             this.pctArtistaMota.Size = new System.Drawing.Size(20, 20);
             this.pctArtistaMota.TabIndex = 11;
             this.pctArtistaMota.TabStop = false;
+            this.pctArtistaMota.Tag = "feo";
             this.pctArtistaMota.Click += new System.EventHandler(this.pctArtistaMota_Click);
             // 
             // btnLimpiar

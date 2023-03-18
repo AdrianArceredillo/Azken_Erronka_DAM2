@@ -96,17 +96,17 @@ namespace clsKlasea
 
         #region "PROCEDIMIENTOS/FUNCIONES"
 
-        public DataSet getAlbumak(string parametro)
+        public DataSet getAlbumak_test(string parametro)
         {
-            DataSet dsAlbumak = claseAlbuma.getAlbumak(parametro);
+            DataSet dsAlbumak = claseAlbuma.getAlbumak_test(parametro);
             return dsAlbumak;
         }
 
 
         //getAlbumak_last
-        public DataSet getAlbumak_last(string parametro)
+        public DataSet getAlbumak(string parametro)
         {
-            DataSet dsAlbumak = claseAlbuma.getAlbumak_last(parametro);
+            DataSet dsAlbumak = claseAlbuma.getAlbumak(parametro);
             return dsAlbumak;
         }
 

@@ -16,11 +16,13 @@ namespace Klasea
 {
     public class Albuma
     {
+
         #region "DECLARACIONES"
         Conexion conexion = new Conexion();
         #endregion
 
 
+        #region "METODOAK"
         public DataSet getAlbumak(string parametro)
         {
             DataSet dsAlbumak = new DataSet("Albumak");
@@ -35,7 +37,7 @@ namespace Klasea
                     cmd.ExecuteNonQuery();
 
                     SqlDataReader reader = cmd.ExecuteReader();
-                    DataTable table = new DataTable();
+                    DataTable table = new DataTable("Albumakk");
                     DataRow row;
                     DataColumn column;
 
@@ -65,31 +67,26 @@ namespace Klasea
                         row["Urtea"] = reader.GetInt32(4);
                         table.Rows.Add(row);
                     }
-
                     dsAlbumak.Tables.Add(table);
-
                 }
             }
             catch (Exception ex)
             {
 
             }
+
             conexion.cerrar_conexion(con);
-
             return dsAlbumak;
-
         }
 
-
-
-        public DataSet getAlbumak_last(string parametro)
+        public DataSet getAlbumak_test(string parametro)
         {
             DataSet dsAlbumak = new DataSet("Albumak");
             SqlConnection con = conexion.abri_conexion();
 
             try
             {
-                using (SqlCommand cmd = new SqlCommand("getAlbumak_last", con))
+                using (SqlCommand cmd = new SqlCommand("getAlbumak_test", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@parametro", parametro);
@@ -102,16 +99,12 @@ namespace Klasea
 
                     column = new DataColumn("KodAlb");
                     table.Columns.Add(column);
-
                     column = new DataColumn("AlbumaIzena");
                     table.Columns.Add(column);
-
                     column = new DataColumn("ArtistaKodea");
                     table.Columns.Add(column);
-
                     column = new DataColumn("AbestiKopurua");
                     table.Columns.Add(column);
-
                     column = new DataColumn("Urtea");
                     table.Columns.Add(column);
 
@@ -126,9 +119,7 @@ namespace Klasea
                         row["Urtea"] = reader.GetInt32(4);
                         table.Rows.Add(row);
                     }
-
                     dsAlbumak.Tables.Add(table);
-
                 }
             }
             catch (Exception ex)
@@ -136,10 +127,12 @@ namespace Klasea
 
             }
             conexion.cerrar_conexion(con);
-
             return dsAlbumak;
-
         }
+
+        
+        #endregion
+
 
     }
 }

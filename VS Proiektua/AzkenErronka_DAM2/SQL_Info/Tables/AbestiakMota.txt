@@ -1,0 +1,12 @@
+use MusikaBilduma
+
+CREATE TABLE AbestiakMota (
+	KodAbeMota char(1) NOT NULL,
+	AbestiMota_Izena varchar(100) NOT NULL,
+	Deskribapena varchar(1000)
+	
+	primary key (KodAbeMota, AbestiMota_Izena)
+);
+
+
+

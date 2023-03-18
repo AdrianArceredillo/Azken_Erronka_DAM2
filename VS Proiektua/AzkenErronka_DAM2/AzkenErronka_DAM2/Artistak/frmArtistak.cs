@@ -31,12 +31,13 @@ namespace AzkenErronka_DAM2.Artistak
 
 
         public static int kod_art;
+        public static string ize_art;
 
         Artista clsArtista = new Artista();
         ArtistaMota clsArtistaMota = new ArtistaMota();
         clsAlbuma clsAlbuma_2 = new clsAlbuma();
 
-        
+
         #endregion
 
         public frmArtistak()
@@ -53,90 +54,8 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //String parametro = " and KodArtista != -1 ";
-
-            ////artistaren kodea
-            //if (this.txtArtistaKodea.Text != "")
-            //{
-            //    parametro = parametro + " and KodArtista = " + Int32.Parse(this.txtArtistaKodea.Text.Trim());
-            //}
-
-            ////artistaren izena
-            //if (this.txtArtistaIzena.Text != "")
-            //{
-            //    parametro = parametro + " and IzenaArtista LIKE '%" + this.txtArtistaIzena.Text.Trim() + "%'";
-            //}
-
-            ////artista-mota
-            //if (this.txtArtistaMotaKodea.Text != "")
-            //{
-            //    parametro = parametro + " and Artista.KodArtistaMota = " + Int32.Parse(this.txtArtistaMotaKodea.Text.Trim()) + "";
-            //}
-
-            ////artista-deskribapena
-            //if (this.txtArtistaDeskribapena.Text != "")
-            //{
-            //    parametro = parametro + " and Artista.Deskribapena LIKE '%" + this.txtArtistaDeskribapena.Text.Trim() + "%'";
-            //}
-
-            ////nazionalitatea
-            //if (this.txtNazionalitateKodea.Text != "")
-            //{
-            //    parametro = parametro + " and Nazionalitatea LIKE '%" + this.txtNazionalitateIzena.Text.Trim() + "%'";
-            //}
-
-            ////kide kopurua
-            //if (this.numKideKopurua.Value != null)
-            //{
-            //    if (this.numKideKopurua.Value == 0)
-            //    {
-            //        parametro = parametro + " and KideKopurua > 0";
-            //    }
-            //    else
-            //    {
-            //        parametro = parametro + " and KideKopurua = " + this.numKideKopurua.Value + "";
-            //    }
-            //}
-
-
-            ////hasiera-urtea
-            //if (this.cbHasieraUrtea.SelectedItem != null)
-            //{
-            //    if (this.cbHasieraUrtea.SelectedItem == "Zehaztu gabe" || this.cbHasieraUrtea.SelectedItem == "")
-            //    {
-            //        parametro = parametro + " and FundazioUrtea > 0";
-            //    }
-            //    else
-            //    {
-            //        int cb_urtea = Int32.Parse(this.cbHasieraUrtea.SelectedItem.ToString());
-            //        parametro = parametro + " and FundazioUrtea = " + cb_urtea;
-            //    }
-            //}
-
-
-            ////egoera
-            //if (this.rdbJardunean.Checked == true)
-            //{
-            //    parametro = parametro + " and Egoera = 'S'";
-            //}
-            //else if (this.rdbErretiratuta.Checked == true)
-            //{
-            //    parametro = parametro + " and Egoera = 'R'";
-            //}
-            //else if (this.rdbAtsedenaldia.Checked == true)
-            //{
-            //    parametro = parametro + " and Egoera = 'D'";
-            //}
-
-            //parametro = parametro + " order by KodArtista asc";
-
-
-
-
             String param = comprobar_parametros();
             freskatu_artisten_datuak(con, param);
-
-            
         }
 
 
@@ -187,7 +106,6 @@ namespace AzkenErronka_DAM2.Artistak
                 }
             }
 
-
             //hasiera-urtea
             if (this.cbHasieraUrtea.SelectedItem != null)
             {
@@ -202,7 +120,6 @@ namespace AzkenErronka_DAM2.Artistak
                 }
             }
 
-
             //egoera
             if (this.rdbJardunean.Checked == true)
             {
@@ -214,14 +131,16 @@ namespace AzkenErronka_DAM2.Artistak
             }
             else if (this.rdbAtsedenaldia.Checked == true)
             {
-                parametro = parametro + " and Egoera = 'D'";
+                parametro = parametro + " and Egoera = 'A'";
             }
 
-            parametro = parametro + " order by KodArtista asc";
 
+            //aterako diren erregistroak ordenatu (artista-kodearen arabera -> txikienetik handienera)
+            parametro = parametro + " order by KodArtista asc";
 
             return parametro;
         }
+
 
         private void freskatu_artisten_datuak(SqlConnection con, String parametro)
         {
@@ -232,10 +151,6 @@ namespace AzkenErronka_DAM2.Artistak
             dgArtistas.DataSource = dt;
 
             itxura_aldatu();
-            //dgArtistas.Refresh();
-
-
-            //lehenengoa_aukeratu();//lehenengo datua hautatu
         }
 
 
@@ -255,32 +170,12 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistas.Columns[1].HeaderText = "Izena";
             this.dgArtistas.Columns[1].Width = 200;
 
-
-            String sql = "select " +
-                "KodArtista, " +
-                "IzenaArtista, " +
-                "Artista.Deskribapena," +
-                "Nazionalitateak.IdNazioa, " +
-
-                "ArtistaMota.MotaIzena as Mota, " +
-                "KideKopurua, " +
-                "FundazioUrtea, " +
-                "ArtistaEgoera.EgoeraDeskribapena as Egoera, "
-
-
-                //"ArtistaInfoGehiago, " +
-                //"Adina " +
-                ;
-
-
-
             //deskribapena
             this.dgArtistas.Columns["Deskribapena"].Visible = true;
             this.dgArtistas.Columns["Deskribapena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.dgArtistas.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[2].HeaderText = "Deskribapena";
             this.dgArtistas.Columns[2].Width = 260;
-
 
             //nazionalitatea
             this.dgArtistas.Columns["IdNazioa"].Visible = true;
@@ -296,14 +191,12 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistas.Columns[4].HeaderText = "Mota";
             this.dgArtistas.Columns[4].Width = 90;
 
-
             //kide-kopurua
             this.dgArtistas.Columns["KideKopurua"].Visible = true;
             this.dgArtistas.Columns["KideKopurua"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[5].HeaderText = "Kideak";
             this.dgArtistas.Columns[5].Width = 40;
-
 
             //sortze-data
             this.dgArtistas.Columns["FundazioUrtea"].Visible = true;
@@ -312,14 +205,12 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistas.Columns[6].HeaderText = "Urtea";
             this.dgArtistas.Columns[6].Width = 40;
 
-
             //egoera
             this.dgArtistas.Columns["EgoeraDeskribapena"].Visible = true;
             this.dgArtistas.Columns["EgoeraDeskribapena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[7].HeaderText = "Egoera";
             this.dgArtistas.Columns[7].Width = 90;
-
 
             //KodArtistaMota
             this.dgArtistas.Columns["KodArtistaMota"].Visible = false;
@@ -328,32 +219,12 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistas.Columns[8].HeaderText = "Mota Kodea";
             this.dgArtistas.Columns[8].Width = 0;
 
-
             //NazioaIzena
             this.dgArtistas.Columns["NazioaIzena"].Visible = false;
             this.dgArtistas.Columns["NazioaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgArtistas.Columns[8].HeaderText = "Nazioa";
             this.dgArtistas.Columns[8].Width = 0;
-
-
-            //UUUU
-
-
-            ////kide-kopurua
-            //this.dgArtistas.Columns["KideKopurua"].Visible = true;
-            //this.dgArtistas.Columns["KideKopurua"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistas.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistas.Columns[4].HeaderText = "Kideak";
-            //this.dgArtistas.Columns[4].Width = 70;
-
-
-            ////sortze-data
-            //this.dgArtistas.Columns["FundazioUrtea"].Visible = true;
-            //this.dgArtistas.Columns["FundazioUrtea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistas.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistas.Columns[5].HeaderText = "Sortze-Data";
-            //this.dgArtistas.Columns[5].Width = 80;
 
         }
 
@@ -366,6 +237,7 @@ namespace AzkenErronka_DAM2.Artistak
 
             int index = e.RowIndex;
             dgArtistas.Rows[index].Selected = true;
+            this.dgArtistas.CurrentCell = this.dgArtistas.Rows[index].Cells[1];
 
 
             cargar_artista();
@@ -413,7 +285,7 @@ namespace AzkenErronka_DAM2.Artistak
 
 
 
-            
+
 
         }
 
@@ -534,7 +406,7 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void btnOnartu_Click(object sender, EventArgs e)
         {
-             Int32 kodea = 0;
+            Int32 kodea = 0;
             String izena = "";
             Int32 kod_mota = 0;
             String nazionalitatea = "";
@@ -657,7 +529,7 @@ namespace AzkenErronka_DAM2.Artistak
                 //reader = clsArtista.getArtistak_grid_artistak(con, "");
 
 
-                
+
 
 
                 foreach (DataGridViewRow row in dgArtistas.Rows)    //bilatu orain sartu dugun artista eta lerro hori hautatu
@@ -674,7 +546,7 @@ namespace AzkenErronka_DAM2.Artistak
                         //cargar_artista();
                     }
                 }
-                
+
             }
 
         }
@@ -798,20 +670,28 @@ namespace AzkenErronka_DAM2.Artistak
 
         private void dgArtistas_DoubleClick(object sender, EventArgs e)
         {
-            int kodea_artista = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells[0].Value.ToString());
-            //clsAlbuma pasa = new clsAlbuma(kodea_artista);
+            //int kodea_artista = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells[0].Value.ToString());
+            ////clsAlbuma pasa = new clsAlbuma(kodea_artista);
 
-            kod_art = kodea_artista;
+            //kod_art = kodea_artista;
+
+            //frmEdukiaArtista _frmEdukiaArtista = new frmEdukiaArtista();
+            //_frmEdukiaArtista.ShowDialog();
+        }
+
+        private void dgArtistas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //clsAlbuma pasa = new clsAlbuma(kodea_artista);
+            int pasatu_kodea_artista = Int32.Parse(this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells[0].Value.ToString());
+            String pasatu_izena_artista = this.dgArtistas.Rows[this.dgArtistas.CurrentRow.Index].Cells[1].Value.ToString();
+
+            kod_art = pasatu_kodea_artista;
+            ize_art = pasatu_izena_artista;
 
             frmEdukiaArtista _frmEdukiaArtista = new frmEdukiaArtista();
             _frmEdukiaArtista.ShowDialog();
-
-
-            
-
-
-
         }
+
     }
 }
 

@@ -1,0 +1,10 @@
+use MusikaBilduma
+
+CREATE TABLE GeneroaAbestia (
+	KodGeneroa int NOT NULL,
+	GeneroIzena varchar(100) NOT NULL,
+	Deskribapena varchar(1000)
+	
+	primary key (KodGeneroa, GeneroIzena)
+);
+
