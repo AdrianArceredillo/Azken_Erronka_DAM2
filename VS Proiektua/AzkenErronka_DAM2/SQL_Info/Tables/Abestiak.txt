@@ -16,15 +16,21 @@ CREATE TABLE Abestiak (
 	Collab3 int,
 	Collab4 int,
 	Collab5 int,
-	Collab6 int,
-	Collab7 int,
-	Collab8 int,
-	Collab9 int,
-	Collab10 int,
-	Deskribapena varchar(1000)
+	Deskribapena varchar(1000),
+	Iraupena Time(0) DEFAULT ('00:00:00'),
+	Urtea int DEFAULT 2023
 
 	primary key (KodAbestia, AbestiaIzena, EgileaKodea, AlbumaKodea)
 );
+
+
+
+--ALTER TABLE Abestiak
+--ADD Iraupena Time(0) DEFAULT ('00:00:00');
+
+ALTER TABLE Abestiak
+ADD Urtea int DEFAULT 2023;
+
 
 
 
