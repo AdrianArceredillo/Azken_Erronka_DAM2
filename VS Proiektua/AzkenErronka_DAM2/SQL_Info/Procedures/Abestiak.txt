@@ -1,0 +1,98 @@
+
+----------------------------------------------------------------------------
+-------------------------------------------------- getAbestiak (+ kondizioa)
+----------------------------------------------------------------------------
+
+
+USE [MusikaBilduma]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[getAbestiak] (@parametro varchar(2000)) 
+AS
+
+declare @query varchar(1000);
+set @query = 'select * from Abestiak where ' + @parametro;
+execute (@query);
+
+
+----------------------------------------------------------------------------------
+-------------------------------------------------- getAbestiak_luzea (+ kondizioa)
+----------------------------------------------------------------------------------
+
+
+USE [MusikaBilduma]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[getAbestiak_luzea] (@parametro varchar(2000)) 
+AS
+
+declare @query varchar(1000);
+set @query = 'select 
+Abestiak.KodAbestia, Abestiak.AbestiaIzena, 
+Abestiak.EgileaKodea, Artista.IzenaArtista,
+Abestiak.AlbumaKodea, Albumak.AlbumaIzena,
+Abestiak.AbestiMota, AbestiakMota.AbestiMota_Izena,
+Abestiak.Generoa, GeneroaAbestia.GeneroIzena,
+Abestiak.Deskribapena, Abestiak.Urtea
+
+from 
+Abestiak, Artista, Albumak, AbestiakMota, GeneroaAbestia
+
+where 
+Abestiak.EgileaKodea = Artista.KodArtista
+and Abestiak.AlbumaKodea = Albumak.KodAlb
+and Abestiak.AbestiMota = AbestiakMota.KodAbeMota
+and Abestiak.Generoa = GeneroaAbestia.KodGeneroa ' + @parametro;
+execute (@query);
+
+
+----------------------------------------------------------------------------------
+---------------------------------------- getAbestiKopurua_filtratuta (+ kondizioa)
+----------------------------------------------------------------------------------
+
+
+
+USE [MusikaBilduma]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[getAbestiKopurua_filtratuta] (@parametro varchar(2000)) 
+AS
+
+declare @query varchar(1000);
+set @query = 
+'select count(Abestiak.AbestiaIzena) from Abestiak ' + @parametro;
+execute (@query);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

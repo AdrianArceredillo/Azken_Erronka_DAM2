@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAbestia.cs" />
     <Compile Include="clsAlbuma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

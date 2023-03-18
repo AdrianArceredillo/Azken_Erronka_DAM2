@@ -1,0 +1,9 @@
+18-03-2023 - 19:21
+
+
+1	Bangarang	5	0	N	1	0	0	0	0	0	0	0	lehenengo abestia	00:03:35	2011
+2	Good Goodbye	1	1	N	1	0	0	5	0	0	0	0	Song of the One More Light album	00:03:31	2017
+3	One More Light	1	1	N	1	0	0	0	0	0	0	0	Main song of the Album	00:04:15	2017
+4	Wastelands	1	2	N	4	1	0	0	0	0	0	0		00:03:15	2014
+5	Lost	1	0	N	7	1	0	1	0	0	0	0	Meteora izeneko diskotik inoiz atera ez zen abestia	00:03:19	2023
+

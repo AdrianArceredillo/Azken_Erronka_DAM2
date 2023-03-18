@@ -8,16 +8,11 @@ CREATE TABLE Abestiak (
 
 	AbestiMota char(1) NOT NULL,
 	Generoa int NOT NULL,
-	Genero2 int,
-	Genero3 int,
 
 	Collab1 int,
 	Collab2 int,
 	Collab3 int,
-	Collab4 int,
-	Collab5 int,
 	Deskribapena varchar(1000),
-	Iraupena Time(0) DEFAULT ('00:00:00'),
 	Urtea int DEFAULT 2023
 
 	primary key (KodAbestia, AbestiaIzena, EgileaKodea, AlbumaKodea)
@@ -25,18 +20,43 @@ CREATE TABLE Abestiak (
 
 
 
---ALTER TABLE Abestiak
---ADD Iraupena Time(0) DEFAULT ('00:00:00');
-
 ALTER TABLE Abestiak
 ADD Urtea int DEFAULT 2023;
 
 
 
 
-1	Bangaran	5	0	1	prueba 0
-2	With You, Friends	5	0	2	prueba 1
-3	Lost	1	1	0	prueba 2
-4	In the End	1	0	0	prueba 3
-5	Nuclear	5	8	0	prueba 4
-6	Weekends	5	6	2	prueba 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
