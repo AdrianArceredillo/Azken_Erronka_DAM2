@@ -33,12 +33,12 @@
             this.dgArtistaMota = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblDeskribapena = new System.Windows.Forms.Label();
+            this.txtDeskribapena = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblInformazioGehiago = new System.Windows.Forms.Label();
-            this.txtDeskribapena = new System.Windows.Forms.TextBox();
+            this.lblDeskribapena = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistaMota)).BeginInit();
@@ -102,15 +102,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Artista-mota guztien zerrenda";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Aukeratu artista mota:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -121,15 +112,25 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Deskribapena:";
             // 
-            // lblDeskribapena
+            // txtDeskribapena
             // 
-            this.lblDeskribapena.AutoSize = true;
-            this.lblDeskribapena.Location = new System.Drawing.Point(96, 451);
-            this.lblDeskribapena.Name = "lblDeskribapena";
-            this.lblDeskribapena.Size = new System.Drawing.Size(13, 13);
-            this.lblDeskribapena.TabIndex = 2;
-            this.lblDeskribapena.Text = "d";
-            this.lblDeskribapena.Visible = false;
+            this.txtDeskribapena.AcceptsReturn = true;
+            this.txtDeskribapena.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDeskribapena.Location = new System.Drawing.Point(99, 291);
+            this.txtDeskribapena.Multiline = true;
+            this.txtDeskribapena.Name = "txtDeskribapena";
+            this.txtDeskribapena.ReadOnly = true;
+            this.txtDeskribapena.Size = new System.Drawing.Size(347, 63);
+            this.txtDeskribapena.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Aukeratu artista mota:";
             // 
             // label4
             // 
@@ -150,16 +151,15 @@
             this.lblInformazioGehiago.TabIndex = 4;
             this.lblInformazioGehiago.Text = "i";
             // 
-            // txtDeskribapena
+            // lblDeskribapena
             // 
-            this.txtDeskribapena.AcceptsReturn = true;
-            this.txtDeskribapena.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDeskribapena.Location = new System.Drawing.Point(99, 291);
-            this.txtDeskribapena.Multiline = true;
-            this.txtDeskribapena.Name = "txtDeskribapena";
-            this.txtDeskribapena.ReadOnly = true;
-            this.txtDeskribapena.Size = new System.Drawing.Size(347, 63);
-            this.txtDeskribapena.TabIndex = 5;
+            this.lblDeskribapena.AutoSize = true;
+            this.lblDeskribapena.Location = new System.Drawing.Point(96, 451);
+            this.lblDeskribapena.Name = "lblDeskribapena";
+            this.lblDeskribapena.Size = new System.Drawing.Size(13, 13);
+            this.lblDeskribapena.TabIndex = 2;
+            this.lblDeskribapena.Text = "d";
+            this.lblDeskribapena.Visible = false;
             // 
             // frmArtistaMotak
             // 
@@ -192,15 +192,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgArtistaMota;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblDeskribapena;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblInformazioGehiago;
         private System.Windows.Forms.TextBox txtDeskribapena;
         public System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblInformazioGehiago;
+        private System.Windows.Forms.Label lblDeskribapena;
     }
 }

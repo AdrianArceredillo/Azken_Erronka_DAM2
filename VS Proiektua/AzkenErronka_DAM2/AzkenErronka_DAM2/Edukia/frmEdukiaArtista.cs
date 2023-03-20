@@ -1,4 +1,5 @@
 ﻿using AzkenErronka_DAM2.Artistak;
+using AzkenErronka_DAM2.ArtistaMotak;
 using clsKlasea;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace AzkenErronka_DAM2.Edukia
 
         public void llenarDataGrid_albumak()
         {
-            String parametro = " kodAlb <> -1 and ArtistaKodea = " + artistaren_kodea;
+            String parametro = " kodAlb <> -1 and ArtistaKodea = " + Int32.Parse(this.txtEdukia_ArtistaKodea.Text.ToString());
 
             dsAlbumak = clsAlbuma.getAlbumak(parametro);
             dgAlbumes.DataSource = dsAlbumak.Tables["Albumakk"];
@@ -212,6 +213,7 @@ namespace AzkenErronka_DAM2.Edukia
                 {
                     MessageBox.Show("Albumak ikusi! ", "Eduki-mota");
                     albumak_filtro_egoera_aldatu(true);
+                    llenarDataGrid_albumak();
                 }
             }
         }
@@ -225,6 +227,7 @@ namespace AzkenErronka_DAM2.Edukia
                 {
                     MessageBox.Show("Abestiak ikusi! ", "Eduki-mota");
                     albumak_filtro_egoera_aldatu(false);
+                    llenarDataGrid_abestiak(" Abestiak.EgileaKodea = " + Int32.Parse(this.txtEdukia_ArtistaKodea.Text.ToString()));
                 }
             }
         }
@@ -232,6 +235,18 @@ namespace AzkenErronka_DAM2.Edukia
         private void btnAtzera_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pctEdukia_Artista_Click(object sender, EventArgs e)
+        {
+            frmArtistaAukeratu _frmArtistaAukeratu = new frmArtistaAukeratu();
+            _frmArtistaAukeratu.ShowDialog();
+
+            if (_frmArtistaAukeratu.aukeraturiko_artista_kodea != null)
+            {
+                this.txtEdukia_ArtistaKodea.Text = _frmArtistaAukeratu.aukeraturiko_artista_kodea.ToString();
+                this.txtEdukia_ArtistaIzena.Text = _frmArtistaAukeratu.aukeraturiko_artista_izena.ToString();
+            }
         }
 
         private void btnGuztiakAukeratu_Click(object sender, EventArgs e)

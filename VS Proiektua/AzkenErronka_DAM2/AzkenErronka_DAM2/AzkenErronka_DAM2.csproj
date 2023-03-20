@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artistak\frmArtistaAukeratu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Artistak\frmArtistaAukeratu.Designer.cs">
+      <DependentUpon>frmArtistaAukeratu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Artistak\frmArtistak.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Artistak\frmArtistaAukeratu.resx">
+      <DependentUpon>frmArtistaAukeratu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Artistak\frmArtistak.resx">
       <DependentUpon>frmArtistak.cs</DependentUpon>
     </EmbeddedResource>

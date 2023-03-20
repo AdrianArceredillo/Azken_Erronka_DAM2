@@ -44,6 +44,7 @@
             this.panel_superior = new System.Windows.Forms.Panel();
             this.panel_filtros = new System.Windows.Forms.Panel();
             this.panel_filtro_artistak = new System.Windows.Forms.Panel();
+            this.dgAbestiak_Aurkituta = new System.Windows.Forms.DataGridView();
             this.panel_albumak_general = new System.Windows.Forms.Panel();
             this.panel_album_zerrenda = new System.Windows.Forms.Panel();
             this.lblAbestiakGuztira = new System.Windows.Forms.Label();
@@ -81,12 +82,12 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAtzera = new System.Windows.Forms.ToolStripButton();
             this.dgAbestiak = new System.Windows.Forms.DataGridView();
-            this.dgAbestiak_Aurkituta = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).BeginInit();
             this.panel_superior.SuspendLayout();
             this.panel_filtros.SuspendLayout();
             this.panel_filtro_artistak.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak_Aurkituta)).BeginInit();
             this.panel_albumak_general.SuspendLayout();
             this.panel_album_zerrenda.SuspendLayout();
             this.panel_albumak.SuspendLayout();
@@ -97,7 +98,6 @@
             this.panel_botonera_superior.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak_Aurkituta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +146,7 @@
             this.dgAlbumes.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgAlbumes.Location = new System.Drawing.Point(0, 0);
             this.dgAlbumes.Name = "dgAlbumes";
+            this.dgAlbumes.ReadOnly = true;
             this.dgAlbumes.Size = new System.Drawing.Size(450, 127);
             this.dgAlbumes.TabIndex = 4;
             this.dgAlbumes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAlbumes_CellClick);
@@ -171,6 +172,7 @@
             this.pctEdukia_Artista.Size = new System.Drawing.Size(20, 20);
             this.pctEdukia_Artista.TabIndex = 12;
             this.pctEdukia_Artista.TabStop = false;
+            this.pctEdukia_Artista.Click += new System.EventHandler(this.pctEdukia_Artista_Click);
             // 
             // txtEdukia_ArtistaMotaIzena
             // 
@@ -244,6 +246,15 @@
             this.panel_filtro_artistak.Name = "panel_filtro_artistak";
             this.panel_filtro_artistak.Size = new System.Drawing.Size(1294, 223);
             this.panel_filtro_artistak.TabIndex = 0;
+            // 
+            // dgAbestiak_Aurkituta
+            // 
+            this.dgAbestiak_Aurkituta.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgAbestiak_Aurkituta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAbestiak_Aurkituta.Location = new System.Drawing.Point(769, 6);
+            this.dgAbestiak_Aurkituta.Name = "dgAbestiak_Aurkituta";
+            this.dgAbestiak_Aurkituta.Size = new System.Drawing.Size(68, 214);
+            this.dgAbestiak_Aurkituta.TabIndex = 50;
             // 
             // panel_albumak_general
             // 
@@ -626,19 +637,11 @@
             // 
             this.dgAbestiak.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgAbestiak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAbestiak.Location = new System.Drawing.Point(38, 358);
+            this.dgAbestiak.Location = new System.Drawing.Point(38, 304);
             this.dgAbestiak.Name = "dgAbestiak";
+            this.dgAbestiak.ReadOnly = true;
             this.dgAbestiak.Size = new System.Drawing.Size(764, 139);
             this.dgAbestiak.TabIndex = 19;
-            // 
-            // dgAbestiak_Aurkituta
-            // 
-            this.dgAbestiak_Aurkituta.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgAbestiak_Aurkituta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAbestiak_Aurkituta.Location = new System.Drawing.Point(769, 6);
-            this.dgAbestiak_Aurkituta.Name = "dgAbestiak_Aurkituta";
-            this.dgAbestiak_Aurkituta.Size = new System.Drawing.Size(68, 214);
-            this.dgAbestiak_Aurkituta.TabIndex = 50;
             // 
             // frmEdukiaArtista
             // 
@@ -667,6 +670,7 @@
             this.panel_filtros.ResumeLayout(false);
             this.panel_filtro_artistak.ResumeLayout(false);
             this.panel_filtro_artistak.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak_Aurkituta)).EndInit();
             this.panel_albumak_general.ResumeLayout(false);
             this.panel_album_zerrenda.ResumeLayout(false);
             this.panel_album_zerrenda.PerformLayout();
@@ -684,7 +688,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak_Aurkituta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

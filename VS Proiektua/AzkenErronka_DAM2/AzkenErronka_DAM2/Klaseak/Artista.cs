@@ -65,46 +65,16 @@ namespace AzkenErronka_DAM2.Klaseak
             SqlDataReader reader = cmd.ExecuteReader();
 
             return reader;
+
+
+
+
+
+            //            KodArtista, IzenaArtista, Artista.Deskribapena, Nazionalitateak.IdNazioa, ArtistaMota.MotaIzena as Mota, KideKopurua, FundazioUrtea, 
+            //ArtistaEgoera.EgoeraDeskribapena, Artista.KodArtistaMota, Nazionalitateak.NazioaIzena
+            //from Artista, ArtistaMota, Nazionalitateak, ArtistaEgoera where Artista.KodArtistaMota = ArtistaMota.KodMota and Artista.Nazionalitatea = Nazionalitateak.IdNazioa
+            //and Artista.Egoera = ArtistaEgoera.KodEgoera
         }
-
-
-        //public int getArtistak_MaxCode(SqlConnection conn, String parametro)
-        //{
-        //    int maxnum = 0;
-
-        //    using (conn)
-
-        //    {
-        //        SqlCommand cmd = new SqlCommand("select MAX(KodArtista) from Artista", conn);
-
-        //        //conn.Open();
-        //        maxnum = Convert.ToInt32(cmd.ExecuteScalar());
-        //        //conn.Close();
-
-        //    }
-
-        //    return maxnum;
-        //}
-
-
-        //public int getArtistak_MaxCode(SqlConnection conn, String parametro)
-        //{
-        //    //conn.Open();
-
-        //    int maxnum = 0;
-
-        //    using (conn)
-
-        //    {
-        //        SqlCommand cmd = new SqlCommand("select MAX(KodArtista) from Artista", conn);
-
-        //        maxnum = Convert.ToInt32(cmd.ExecuteScalar());
-        //    }
-
-        //    //conn.Close();
-
-        //    return maxnum;
-        //}
 
 
         public void getArtistak_MaxCode(SqlConnection conn, String parametro)
@@ -128,25 +98,20 @@ namespace AzkenErronka_DAM2.Klaseak
 
                     prueba_enviar = Int32.Parse(read[0].ToString());
                     prueba_enviar = prueba_enviar + 1;
-                    
+
                 }
 
                 con.Close();
             }
-
-            //return a;
         }
-
 
 
         //private static int ReadSingleRow(IDataRecord dataRecord)
         private static void ReadSingleRow(IDataRecord dataRecord)
         {
-            //Console.WriteLine(String.Format("{0}, {1}, {2}", dataRecord[0], dataRecord[1], dataRecord[2]));
             Console.WriteLine(String.Format("{0}", dataRecord[0]));
 
             int prueba = (int)dataRecord[0];
-            //return prueba;
         }
 
 
@@ -156,8 +121,6 @@ namespace AzkenErronka_DAM2.Klaseak
             int kideKopurua, int fundazioUrtea, String egoera, String artistaInfoGehiago
             )
         {
-            int a = 0;
-
             using (SqlConnection con = new SqlConnection("Data Source=LENOVO_ADRI\\SQLEXPRESS;Initial Catalog=MusikaBilduma;Integrated Security=True"))
             {
                 con.Open();
@@ -175,10 +138,8 @@ namespace AzkenErronka_DAM2.Klaseak
                 sql_cmnd.Parameters.AddWithValue("@ArtistaInfoGehiago", SqlDbType.VarChar).Value = artistaInfoGehiago;
 
                 sql_cmnd.ExecuteNonQuery();
-
                 con.Close();
             }
-
         }
 
 
@@ -216,19 +177,13 @@ namespace AzkenErronka_DAM2.Klaseak
                 }
                 else
                 {
-                    // Well this should never really happen
                     MessageBox.Show("No row inserted");
 
                     sartuta = false;
                 }
-
-
-
                 //sql_cmnd.ExecuteNonQuery();
-
                 con.Close();
             }
-
             return sartuta;
         }
 
