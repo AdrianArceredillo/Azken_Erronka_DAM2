@@ -98,13 +98,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtArtistaDeskribapena = new System.Windows.Forms.TextBox();
             this.txtArtistaMotaIzena = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtArtistaIzena = new System.Windows.Forms.TextBox();
             this.txtArtistaKodea = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_SUPERIOR = new System.Windows.Forms.Panel();
+            this.pctArtista = new System.Windows.Forms.PictureBox();
             this.panel_Izquierdo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgArtistas)).BeginInit();
             this.panel_GENERAL.SuspendLayout();
@@ -131,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numKideKopurua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).BeginInit();
             this.panel_SUPERIOR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctArtista)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Izquierdo
@@ -327,6 +328,7 @@
             // 
             // txtEdicionDeskribapena
             // 
+            this.txtEdicionDeskribapena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionDeskribapena.Enabled = false;
             this.txtEdicionDeskribapena.Location = new System.Drawing.Point(995, 17);
             this.txtEdicionDeskribapena.Multiline = true;
@@ -345,6 +347,7 @@
             // 
             // txtEdicionNazionalitateaDesk
             // 
+            this.txtEdicionNazionalitateaDesk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionNazionalitateaDesk.Enabled = false;
             this.txtEdicionNazionalitateaDesk.Location = new System.Drawing.Point(508, 71);
             this.txtEdicionNazionalitateaDesk.Name = "txtEdicionNazionalitateaDesk";
@@ -353,6 +356,7 @@
             // 
             // txtEdicionNazionalitateaKodea
             // 
+            this.txtEdicionNazionalitateaKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionNazionalitateaKodea.Enabled = false;
             this.txtEdicionNazionalitateaKodea.Location = new System.Drawing.Point(468, 71);
             this.txtEdicionNazionalitateaKodea.Name = "txtEdicionNazionalitateaKodea";
@@ -361,6 +365,7 @@
             // 
             // txtEdicionArtistaMotaDesk
             // 
+            this.txtEdicionArtistaMotaDesk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionArtistaMotaDesk.Enabled = false;
             this.txtEdicionArtistaMotaDesk.Location = new System.Drawing.Point(508, 44);
             this.txtEdicionArtistaMotaDesk.Name = "txtEdicionArtistaMotaDesk";
@@ -369,6 +374,7 @@
             // 
             // txtEdicionArtistaMotaKodea
             // 
+            this.txtEdicionArtistaMotaKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionArtistaMotaKodea.Enabled = false;
             this.txtEdicionArtistaMotaKodea.Location = new System.Drawing.Point(468, 44);
             this.txtEdicionArtistaMotaKodea.Name = "txtEdicionArtistaMotaKodea";
@@ -424,6 +430,7 @@
             // 
             // txtEdicionFundazioUrtea
             // 
+            this.txtEdicionFundazioUrtea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionFundazioUrtea.Enabled = false;
             this.txtEdicionFundazioUrtea.Location = new System.Drawing.Point(281, 71);
             this.txtEdicionFundazioUrtea.Name = "txtEdicionFundazioUrtea";
@@ -507,6 +514,7 @@
             // 
             // txtEdicionIzena
             // 
+            this.txtEdicionIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionIzena.Enabled = false;
             this.txtEdicionIzena.Location = new System.Drawing.Point(112, 44);
             this.txtEdicionIzena.Name = "txtEdicionIzena";
@@ -516,6 +524,7 @@
             // txtEdicionKodea
             // 
             this.txtEdicionKodea.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtEdicionKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicionKodea.Enabled = false;
             this.txtEdicionKodea.Location = new System.Drawing.Point(112, 17);
             this.txtEdicionKodea.Name = "txtEdicionKodea";
@@ -648,6 +657,7 @@
             // p1_Filtros
             // 
             this.p1_Filtros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.p1_Filtros.Controls.Add(this.pctArtista);
             this.p1_Filtros.Controls.Add(this.label1);
             this.p1_Filtros.Controls.Add(this.gbEgoera);
             this.p1_Filtros.Controls.Add(this.cbHasieraUrtea);
@@ -664,7 +674,6 @@
             this.p1_Filtros.Controls.Add(this.label6);
             this.p1_Filtros.Controls.Add(this.txtArtistaDeskribapena);
             this.p1_Filtros.Controls.Add(this.txtArtistaMotaIzena);
-            this.p1_Filtros.Controls.Add(this.label5);
             this.p1_Filtros.Controls.Add(this.txtArtistaIzena);
             this.p1_Filtros.Controls.Add(this.txtArtistaKodea);
             this.p1_Filtros.Controls.Add(this.label4);
@@ -679,7 +688,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(712, 86);
+            this.label1.Location = new System.Drawing.Point(950, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 13);
             this.label1.TabIndex = 0;
@@ -794,17 +803,17 @@
             "2021",
             "2022",
             "2023"});
-            this.cbHasieraUrtea.Location = new System.Drawing.Point(535, 40);
+            this.cbHasieraUrtea.Location = new System.Drawing.Point(535, 44);
             this.cbHasieraUrtea.MaxDropDownItems = 5;
             this.cbHasieraUrtea.Name = "cbHasieraUrtea";
-            this.cbHasieraUrtea.Size = new System.Drawing.Size(98, 21);
+            this.cbHasieraUrtea.Size = new System.Drawing.Size(79, 21);
             this.cbHasieraUrtea.TabIndex = 22;
             this.cbHasieraUrtea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbHasieraUrtea_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(452, 43);
+            this.label8.Location = new System.Drawing.Point(452, 48);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 21;
@@ -812,11 +821,13 @@
             // 
             // txtNazionalitateKodea
             // 
+            this.txtNazionalitateKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNazionalitateKodea.Enabled = false;
             this.txtNazionalitateKodea.Location = new System.Drawing.Point(535, 18);
             this.txtNazionalitateKodea.Name = "txtNazionalitateKodea";
             this.txtNazionalitateKodea.Size = new System.Drawing.Size(47, 20);
             this.txtNazionalitateKodea.TabIndex = 20;
+            this.txtNazionalitateKodea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pctNazionalitatea
             // 
@@ -832,6 +843,7 @@
             // 
             // txtNazionalitateIzena
             // 
+            this.txtNazionalitateIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNazionalitateIzena.Enabled = false;
             this.txtNazionalitateIzena.Location = new System.Drawing.Point(588, 18);
             this.txtNazionalitateIzena.Name = "txtNazionalitateIzena";
@@ -849,19 +861,20 @@
             // 
             // numKideKopurua
             // 
-            this.numKideKopurua.Location = new System.Drawing.Point(782, 41);
+            this.numKideKopurua.Location = new System.Drawing.Point(535, 71);
             this.numKideKopurua.Name = "numKideKopurua";
-            this.numKideKopurua.Size = new System.Drawing.Size(61, 20);
+            this.numKideKopurua.Size = new System.Drawing.Size(79, 20);
             this.numKideKopurua.TabIndex = 16;
             this.numKideKopurua.Tag = "";
             this.numKideKopurua.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtArtistaMotaKodea
             // 
+            this.txtArtistaMotaKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtArtistaMotaKodea.Enabled = false;
-            this.txtArtistaMotaKodea.Location = new System.Drawing.Point(222, 18);
+            this.txtArtistaMotaKodea.Location = new System.Drawing.Point(660, 44);
             this.txtArtistaMotaKodea.Name = "txtArtistaMotaKodea";
-            this.txtArtistaMotaKodea.Size = new System.Drawing.Size(47, 20);
+            this.txtArtistaMotaKodea.Size = new System.Drawing.Size(39, 20);
             this.txtArtistaMotaKodea.TabIndex = 12;
             // 
             // pctArtistaMota
@@ -870,7 +883,7 @@
             this.pctArtistaMota.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctArtistaMota.BackgroundImage")));
             this.pctArtistaMota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pctArtistaMota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctArtistaMota.Location = new System.Drawing.Point(381, 18);
+            this.pctArtistaMota.Location = new System.Drawing.Point(823, 44);
             this.pctArtistaMota.Name = "pctArtistaMota";
             this.pctArtistaMota.Size = new System.Drawing.Size(20, 20);
             this.pctArtistaMota.TabIndex = 11;
@@ -901,7 +914,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(703, 43);
+            this.label6.Location = new System.Drawing.Point(452, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 8;
@@ -909,48 +922,44 @@
             // 
             // txtArtistaDeskribapena
             // 
-            this.txtArtistaDeskribapena.Location = new System.Drawing.Point(31, 83);
+            this.txtArtistaDeskribapena.Location = new System.Drawing.Point(31, 63);
             this.txtArtistaDeskribapena.Multiline = true;
             this.txtArtistaDeskribapena.Name = "txtArtistaDeskribapena";
-            this.txtArtistaDeskribapena.Size = new System.Drawing.Size(344, 51);
+            this.txtArtistaDeskribapena.Size = new System.Drawing.Size(344, 71);
             this.txtArtistaDeskribapena.TabIndex = 7;
             // 
             // txtArtistaMotaIzena
             // 
+            this.txtArtistaMotaIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtArtistaMotaIzena.Enabled = false;
-            this.txtArtistaMotaIzena.Location = new System.Drawing.Point(275, 18);
+            this.txtArtistaMotaIzena.Location = new System.Drawing.Point(705, 44);
             this.txtArtistaMotaIzena.Name = "txtArtistaMotaIzena";
-            this.txtArtistaMotaIzena.Size = new System.Drawing.Size(100, 20);
+            this.txtArtistaMotaIzena.Size = new System.Drawing.Size(108, 20);
             this.txtArtistaMotaIzena.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Izena:";
             // 
             // txtArtistaIzena
             // 
-            this.txtArtistaIzena.Location = new System.Drawing.Point(118, 40);
+            this.txtArtistaIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArtistaIzena.Enabled = false;
+            this.txtArtistaIzena.Location = new System.Drawing.Point(143, 18);
             this.txtArtistaIzena.Name = "txtArtistaIzena";
-            this.txtArtistaIzena.Size = new System.Drawing.Size(257, 20);
+            this.txtArtistaIzena.Size = new System.Drawing.Size(232, 20);
             this.txtArtistaIzena.TabIndex = 4;
             // 
             // txtArtistaKodea
             // 
+            this.txtArtistaKodea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtArtistaKodea.Enabled = false;
-            this.txtArtistaKodea.Location = new System.Drawing.Point(118, 18);
+            this.txtArtistaKodea.Location = new System.Drawing.Point(90, 18);
             this.txtArtistaKodea.Name = "txtArtistaKodea";
             this.txtArtistaKodea.Size = new System.Drawing.Size(47, 20);
             this.txtArtistaKodea.TabIndex = 3;
+            this.txtArtistaKodea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 67);
+            this.label4.Location = new System.Drawing.Point(28, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 2;
@@ -959,7 +968,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(182, 21);
+            this.label3.Location = new System.Drawing.Point(620, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 1;
@@ -970,9 +979,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Artista kodea:";
+            this.label2.Text = "Artista:";
             // 
             // panel_SUPERIOR
             // 
@@ -983,6 +992,19 @@
             this.panel_SUPERIOR.Name = "panel_SUPERIOR";
             this.panel_SUPERIOR.Size = new System.Drawing.Size(1294, 180);
             this.panel_SUPERIOR.TabIndex = 1;
+            // 
+            // pctArtista
+            // 
+            this.pctArtista.BackColor = System.Drawing.Color.Black;
+            this.pctArtista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctArtista.BackgroundImage")));
+            this.pctArtista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctArtista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctArtista.Location = new System.Drawing.Point(381, 18);
+            this.pctArtista.Name = "pctArtista";
+            this.pctArtista.Size = new System.Drawing.Size(20, 20);
+            this.pctArtista.TabIndex = 24;
+            this.pctArtista.TabStop = false;
+            this.pctArtista.Click += new System.EventHandler(this.pctArtista_Click);
             // 
             // frmArtistak
             // 
@@ -1035,6 +1057,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numKideKopurua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctArtistaMota)).EndInit();
             this.panel_SUPERIOR.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctArtista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1101,7 +1124,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtArtistaDeskribapena;
         private System.Windows.Forms.TextBox txtArtistaMotaIzena;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtArtistaIzena;
         private System.Windows.Forms.TextBox txtArtistaKodea;
         private System.Windows.Forms.Label label4;
@@ -1116,5 +1138,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnOnartu;
         private System.Windows.Forms.ToolStripButton btnEzeztatu;
+        private System.Windows.Forms.PictureBox pctArtista;
     }
 }

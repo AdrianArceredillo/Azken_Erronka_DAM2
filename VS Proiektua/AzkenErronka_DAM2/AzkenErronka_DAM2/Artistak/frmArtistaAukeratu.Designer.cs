@@ -57,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(535, 213);
+            this.panel1.Size = new System.Drawing.Size(494, 213);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -67,24 +67,25 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(535, 141);
+            this.panel2.Size = new System.Drawing.Size(494, 141);
             this.panel2.TabIndex = 1;
             // 
             // dgArtistak
             // 
             this.dgArtistak.AllowUserToAddRows = false;
             this.dgArtistak.AllowUserToDeleteRows = false;
-            this.dgArtistak.AllowUserToResizeColumns = false;
+            this.dgArtistak.AllowUserToResizeRows = false;
             this.dgArtistak.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgArtistak.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgArtistak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgArtistak.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgArtistak.Location = new System.Drawing.Point(0, 28);
             this.dgArtistak.Name = "dgArtistak";
             this.dgArtistak.ReadOnly = true;
-            this.dgArtistak.ShowEditingIcon = false;
-            this.dgArtistak.Size = new System.Drawing.Size(535, 113);
+            this.dgArtistak.Size = new System.Drawing.Size(494, 113);
             this.dgArtistak.TabIndex = 1;
-            this.dgArtistak.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistaMota_CellContentDoubleClick);
+            this.dgArtistak.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistak_CellClick);
+            this.dgArtistak.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArtistak_CellDoubleClick);
             // 
             // panel3
             // 
@@ -93,7 +94,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(535, 28);
+            this.panel3.Size = new System.Drawing.Size(494, 28);
             this.panel3.TabIndex = 0;
             // 
             // label2
@@ -124,6 +125,8 @@
             // 
             // txtHasieraUrtea
             // 
+            this.txtHasieraUrtea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHasieraUrtea.Enabled = false;
             this.txtHasieraUrtea.Location = new System.Drawing.Point(50, 329);
             this.txtHasieraUrtea.Name = "txtHasieraUrtea";
             this.txtHasieraUrtea.Size = new System.Drawing.Size(94, 20);
@@ -141,6 +144,8 @@
             // 
             // txtMotaIzena
             // 
+            this.txtMotaIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMotaIzena.Enabled = false;
             this.txtMotaIzena.Location = new System.Drawing.Point(50, 251);
             this.txtMotaIzena.Name = "txtMotaIzena";
             this.txtMotaIzena.Size = new System.Drawing.Size(173, 20);
@@ -189,6 +194,8 @@
             // 
             // txtNazionalitateaIzena
             // 
+            this.txtNazionalitateaIzena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNazionalitateaIzena.Enabled = false;
             this.txtNazionalitateaIzena.Location = new System.Drawing.Point(50, 290);
             this.txtNazionalitateaIzena.Name = "txtNazionalitateaIzena";
             this.txtNazionalitateaIzena.Size = new System.Drawing.Size(173, 20);
@@ -198,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 503);
+            this.ClientSize = new System.Drawing.Size(494, 503);
             this.Controls.Add(this.txtNazionalitateaIzena);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtHasieraUrtea);

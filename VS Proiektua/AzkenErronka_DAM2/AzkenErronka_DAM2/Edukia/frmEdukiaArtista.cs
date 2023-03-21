@@ -61,7 +61,8 @@ namespace AzkenErronka_DAM2.Edukia
 
         public void llenarDataGrid_abestiak(String parametro)
         {
-            dsAbestiak = clsAbestia.getAbestiak(parametro);
+            //dsAbestiak = clsAbestia.getAbestiak(parametro);
+            dsAbestiak = clsAbestia.getAbestiak_luzea(" and " + parametro);
             dgAbestiak.DataSource = dsAbestiak.Tables["Abestiakk"];
 
             //contar resultados encontrados
@@ -145,9 +146,30 @@ namespace AzkenErronka_DAM2.Edukia
             //AbestiaIzena
             this.dgAbestiak.Columns["AbestiaIzena"].Visible = true;
             this.dgAbestiak.Columns["AbestiaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[0].HeaderText = "Izena";
-            this.dgAbestiak.Columns[0].Width = 50;
+            this.dgAbestiak.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[1].HeaderText = "Izena";
+            this.dgAbestiak.Columns[1].Width = 50;
+
+            //AlbumaIzena
+            this.dgAbestiak.Columns["AlbumaIzena"].Visible = true;
+            this.dgAbestiak.Columns["AlbumaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[5].HeaderText = "AlbIII";
+            this.dgAbestiak.Columns[5].Width = 300;
+
+            //AlbumaIzena
+            this.dgAbestiak.Columns["AbestiMota_Izena"].Visible = true;
+            this.dgAbestiak.Columns["AbestiMota_Izena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[7].HeaderText = "Abesti-ota";
+            this.dgAbestiak.Columns[7].Width = 100;
+
+            //AlbumaIzena
+            //this.dgAbestiak.Columns["AlbumaIzena"].Visible = true;
+            //this.dgAbestiak.Columns["AlbumaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgAbestiak.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgAbestiak.Columns[0].HeaderText = "Albuma";
+            //this.dgAbestiak.Columns[0].Width = 50;
         }
 
 

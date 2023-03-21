@@ -29,18 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdukiaArtista));
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEdukia_ArtistaKodea = new System.Windows.Forms.TextBox();
             this.txtEdukia_ArtistaIzena = new System.Windows.Forms.TextBox();
             this.dgAlbumes = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.pctEdukia_Artista = new System.Windows.Forms.PictureBox();
-            this.txtEdukia_ArtistaMotaIzena = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEdukia_ArtistaMotaKodea = new System.Windows.Forms.TextBox();
-            this.txtEdukia_EgoeraIzena = new System.Windows.Forms.TextBox();
-            this.txtEdukia_EgoeraKodea = new System.Windows.Forms.TextBox();
             this.panel_superior = new System.Windows.Forms.Panel();
             this.panel_filtros = new System.Windows.Forms.Panel();
             this.panel_filtro_artistak = new System.Windows.Forms.Panel();
@@ -82,6 +75,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAtzera = new System.Windows.Forms.ToolStripButton();
             this.dgAbestiak = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).BeginInit();
             this.panel_superior.SuspendLayout();
@@ -98,16 +92,8 @@
             this.panel_botonera_superior.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(939, 361);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mota:";
             // 
             // label2
             // 
@@ -151,16 +137,6 @@
             this.dgAlbumes.TabIndex = 4;
             this.dgAlbumes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAlbumes_CellClick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(887, 304);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Artistaren informazio laburra:";
-            // 
             // pctEdukia_Artista
             // 
             this.pctEdukia_Artista.BackColor = System.Drawing.Color.Black;
@@ -173,47 +149,6 @@
             this.pctEdukia_Artista.TabIndex = 12;
             this.pctEdukia_Artista.TabStop = false;
             this.pctEdukia_Artista.Click += new System.EventHandler(this.pctEdukia_Artista_Click);
-            // 
-            // txtEdukia_ArtistaMotaIzena
-            // 
-            this.txtEdukia_ArtistaMotaIzena.Enabled = false;
-            this.txtEdukia_ArtistaMotaIzena.Location = new System.Drawing.Point(989, 358);
-            this.txtEdukia_ArtistaMotaIzena.Name = "txtEdukia_ArtistaMotaIzena";
-            this.txtEdukia_ArtistaMotaIzena.Size = new System.Drawing.Size(147, 20);
-            this.txtEdukia_ArtistaMotaIzena.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(939, 387);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Egoera:";
-            // 
-            // txtEdukia_ArtistaMotaKodea
-            // 
-            this.txtEdukia_ArtistaMotaKodea.Enabled = false;
-            this.txtEdukia_ArtistaMotaKodea.Location = new System.Drawing.Point(1142, 358);
-            this.txtEdukia_ArtistaMotaKodea.Name = "txtEdukia_ArtistaMotaKodea";
-            this.txtEdukia_ArtistaMotaKodea.Size = new System.Drawing.Size(35, 20);
-            this.txtEdukia_ArtistaMotaKodea.TabIndex = 15;
-            // 
-            // txtEdukia_EgoeraIzena
-            // 
-            this.txtEdukia_EgoeraIzena.Enabled = false;
-            this.txtEdukia_EgoeraIzena.Location = new System.Drawing.Point(989, 384);
-            this.txtEdukia_EgoeraIzena.Name = "txtEdukia_EgoeraIzena";
-            this.txtEdukia_EgoeraIzena.Size = new System.Drawing.Size(147, 20);
-            this.txtEdukia_EgoeraIzena.TabIndex = 16;
-            // 
-            // txtEdukia_EgoeraKodea
-            // 
-            this.txtEdukia_EgoeraKodea.Enabled = false;
-            this.txtEdukia_EgoeraKodea.Location = new System.Drawing.Point(1142, 384);
-            this.txtEdukia_EgoeraKodea.Name = "txtEdukia_EgoeraKodea";
-            this.txtEdukia_EgoeraKodea.Size = new System.Drawing.Size(35, 20);
-            this.txtEdukia_EgoeraKodea.TabIndex = 17;
             // 
             // panel_superior
             // 
@@ -637,11 +572,21 @@
             // 
             this.dgAbestiak.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgAbestiak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAbestiak.Location = new System.Drawing.Point(38, 304);
+            this.dgAbestiak.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgAbestiak.Location = new System.Drawing.Point(0, 0);
             this.dgAbestiak.Name = "dgAbestiak";
             this.dgAbestiak.ReadOnly = true;
-            this.dgAbestiak.Size = new System.Drawing.Size(764, 139);
+            this.dgAbestiak.Size = new System.Drawing.Size(1294, 229);
             this.dgAbestiak.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgAbestiak);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 482);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1294, 229);
+            this.panel1.TabIndex = 20;
             // 
             // frmEdukiaArtista
             // 
@@ -649,15 +594,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1294, 711);
-            this.Controls.Add(this.dgAbestiak);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_superior);
-            this.Controls.Add(this.txtEdukia_EgoeraKodea);
-            this.Controls.Add(this.txtEdukia_EgoeraIzena);
-            this.Controls.Add(this.txtEdukia_ArtistaMotaKodea);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEdukia_ArtistaMotaIzena);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEdukiaArtista";
@@ -688,25 +626,17 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEdukia_ArtistaKodea;
         private System.Windows.Forms.TextBox txtEdukia_ArtistaIzena;
         private System.Windows.Forms.DataGridView dgAlbumes;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pctEdukia_Artista;
-        private System.Windows.Forms.TextBox txtEdukia_ArtistaMotaIzena;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEdukia_ArtistaMotaKodea;
-        private System.Windows.Forms.TextBox txtEdukia_EgoeraIzena;
-        private System.Windows.Forms.TextBox txtEdukia_EgoeraKodea;
         private System.Windows.Forms.Panel panel_superior;
         private System.Windows.Forms.Panel panel_botonera_superior;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -748,5 +678,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgAbestiak;
         private System.Windows.Forms.DataGridView dgAbestiak_Aurkituta;
+        private System.Windows.Forms.Panel panel1;
     }
 }

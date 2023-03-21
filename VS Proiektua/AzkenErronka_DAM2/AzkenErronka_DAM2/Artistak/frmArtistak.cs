@@ -692,6 +692,17 @@ namespace AzkenErronka_DAM2.Artistak
             _frmEdukiaArtista.ShowDialog();
         }
 
+        private void pctArtista_Click(object sender, EventArgs e)
+        {
+            frmArtistaAukeratu _frmArtistaAukeratu = new frmArtistaAukeratu();
+            _frmArtistaAukeratu.ShowDialog();
+
+            if (_frmArtistaAukeratu.aukeraturiko_artista_kodea != null)
+            {
+                this.txtArtistaKodea.Text = _frmArtistaAukeratu.aukeraturiko_artista_kodea.ToString();
+                this.txtArtistaIzena.Text = _frmArtistaAukeratu.aukeraturiko_artista_izena.ToString();
+            }
+        }
     }
 }
 

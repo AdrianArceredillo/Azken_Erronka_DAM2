@@ -167,12 +167,12 @@ namespace Klasea
                         row["IzenaArtista"] = reader.GetString(3);
                         row["AlbumaKodea"] = reader.GetInt32(4);
                         row["AlbumaIzena"] = reader.GetString(5);
-                        row["AbestiMota"] = reader.GetInt32(6);
+                        row["AbestiMota"] = reader.GetString(6);
                         row["AbestiMota_Izena"] = reader.GetString(7);
                         row["Generoa"] = reader.GetInt32(8);
-                        row["GeneroIzena"] = reader.GetInt32(9);
+                        row["GeneroIzena"] = reader.GetString(9);
                         row["Deskribapena"] = reader.GetString(10);
-                        row["Urtea"] = reader.GetString(11);
+                        row["Urtea"] = reader.GetInt32(11);
                         //++++++++
                         table.Rows.Add(row);
                     }
