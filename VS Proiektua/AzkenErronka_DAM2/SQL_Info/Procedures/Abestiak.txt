@@ -80,6 +80,7 @@ execute (@query);
 
 USE [MusikaBilduma]
 GO
+/****** Object:  StoredProcedure [dbo].[getAbestiak_Concretas]    Script Date: 22/03/2023 21:57:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +93,10 @@ set @query = 'select
 Abestiak.KodAbestia, Abestiak.AbestiaIzena,
 (select Artista.IzenaArtista from Artista where Artista.KodArtista = Abestiak.EgileaKodea) as Artista,
 (select Albumak.AlbumaIzena from Albumak where Albumak.KodAlb = Abestiak.AlbumaKodea) as Albuma,
-(select AbestiakMota.AbestiMota_Izena from AbestiakMota where AbestiakMota.KodAbeMota = Abestiak.AbestiMota) as Mota
+(select AbestiakMota.AbestiMota_Izena from AbestiakMota where AbestiakMota.KodAbeMota = Abestiak.AbestiMota) as Mota,
+
+Abestiak.EgileaKodea, Abestiak.AlbumaKodea, Abestiak.AbestiMota
+
 from 
 Abestiak ' + @parametro;
 execute (@query);

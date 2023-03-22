@@ -265,6 +265,17 @@ namespace Klasea
                     column = new DataColumn("Mota");
                     table.Columns.Add(column);
 
+                    //++++++++++++++
+
+                    column = new DataColumn("EgileaKodea");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("AlbumaKodea");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("AbestiMota");
+                    table.Columns.Add(column);
+
                     while (reader.Read())
                     {
                         row = table.NewRow();
@@ -273,6 +284,10 @@ namespace Klasea
                         row["Artista"] = reader.GetString(2);
                         row["Albuma"] = reader.GetString(3);
                         row["Mota"] = reader.GetString(4);
+                        //++++++++
+                        row["EgileaKodea"] = reader.GetInt32(0);
+                        row["AlbumaKodea"] = reader.GetInt32(0);
+                        row["AbestiMota"] = reader.GetInt32(0);
                         //++++++++
                         table.Rows.Add(row);
                     }

@@ -34,8 +34,8 @@ namespace AzkenErronka_DAM2.Edukia
 
 
         //pasar a frmAbestiaDatuak
-        public static int kod_abestia, kod_artista, kod_albuma;
-        public static string abestia_izena, abesti_mota;
+        public static int kod_abestia, egilea_kodea, albuma_kodea, abesti_mota;
+        public static string abestia_izena, artista, albuma, mota;
         public static string zeregina;
         #endregion
 
@@ -144,6 +144,8 @@ namespace AzkenErronka_DAM2.Edukia
 
         private void estilo_datagridview_abestiak()
         {
+            //KodAbestia,AbestiaIzena,Artista,Albuma,Mota,EgileaKodea,AlbumaKodea,AbestiMota
+
             //KodAbestia
             this.dgAbestiak.Columns["KodAbestia"].Visible = true;
             this.dgAbestiak.Columns["KodAbestia"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -172,13 +174,36 @@ namespace AzkenErronka_DAM2.Edukia
             this.dgAbestiak.Columns[3].HeaderText = "Albuma";
             this.dgAbestiak.Columns[3].Width = 150;
 
-            //Albuma
+            //Mota
             this.dgAbestiak.Columns["Mota"].Visible = true;
             this.dgAbestiak.Columns["Mota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgAbestiak.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgAbestiak.Columns[4].HeaderText = "Mota";
             this.dgAbestiak.Columns[4].Width = 50;
 
+            //EgileaKodea
+            this.dgAbestiak.Columns["EgileaKodea"].Visible = false;
+            this.dgAbestiak.Columns["EgileaKodea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgAbestiak.Columns[5].HeaderText = "EgileaKodea";
+            this.dgAbestiak.Columns[5].HeaderText = "";
+            this.dgAbestiak.Columns[5].Width = 0;
+
+            //AlbumaKodea
+            this.dgAbestiak.Columns["AlbumaKodea"].Visible = true;
+            this.dgAbestiak.Columns["AlbumaKodea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgAbestiak.Columns[6].HeaderText = "AlbumaKodea";
+            this.dgAbestiak.Columns[6].HeaderText = "";
+            this.dgAbestiak.Columns[6].Width = 0;
+
+            //AbestiMota
+            this.dgAbestiak.Columns["AbestiMota"].Visible = true;
+            this.dgAbestiak.Columns["AbestiMota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgAbestiak.Columns[7].HeaderText = "AbestiMota";
+            this.dgAbestiak.Columns[7].HeaderText = "";
+            this.dgAbestiak.Columns[7].Width = 0;
 
 
             //this.dgAlbumes.Columns["KodAbestia"].DisplayIndex = 0;
@@ -186,6 +211,9 @@ namespace AzkenErronka_DAM2.Edukia
             //this.dgAlbumes.Columns["Artista"].DisplayIndex = 2;
             //this.dgAlbumes.Columns["Albuma"].DisplayIndex = 3;
             //this.dgAlbumes.Columns["Mota"].DisplayIndex = 4;
+            //this.dgAlbumes.Columns["EgileaKodea"].DisplayIndex = 5;
+            //this.dgAlbumes.Columns["AlbumaKodea"].DisplayIndex = 6;
+            //this.dgAlbumes.Columns["AbestiMota"].DisplayIndex = 7;
         }
 
 
@@ -357,11 +385,21 @@ namespace AzkenErronka_DAM2.Edukia
                     if (this.dgAbestiak.Rows[i].Selected == true)
                     {
                         contador = contador + 1;
+                        contador = contador + 1;
                     }
                 }
             }
 
+            //KodAbestia,AbestiaIzena,Artista,Albuma,Mota,EgileaKodea,AlbumaKodea,AbestiMota
+
             kod_abestia = Int32.Parse(this.dgAbestiak.CurrentRow.Cells["KodAbestia"].Value.ToString());
+            abestia_izena = this.dgAbestiak.CurrentRow.Cells["AbestiaIzena"].Value.ToString();
+            artista = this.dgAbestiak.CurrentRow.Cells["Artista"].Value.ToString();
+            albuma = this.dgAbestiak.CurrentRow.Cells["Albuma"].Value.ToString();
+            mota = this.dgAbestiak.CurrentRow.Cells["Mota"].Value.ToString();
+            egilea_kodea = Int32.Parse(this.dgAbestiak.CurrentRow.Cells["EgileaKodea"].Value.ToString());
+            albuma_kodea = Int32.Parse(this.dgAbestiak.CurrentRow.Cells["AlbumaKodea"].Value.ToString());
+            abesti_mota = Int32.Parse(this.dgAbestiak.CurrentRow.Cells["AbestiMota"].Value.ToString());
 
             frmAbestiaDatuak _frnAbestiaDatuak = new frmAbestiaDatuak();
             _frnAbestiaDatuak.ShowDialog();

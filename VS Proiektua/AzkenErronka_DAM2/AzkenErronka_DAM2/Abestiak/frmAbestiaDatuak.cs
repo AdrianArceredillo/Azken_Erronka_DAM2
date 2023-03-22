@@ -1,6 +1,7 @@
 ﻿using AzkenErronka_DAM2.Artistak;
 using AzkenErronka_DAM2.ArtistaMotak;
 using AzkenErronka_DAM2.Edukia;
+using AzkenErronka_DAM2.Klaseak;
 using clsKlasea;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,9 @@ namespace AzkenErronka_DAM2.Abestiak
         {
             zeregina_jaso = frmEdukiaArtista.zeregina;
 
-            this.txtAbestiaKodea.Text = frmEdukiaArtista.kod_abestia.ToString();
+            zeregina_irakurri(zeregina_jaso);
+
+            //this.txtAbestiaKodea.Text = frmEdukiaArtista.kod_abestia.ToString();
 
 
             /*
@@ -49,6 +52,8 @@ namespace AzkenErronka_DAM2.Abestiak
             else if (zere == "editatu")
             {
                 //cargar datos de la canción
+                this.txtAbestiaKodea.Enabled = false;
+                abestia_kargatu();
             }
         }
 
@@ -60,12 +65,34 @@ namespace AzkenErronka_DAM2.Abestiak
             }
             else if (zeregina_jaso == "editatu")
             {
-                //abestia_kargatu();
-
-                
-
                 //setAbestia
             }
         }
+
+        private void abestia_kargatu()
+        {
+            int kod_abe = frmEdukiaArtista.kod_abestia;
+            string abe_izena = frmEdukiaArtista.abestia_izena;
+            string artista_izena = frmEdukiaArtista.artista;
+            string albuma_izena = frmEdukiaArtista.albuma;
+            string abesti_mota = frmEdukiaArtista.mota;
+            int egilea_kodea = frmEdukiaArtista.egilea_kodea;
+            int albuma_kodea = frmEdukiaArtista.albuma_kodea;
+            int mota_kodea = frmEdukiaArtista.abesti_mota;
+
+            //++++++
+
+            this.txtAbestiaKodea.Text = kod_abe.ToString();
+            this.txtAlbumaKodea.Text = albuma_kodea.ToString();
+            this.txtMotaKodea.Text = mota_kodea.ToString();
+            this.txtEgileaKodea.Text = egilea_kodea.ToString();
+
+            this.txtAbestiaIzena.Text = abe_izena;
+            this.txtAlbumaIzena.Text = albuma_izena;
+            this.txtMotaIzena.Text = abesti_mota;
+            this.txtEgileaIzena.Text = artista_izena;
+
+        }
+
     }
 }
