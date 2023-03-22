@@ -231,6 +231,64 @@ namespace Klasea
         }
 
 
+
+        public DataSet getAbestiak_Concretas(string parametro)
+        {
+            DataSet dsAbestiak = new DataSet("Abestiak");
+            SqlConnection con = conexion.abri_conexion();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("getAbestiak_Concretas", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@parametro", parametro);
+                    cmd.ExecuteNonQuery();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    DataTable table = new DataTable("Abestiakk");
+                    DataRow row;
+                    DataColumn column;
+
+                    column = new DataColumn("KodAbestia");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("AbestiaIzena");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("Artista");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("Albuma");
+                    table.Columns.Add(column);
+
+                    column = new DataColumn("Mota");
+                    table.Columns.Add(column);
+
+                    while (reader.Read())
+                    {
+                        row = table.NewRow();
+                        row["KodAbestia"] = reader.GetInt32(0);
+                        row["AbestiaIzena"] = reader.GetString(1);
+                        row["Artista"] = reader.GetString(2);
+                        row["Albuma"] = reader.GetString(3);
+                        row["Mota"] = reader.GetString(4);
+                        //++++++++
+                        table.Rows.Add(row);
+                    }
+                    dsAbestiak.Tables.Add(table);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            conexion.cerrar_conexion(con);
+            return dsAbestiak;
+        }
+
+
         #endregion
 
 

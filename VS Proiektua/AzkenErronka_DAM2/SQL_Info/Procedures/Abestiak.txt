@@ -73,6 +73,40 @@ set @query =
 execute (@query);
 
 
+----------------------------------------------------------------------------------
+---------------------------------------------- getAbestiak_Concretas (+ kondizioa)
+----------------------------------------------------------------------------------
+
+
+USE [MusikaBilduma]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[getAbestiak_Concretas] (@parametro varchar(2000)) 
+AS
+
+declare @query varchar(1000);
+set @query = 'select 
+Abestiak.KodAbestia, Abestiak.AbestiaIzena,
+(select Artista.IzenaArtista from Artista where Artista.KodArtista = Abestiak.EgileaKodea) as Artista,
+(select Albumak.AlbumaIzena from Albumak where Albumak.KodAlb = Abestiak.AlbumaKodea) as Albuma,
+(select AbestiakMota.AbestiMota_Izena from AbestiakMota where AbestiakMota.KodAbeMota = Abestiak.AbestiMota) as Mota
+from 
+Abestiak ' + @parametro;
+execute (@query);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

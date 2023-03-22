@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdukiaArtista));
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEdukia_ArtistaKodea = new System.Windows.Forms.TextBox();
-            this.txtEdukia_ArtistaIzena = new System.Windows.Forms.TextBox();
-            this.dgAlbumes = new System.Windows.Forms.DataGridView();
-            this.pctEdukia_Artista = new System.Windows.Forms.PictureBox();
             this.panel_superior = new System.Windows.Forms.Panel();
             this.panel_filtros = new System.Windows.Forms.Panel();
             this.panel_filtro_artistak = new System.Windows.Forms.Panel();
@@ -50,6 +45,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblSeleccionadosAlbumak = new System.Windows.Forms.Label();
+            this.dgAlbumes = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.panel_albumak = new System.Windows.Forms.Panel();
             this.tlsAlbumak = new System.Windows.Forms.ToolStrip();
@@ -71,84 +67,49 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtEdukia_Deskribapena = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEdukia_ArtistaKodea = new System.Windows.Forms.TextBox();
+            this.txtEdukia_ArtistaIzena = new System.Windows.Forms.TextBox();
+            this.pctEdukia_Artista = new System.Windows.Forms.PictureBox();
             this.panel_botonera_superior = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAtzera = new System.Windows.Forms.ToolStripButton();
             this.dgAbestiak = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).BeginInit();
+            this.panel_info_decoracion = new System.Windows.Forms.Panel();
+            this.panel_canciones = new System.Windows.Forms.Panel();
+            this.panel_botonera_abestiak = new System.Windows.Forms.Panel();
+            this.panel_cabecera_canciones = new System.Windows.Forms.Panel();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btnAbestiGuztiak = new System.Windows.Forms.ToolStripButton();
+            this.btnDesautatuAbestiDenak = new System.Windows.Forms.ToolStripButton();
+            this.btnRefrescar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_AbestiBerria = new System.Windows.Forms.ToolStripButton();
+            this.btn_AbestiaEditatu = new System.Windows.Forms.ToolStripButton();
+            this.btnAbestiaEzabatu = new System.Windows.Forms.ToolStripButton();
             this.panel_superior.SuspendLayout();
             this.panel_filtros.SuspendLayout();
             this.panel_filtro_artistak.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak_Aurkituta)).BeginInit();
             this.panel_albumak_general.SuspendLayout();
             this.panel_album_zerrenda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).BeginInit();
             this.panel_albumak.SuspendLayout();
             this.tlsAlbumak.SuspendLayout();
             this.gbEdukia_EdukiMota.SuspendLayout();
             this.panel_artistak.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_Edukia_KideakIkusi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).BeginInit();
             this.panel_botonera_superior.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel_canciones.SuspendLayout();
+            this.panel_botonera_abestiak.SuspendLayout();
+            this.panel_cabecera_canciones.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Artista:";
-            // 
-            // txtEdukia_ArtistaKodea
-            // 
-            this.txtEdukia_ArtistaKodea.Enabled = false;
-            this.txtEdukia_ArtistaKodea.Location = new System.Drawing.Point(125, 0);
-            this.txtEdukia_ArtistaKodea.Name = "txtEdukia_ArtistaKodea";
-            this.txtEdukia_ArtistaKodea.Size = new System.Drawing.Size(54, 20);
-            this.txtEdukia_ArtistaKodea.TabIndex = 2;
-            // 
-            // txtEdukia_ArtistaIzena
-            // 
-            this.txtEdukia_ArtistaIzena.Enabled = false;
-            this.txtEdukia_ArtistaIzena.Location = new System.Drawing.Point(185, 0);
-            this.txtEdukia_ArtistaIzena.Name = "txtEdukia_ArtistaIzena";
-            this.txtEdukia_ArtistaIzena.Size = new System.Drawing.Size(215, 20);
-            this.txtEdukia_ArtistaIzena.TabIndex = 3;
-            // 
-            // dgAlbumes
-            // 
-            this.dgAlbumes.AllowUserToAddRows = false;
-            this.dgAlbumes.AllowUserToDeleteRows = false;
-            this.dgAlbumes.AllowUserToResizeRows = false;
-            this.dgAlbumes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgAlbumes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgAlbumes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAlbumes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgAlbumes.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgAlbumes.Location = new System.Drawing.Point(0, 0);
-            this.dgAlbumes.Name = "dgAlbumes";
-            this.dgAlbumes.ReadOnly = true;
-            this.dgAlbumes.Size = new System.Drawing.Size(450, 127);
-            this.dgAlbumes.TabIndex = 4;
-            this.dgAlbumes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAlbumes_CellClick);
-            // 
-            // pctEdukia_Artista
-            // 
-            this.pctEdukia_Artista.BackColor = System.Drawing.Color.Black;
-            this.pctEdukia_Artista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctEdukia_Artista.BackgroundImage")));
-            this.pctEdukia_Artista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctEdukia_Artista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctEdukia_Artista.Location = new System.Drawing.Point(406, 0);
-            this.pctEdukia_Artista.Name = "pctEdukia_Artista";
-            this.pctEdukia_Artista.Size = new System.Drawing.Size(20, 20);
-            this.pctEdukia_Artista.TabIndex = 12;
-            this.pctEdukia_Artista.TabStop = false;
-            this.pctEdukia_Artista.Click += new System.EventHandler(this.pctEdukia_Artista_Click);
             // 
             // panel_superior
             // 
@@ -316,6 +277,23 @@
             this.lblSeleccionadosAlbumak.TabIndex = 6;
             this.lblSeleccionadosAlbumak.Text = "0";
             this.lblSeleccionadosAlbumak.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dgAlbumes
+            // 
+            this.dgAlbumes.AllowUserToAddRows = false;
+            this.dgAlbumes.AllowUserToDeleteRows = false;
+            this.dgAlbumes.AllowUserToResizeRows = false;
+            this.dgAlbumes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgAlbumes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgAlbumes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAlbumes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgAlbumes.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgAlbumes.Location = new System.Drawing.Point(0, 0);
+            this.dgAlbumes.Name = "dgAlbumes";
+            this.dgAlbumes.ReadOnly = true;
+            this.dgAlbumes.Size = new System.Drawing.Size(450, 127);
+            this.dgAlbumes.TabIndex = 4;
+            this.dgAlbumes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAlbumes_CellClick);
             // 
             // label9
             // 
@@ -538,6 +516,45 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Deskribapena:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Artista:";
+            // 
+            // txtEdukia_ArtistaKodea
+            // 
+            this.txtEdukia_ArtistaKodea.Enabled = false;
+            this.txtEdukia_ArtistaKodea.Location = new System.Drawing.Point(125, 0);
+            this.txtEdukia_ArtistaKodea.Name = "txtEdukia_ArtistaKodea";
+            this.txtEdukia_ArtistaKodea.Size = new System.Drawing.Size(54, 20);
+            this.txtEdukia_ArtistaKodea.TabIndex = 2;
+            this.txtEdukia_ArtistaKodea.TextChanged += new System.EventHandler(this.txtEdukia_ArtistaKodea_TextChanged);
+            // 
+            // txtEdukia_ArtistaIzena
+            // 
+            this.txtEdukia_ArtistaIzena.Enabled = false;
+            this.txtEdukia_ArtistaIzena.Location = new System.Drawing.Point(185, 0);
+            this.txtEdukia_ArtistaIzena.Name = "txtEdukia_ArtistaIzena";
+            this.txtEdukia_ArtistaIzena.Size = new System.Drawing.Size(215, 20);
+            this.txtEdukia_ArtistaIzena.TabIndex = 3;
+            // 
+            // pctEdukia_Artista
+            // 
+            this.pctEdukia_Artista.BackColor = System.Drawing.Color.Black;
+            this.pctEdukia_Artista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctEdukia_Artista.BackgroundImage")));
+            this.pctEdukia_Artista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctEdukia_Artista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctEdukia_Artista.Location = new System.Drawing.Point(406, 0);
+            this.pctEdukia_Artista.Name = "pctEdukia_Artista";
+            this.pctEdukia_Artista.Size = new System.Drawing.Size(20, 20);
+            this.pctEdukia_Artista.TabIndex = 12;
+            this.pctEdukia_Artista.TabStop = false;
+            this.pctEdukia_Artista.Click += new System.EventHandler(this.pctEdukia_Artista_Click);
+            // 
             // panel_botonera_superior
             // 
             this.panel_botonera_superior.Controls.Add(this.toolStrip1);
@@ -571,22 +588,154 @@
             // dgAbestiak
             // 
             this.dgAbestiak.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgAbestiak.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgAbestiak.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAbestiak.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgAbestiak.Location = new System.Drawing.Point(0, 0);
             this.dgAbestiak.Name = "dgAbestiak";
             this.dgAbestiak.ReadOnly = true;
-            this.dgAbestiak.Size = new System.Drawing.Size(1294, 229);
+            this.dgAbestiak.Size = new System.Drawing.Size(1294, 206);
             this.dgAbestiak.TabIndex = 19;
+            this.dgAbestiak.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAbestiak_CellClick);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgAbestiak);
+            this.panel1.Controls.Add(this.panel_info_decoracion);
+            this.panel1.Controls.Add(this.panel_canciones);
+            this.panel1.Controls.Add(this.panel_botonera_abestiak);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 482);
+            this.panel1.Location = new System.Drawing.Point(0, 282);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1294, 229);
+            this.panel1.Size = new System.Drawing.Size(1294, 429);
             this.panel1.TabIndex = 20;
+            // 
+            // panel_info_decoracion
+            // 
+            this.panel_info_decoracion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_info_decoracion.Location = new System.Drawing.Point(0, 321);
+            this.panel_info_decoracion.Name = "panel_info_decoracion";
+            this.panel_info_decoracion.Size = new System.Drawing.Size(1294, 108);
+            this.panel_info_decoracion.TabIndex = 22;
+            // 
+            // panel_canciones
+            // 
+            this.panel_canciones.Controls.Add(this.dgAbestiak);
+            this.panel_canciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_canciones.Location = new System.Drawing.Point(0, 27);
+            this.panel_canciones.Name = "panel_canciones";
+            this.panel_canciones.Size = new System.Drawing.Size(1294, 206);
+            this.panel_canciones.TabIndex = 21;
+            // 
+            // panel_botonera_abestiak
+            // 
+            this.panel_botonera_abestiak.Controls.Add(this.panel_cabecera_canciones);
+            this.panel_botonera_abestiak.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_botonera_abestiak.Location = new System.Drawing.Point(0, 0);
+            this.panel_botonera_abestiak.Name = "panel_botonera_abestiak";
+            this.panel_botonera_abestiak.Size = new System.Drawing.Size(1294, 27);
+            this.panel_botonera_abestiak.TabIndex = 20;
+            // 
+            // panel_cabecera_canciones
+            // 
+            this.panel_cabecera_canciones.Controls.Add(this.toolStrip2);
+            this.panel_cabecera_canciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_cabecera_canciones.Location = new System.Drawing.Point(0, 0);
+            this.panel_cabecera_canciones.Name = "panel_cabecera_canciones";
+            this.panel_cabecera_canciones.Size = new System.Drawing.Size(1294, 25);
+            this.panel_cabecera_canciones.TabIndex = 1;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAbestiGuztiak,
+            this.btnDesautatuAbestiDenak,
+            this.btnRefrescar,
+            this.toolStripSeparator2,
+            this.btn_AbestiBerria,
+            this.btn_AbestiaEditatu,
+            this.btnAbestiaEzabatu});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1294, 25);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // btnAbestiGuztiak
+            // 
+            this.btnAbestiGuztiak.BackColor = System.Drawing.Color.Yellow;
+            this.btnAbestiGuztiak.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAbestiGuztiak.Image = ((System.Drawing.Image)(resources.GetObject("btnAbestiGuztiak.Image")));
+            this.btnAbestiGuztiak.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAbestiGuztiak.Name = "btnAbestiGuztiak";
+            this.btnAbestiGuztiak.Size = new System.Drawing.Size(23, 22);
+            this.btnAbestiGuztiak.Text = "toolStripButton1";
+            this.btnAbestiGuztiak.ToolTipText = "Guztiak hautatu";
+            // 
+            // btnDesautatuAbestiDenak
+            // 
+            this.btnDesautatuAbestiDenak.BackColor = System.Drawing.Color.Blue;
+            this.btnDesautatuAbestiDenak.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDesautatuAbestiDenak.Image = ((System.Drawing.Image)(resources.GetObject("btnDesautatuAbestiDenak.Image")));
+            this.btnDesautatuAbestiDenak.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDesautatuAbestiDenak.Name = "btnDesautatuAbestiDenak";
+            this.btnDesautatuAbestiDenak.Size = new System.Drawing.Size(23, 22);
+            this.btnDesautatuAbestiDenak.Text = "toolStripButton1";
+            this.btnDesautatuAbestiDenak.ToolTipText = "Desautatu guztiak";
+            // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.BackColor = System.Drawing.Color.Pink;
+            this.btnRefrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
+            this.btnRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(23, 22);
+            this.btnRefrescar.Text = "toolStripButton1";
+            this.btnRefrescar.ToolTipText = "Freskatu";
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btn_AbestiBerria
+            // 
+            this.btn_AbestiBerria.BackColor = System.Drawing.Color.Black;
+            this.btn_AbestiBerria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_AbestiBerria.Image = ((System.Drawing.Image)(resources.GetObject("btn_AbestiBerria.Image")));
+            this.btn_AbestiBerria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_AbestiBerria.Name = "btn_AbestiBerria";
+            this.btn_AbestiBerria.Size = new System.Drawing.Size(23, 22);
+            this.btn_AbestiBerria.Text = "toolStripButton2";
+            this.btn_AbestiBerria.ToolTipText = "Berria";
+            this.btn_AbestiBerria.Click += new System.EventHandler(this.btn_AbestiBerria_Click);
+            // 
+            // btn_AbestiaEditatu
+            // 
+            this.btn_AbestiaEditatu.BackColor = System.Drawing.Color.Gray;
+            this.btn_AbestiaEditatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_AbestiaEditatu.Image = ((System.Drawing.Image)(resources.GetObject("btn_AbestiaEditatu.Image")));
+            this.btn_AbestiaEditatu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_AbestiaEditatu.Name = "btn_AbestiaEditatu";
+            this.btn_AbestiaEditatu.Size = new System.Drawing.Size(23, 22);
+            this.btn_AbestiaEditatu.Text = "toolStripButton1";
+            this.btn_AbestiaEditatu.ToolTipText = "Editatu";
+            this.btn_AbestiaEditatu.Click += new System.EventHandler(this.btn_AbestiaEditatu_Click);
+            // 
+            // btnAbestiaEzabatu
+            // 
+            this.btnAbestiaEzabatu.BackColor = System.Drawing.Color.Red;
+            this.btnAbestiaEzabatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAbestiaEzabatu.Image = ((System.Drawing.Image)(resources.GetObject("btnAbestiaEzabatu.Image")));
+            this.btnAbestiaEzabatu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAbestiaEzabatu.Name = "btnAbestiaEzabatu";
+            this.btnAbestiaEzabatu.Size = new System.Drawing.Size(23, 22);
+            this.btnAbestiaEzabatu.Text = "toolStripButton1";
+            this.btnAbestiaEzabatu.ToolTipText = "Ezabatu";
+            this.btnAbestiaEzabatu.Click += new System.EventHandler(this.btnAbestiaEzabatu_Click);
             // 
             // frmEdukiaArtista
             // 
@@ -602,8 +751,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Artistaren Edukia";
             this.Load += new System.EventHandler(this.frmEdukiaArtista_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).EndInit();
             this.panel_superior.ResumeLayout(false);
             this.panel_filtros.ResumeLayout(false);
             this.panel_filtro_artistak.ResumeLayout(false);
@@ -612,6 +759,7 @@
             this.panel_albumak_general.ResumeLayout(false);
             this.panel_album_zerrenda.ResumeLayout(false);
             this.panel_album_zerrenda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAlbumes)).EndInit();
             this.panel_albumak.ResumeLayout(false);
             this.panel_albumak.PerformLayout();
             this.tlsAlbumak.ResumeLayout(false);
@@ -621,63 +769,82 @@
             this.panel_artistak.ResumeLayout(false);
             this.panel_artistak.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pct_Edukia_KideakIkusi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctEdukia_Artista)).EndInit();
             this.panel_botonera_superior.ResumeLayout(false);
             this.panel_botonera_superior.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbestiak)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel_canciones.ResumeLayout(false);
+            this.panel_botonera_abestiak.ResumeLayout(false);
+            this.panel_cabecera_canciones.ResumeLayout(false);
+            this.panel_cabecera_canciones.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEdukia_ArtistaKodea;
-        private System.Windows.Forms.TextBox txtEdukia_ArtistaIzena;
-        private System.Windows.Forms.DataGridView dgAlbumes;
-        private System.Windows.Forms.PictureBox pctEdukia_Artista;
         private System.Windows.Forms.Panel panel_superior;
         private System.Windows.Forms.Panel panel_botonera_superior;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnAtzera;
         private System.Windows.Forms.Panel panel_filtros;
+        private System.Windows.Forms.DataGridView dgAbestiak;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_filtro_artistak;
-        private System.Windows.Forms.Panel panel_artistak;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEdukia_Deskribapena;
-        private System.Windows.Forms.TextBox txtEdukia_HasieraUrtea;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pct_Edukia_KideakIkusi;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox gbEdukia_EdukiMota;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton rdb_AbestiGuztiak;
-        private System.Windows.Forms.RadioButton rdb_Albumak;
+        private System.Windows.Forms.DataGridView dgAbestiak_Aurkituta;
         private System.Windows.Forms.Panel panel_albumak_general;
-        private System.Windows.Forms.Panel panel_albumak;
-        private System.Windows.Forms.ToolStrip tlsAlbumak;
-        private System.Windows.Forms.ToolStripButton btn_AlbumBerria;
-        private System.Windows.Forms.ToolStripButton btn_AlbumaEditatu;
-        private System.Windows.Forms.ToolStripButton btn_AlbumaEzabatu;
         private System.Windows.Forms.Panel panel_album_zerrenda;
-        private System.Windows.Forms.ToolStripButton btnGuztiakAukeratu;
-        private System.Windows.Forms.ToolStripButton btnDesautatuDenak;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.Label lblSeparador;
-        private System.Windows.Forms.Label lblSeleccionadosAbestiak;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblSeleccionadosAlbumak;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblAbestiakGuztira;
         private System.Windows.Forms.Label lblAlbumakGuztira;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgAbestiak;
-        private System.Windows.Forms.DataGridView dgAbestiak_Aurkituta;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblSeparador;
+        private System.Windows.Forms.Label lblSeleccionadosAbestiak;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblSeleccionadosAlbumak;
+        private System.Windows.Forms.DataGridView dgAlbumes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel_albumak;
+        private System.Windows.Forms.ToolStrip tlsAlbumak;
+        private System.Windows.Forms.ToolStripButton btnGuztiakAukeratu;
+        private System.Windows.Forms.ToolStripButton btnDesautatuDenak;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btn_AlbumBerria;
+        private System.Windows.Forms.ToolStripButton btn_AlbumaEditatu;
+        private System.Windows.Forms.ToolStripButton btn_AlbumaEzabatu;
+        private System.Windows.Forms.GroupBox gbEdukia_EdukiMota;
+        private System.Windows.Forms.RadioButton rdb_AbestiGuztiak;
+        private System.Windows.Forms.RadioButton rdb_Albumak;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel_artistak;
+        private System.Windows.Forms.PictureBox pct_Edukia_KideakIkusi;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtEdukia_HasieraUrtea;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEdukia_Deskribapena;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtEdukia_ArtistaKodea;
+        private System.Windows.Forms.TextBox txtEdukia_ArtistaIzena;
+        private System.Windows.Forms.PictureBox pctEdukia_Artista;
+        private System.Windows.Forms.Panel panel_botonera_abestiak;
+        private System.Windows.Forms.Panel panel_cabecera_canciones;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton btnAbestiGuztiak;
+        private System.Windows.Forms.Panel panel_info_decoracion;
+        private System.Windows.Forms.Panel panel_canciones;
+        private System.Windows.Forms.ToolStripButton btnDesautatuAbestiDenak;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btn_AbestiBerria;
+        private System.Windows.Forms.ToolStripButton btn_AbestiaEditatu;
+        private System.Windows.Forms.ToolStripButton btnAbestiaEzabatu;
+        private System.Windows.Forms.ToolStripButton btnRefrescar;
     }
 }

@@ -84,27 +84,27 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistak.Columns[3].HeaderText = "";
             this.dgArtistak.Columns[3].Width = 0;
 
-            //IdNazioa
-            this.dgArtistak.Columns["IdNazioa"].Visible = false;
-            this.dgArtistak.Columns["IdNazioa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            this.dgArtistak.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistak.Columns[4].HeaderText = "IdNazioa";
-            this.dgArtistak.Columns[4].HeaderText = "";
-            this.dgArtistak.Columns[4].Width = 0;
-
             //Mota
             this.dgArtistak.Columns["Mota"].Visible = false;
             this.dgArtistak.Columns["Mota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            this.dgArtistak.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistak.Columns[5].HeaderText = "Mota";
-            this.dgArtistak.Columns[5].HeaderText = "";
-            this.dgArtistak.Columns[5].Width = 0;
+            this.dgArtistak.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistak.Columns[4].HeaderText = "Mota";
+            this.dgArtistak.Columns[4].HeaderText = "";
+            this.dgArtistak.Columns[4].Width = 0;
 
             //KideKopurua
             this.dgArtistak.Columns["KideKopurua"].Visible = false;
             this.dgArtistak.Columns["KideKopurua"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgArtistak.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistak.Columns[5].HeaderText = "Kide-Kopurua";
+            this.dgArtistak.Columns[5].HeaderText = "";
+            this.dgArtistak.Columns[5].Width = 0;
+
+            //FundazioUrtea
+            this.dgArtistak.Columns["FundazioUrtea"].Visible = false;
+            this.dgArtistak.Columns["FundazioUrtea"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.dgArtistak.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistak.Columns[6].HeaderText = "Kide-Kopurua";
+            //this.dgArtistak.Columns[6].HeaderText = "Urtea";
             this.dgArtistak.Columns[6].HeaderText = "";
             this.dgArtistak.Columns[6].Width = 0;
 
@@ -116,13 +116,21 @@ namespace AzkenErronka_DAM2.Artistak
             this.dgArtistak.Columns[7].HeaderText = "";
             this.dgArtistak.Columns[7].Width = 0;
 
+            //KodArtistaMota
+            this.dgArtistak.Columns["KodArtistaMota"].Visible = false;
+            this.dgArtistak.Columns["KodArtistaMota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgArtistak.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistak.Columns[8].HeaderText = "KodArtistaMota";
+            this.dgArtistak.Columns[8].HeaderText = "";
+            this.dgArtistak.Columns[8].Width = 0;
+
             //NazioaIzena
             this.dgArtistak.Columns["NazioaIzena"].Visible = false;
             this.dgArtistak.Columns["NazioaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            this.dgArtistak.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgArtistak.Columns[8].HeaderText = "Nazioa";
-            this.dgArtistak.Columns[8].HeaderText = "";
-            this.dgArtistak.Columns[8].Width = 0;
+            this.dgArtistak.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dgArtistak.Columns[9].HeaderText = "Nazioa Izena";
+            this.dgArtistak.Columns[9].HeaderText = "";
+            this.dgArtistak.Columns[9].Width = 0;
         }
 
         private void dgArtistaMota_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

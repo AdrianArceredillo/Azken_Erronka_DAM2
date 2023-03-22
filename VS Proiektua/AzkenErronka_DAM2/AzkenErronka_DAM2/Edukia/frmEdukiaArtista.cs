@@ -1,4 +1,5 @@
-﻿using AzkenErronka_DAM2.Artistak;
+﻿using AzkenErronka_DAM2.Abestiak;
+using AzkenErronka_DAM2.Artistak;
 using AzkenErronka_DAM2.ArtistaMotak;
 using clsKlasea;
 using System;
@@ -30,6 +31,12 @@ namespace AzkenErronka_DAM2.Edukia
 
         public int kodAlb, artistaren_kodea, abestiKopurua, urtea;
         String albumaIzena, artistaren_izena;
+
+
+        //pasar a frmAbestiaDatuak
+        public static int kod_abestia, kod_artista, kod_albuma;
+        public static string abestia_izena, abesti_mota;
+        public static string zeregina;
         #endregion
 
 
@@ -62,11 +69,12 @@ namespace AzkenErronka_DAM2.Edukia
         public void llenarDataGrid_abestiak(String parametro)
         {
             //dsAbestiak = clsAbestia.getAbestiak(parametro);
-            dsAbestiak = clsAbestia.getAbestiak_luzea(" and " + parametro);
+            dsAbestiak = clsAbestia.getAbestiak_Concretas(parametro);
+            //dsAbestiak = clsAbestia.getAbestiak_luzea(" and " + parametro);
             dgAbestiak.DataSource = dsAbestiak.Tables["Abestiakk"];
 
             //contar resultados encontrados
-            this.lblSeleccionadosAbestiak.Text = dsAbestiak.Tables["Abestiakk"].Rows.Count.ToString();
+            //this.lblSeleccionadosAbestiak.Text = dsAbestiak.Tables["Abestiakk"].Rows.Count.ToString();
 
 
 
@@ -145,31 +153,39 @@ namespace AzkenErronka_DAM2.Edukia
 
             //AbestiaIzena
             this.dgAbestiak.Columns["AbestiaIzena"].Visible = true;
-            this.dgAbestiak.Columns["AbestiaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns["AbestiaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             this.dgAbestiak.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dgAbestiak.Columns[1].HeaderText = "Izena";
-            this.dgAbestiak.Columns[1].Width = 50;
+            this.dgAbestiak.Columns[1].Width = 250;
 
-            //AlbumaIzena
-            this.dgAbestiak.Columns["AlbumaIzena"].Visible = true;
-            this.dgAbestiak.Columns["AlbumaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[5].HeaderText = "AlbIII";
-            this.dgAbestiak.Columns[5].Width = 300;
+            //Artista
+            this.dgAbestiak.Columns["Artista"].Visible = true;
+            this.dgAbestiak.Columns["Artista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgAbestiak.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[2].HeaderText = "Egilea";
+            this.dgAbestiak.Columns[2].Width = 200;
 
-            //AlbumaIzena
-            this.dgAbestiak.Columns["AbestiMota_Izena"].Visible = true;
-            this.dgAbestiak.Columns["AbestiMota_Izena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dgAbestiak.Columns[7].HeaderText = "Abesti-ota";
-            this.dgAbestiak.Columns[7].Width = 100;
+            //Albuma
+            this.dgAbestiak.Columns["Albuma"].Visible = true;
+            this.dgAbestiak.Columns["Albuma"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            this.dgAbestiak.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[3].HeaderText = "Albuma";
+            this.dgAbestiak.Columns[3].Width = 150;
 
-            //AlbumaIzena
-            //this.dgAbestiak.Columns["AlbumaIzena"].Visible = true;
-            //this.dgAbestiak.Columns["AlbumaIzena"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgAbestiak.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //this.dgAbestiak.Columns[0].HeaderText = "Albuma";
-            //this.dgAbestiak.Columns[0].Width = 50;
+            //Albuma
+            this.dgAbestiak.Columns["Mota"].Visible = true;
+            this.dgAbestiak.Columns["Mota"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dgAbestiak.Columns[4].HeaderText = "Mota";
+            this.dgAbestiak.Columns[4].Width = 50;
+
+
+
+            //this.dgAlbumes.Columns["KodAbestia"].DisplayIndex = 0;
+            //this.dgAlbumes.Columns["AbestiaIzena"].DisplayIndex = 1;
+            //this.dgAlbumes.Columns["Artista"].DisplayIndex = 2;
+            //this.dgAlbumes.Columns["Albuma"].DisplayIndex = 3;
+            //this.dgAlbumes.Columns["Mota"].DisplayIndex = 4;
         }
 
 
@@ -194,6 +210,7 @@ namespace AzkenErronka_DAM2.Edukia
 
             llenarDataGrid_abestiak(filtro_albumes_seleccionados());
             this.lblSeleccionadosAlbumak.Text = hautaturikoak.ToString();
+            this.lblSeleccionadosAbestiak.Text = dsAbestiak.Tables["Abestiakk"].Rows.Count.ToString();
         }
 
 
@@ -209,7 +226,7 @@ namespace AzkenErronka_DAM2.Edukia
                     if (hautaturikoak == 0)
                     {
                         hautaturikoak = hautaturikoak + 1;
-                        parametro = parametro + " Abestiak.AlbumaKodea = " + Int32.Parse(this.dgAlbumes.Rows[i].Cells["KodAlb"].Value.ToString());
+                        parametro = parametro + " where Abestiak.AlbumaKodea = " + Int32.Parse(this.dgAlbumes.Rows[i].Cells["KodAlb"].Value.ToString());
                     }
                     else
                     {
@@ -218,6 +235,18 @@ namespace AzkenErronka_DAM2.Edukia
                     }
                 }
             }
+
+            if (parametro == "")
+            {
+                parametro = parametro + " where Abestiak.Egileakodea = " + Int32.Parse(this.txtEdukia_ArtistaKodea.Text.ToString());
+
+            }
+            else
+            {
+                parametro = parametro + " and Abestiak.Egileakodea = " + Int32.Parse(this.dgAlbumes.Rows[0].Cells["ArtistaKodea"].Value.ToString());
+            }
+
+
 
             //this.lblSeleccionadosAlbumak.Text = hautaturikoak.ToString();
             return parametro;
@@ -233,7 +262,7 @@ namespace AzkenErronka_DAM2.Edukia
             {
                 if (rb_alb.Checked)
                 {
-                    MessageBox.Show("Albumak ikusi! ", "Eduki-mota");
+                    //MessageBox.Show("Albumak ikusi! ", "Eduki-mota");
                     albumak_filtro_egoera_aldatu(true);
                     llenarDataGrid_albumak();
                 }
@@ -247,9 +276,23 @@ namespace AzkenErronka_DAM2.Edukia
             {
                 if (rb_abe.Checked)
                 {
-                    MessageBox.Show("Abestiak ikusi! ", "Eduki-mota");
+                    //MessageBox.Show("Abestiak ikusi! ", "Eduki-mota");
                     albumak_filtro_egoera_aldatu(false);
-                    llenarDataGrid_abestiak(" Abestiak.EgileaKodea = " + Int32.Parse(this.txtEdukia_ArtistaKodea.Text.ToString()));
+                    llenarDataGrid_abestiak(" where Abestiak.EgileaKodea = " + Int32.Parse(this.txtEdukia_ArtistaKodea.Text.ToString()));
+                    //dsAbestiak = clsAbestia.getAbestiak_Concretas(parametro);
+
+
+                    if (dsAbestiak.Tables["Abestiakk"].Rows.Count > 0)
+                    {
+                        this.dgAbestiak.Rows[0].Selected = true;
+                        this.dgAbestiak.CurrentCell = this.dgAbestiak.Rows[0].Cells["KodAbestia"];
+                        this.lblAbestiakGuztira.Text = dsAbestiak.Tables["Abestiakk"].Rows.Count.ToString();
+                    }
+                    else
+                    {
+                        this.lblAbestiakGuztira.Text = "0";
+                    }
+
                 }
             }
         }
@@ -261,6 +304,8 @@ namespace AzkenErronka_DAM2.Edukia
 
         private void pctEdukia_Artista_Click(object sender, EventArgs e)
         {
+            this.rdb_Albumak.Checked = true;
+
             frmArtistaAukeratu _frmArtistaAukeratu = new frmArtistaAukeratu();
             _frmArtistaAukeratu.ShowDialog();
 
@@ -269,6 +314,63 @@ namespace AzkenErronka_DAM2.Edukia
                 this.txtEdukia_ArtistaKodea.Text = _frmArtistaAukeratu.aukeraturiko_artista_kodea.ToString();
                 this.txtEdukia_ArtistaIzena.Text = _frmArtistaAukeratu.aukeraturiko_artista_izena.ToString();
             }
+        }
+
+        private void txtEdukia_ArtistaKodea_TextChanged(object sender, EventArgs e)
+        {
+            llenarDataGrid_albumak();
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            //refrescar grid de canciones
+        }
+
+        private void dgAbestiak_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            int index = e.RowIndex;
+            dgAbestiak.Rows[index].Selected = true;
+            this.dgAbestiak.CurrentCell = this.dgAbestiak.Rows[index].Cells[1];
+        }
+
+        private void btn_AbestiBerria_Click(object sender, EventArgs e)
+        {
+            //abrir ventana (frmAbestiaDatuak) para añadir nueva canción
+        }
+
+        private void btn_AbestiaEditatu_Click(object sender, EventArgs e)
+        {
+            //abrir ventana (frmAbestiaDatuak) para editar canción
+            zeregina = "editatu";
+
+            int contador = 0;
+
+            if (dsAbestiak.Tables[0].Rows.Count >= 1)
+            {
+                for (int i = 0; i < this.dgAbestiak.Rows.Count; i++)
+                {
+                    if (this.dgAbestiak.Rows[i].Selected == true)
+                    {
+                        contador = contador + 1;
+                    }
+                }
+            }
+
+            kod_abestia = Int32.Parse(this.dgAbestiak.CurrentRow.Cells["KodAbestia"].Value.ToString());
+
+            frmAbestiaDatuak _frnAbestiaDatuak = new frmAbestiaDatuak();
+            _frnAbestiaDatuak.ShowDialog();
+
+        }
+
+        private void btnAbestiaEzabatu_Click(object sender, EventArgs e)
+        {
+            //eliminar la canción seleccinada
         }
 
         private void btnGuztiakAukeratu_Click(object sender, EventArgs e)
@@ -293,8 +395,9 @@ namespace AzkenErronka_DAM2.Edukia
                     this.dgAlbumes.Rows[i].Selected = false;
                 }
 
-                llenarDataGrid_abestiak(" KodAbestia = -1");
+                llenarDataGrid_abestiak(" where KodAbestia = -1");
                 this.lblSeleccionadosAlbumak.Text = "0";
+                this.lblSeleccionadosAbestiak.Text = "0";
 
             }
         }
@@ -322,7 +425,7 @@ namespace AzkenErronka_DAM2.Edukia
         #region "ELEMENTUEN PROPIETATEAK"
         private void albumak_filtro_egoera_aldatu(bool est)
         {
-            this.panel_album_zerrenda.Enabled = est;
+            //this.panel_album_zerrenda.Enabled = est;
             this.dgAlbumes.Enabled = est;
             this.tlsAlbumak.Enabled = est;
         }

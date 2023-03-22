@@ -64,6 +64,14 @@ namespace clsKlasea
             return dsAbestiak;
         }
 
+
+        //getAbestiak_Concretas
+        public DataSet getAbestiak_Concretas(string parametro)
+        {
+            DataSet dsAbestiak = claseAbestia.getAbestiak_Concretas(parametro);
+            return dsAbestiak;
+        }
+
         #endregion
 
 
