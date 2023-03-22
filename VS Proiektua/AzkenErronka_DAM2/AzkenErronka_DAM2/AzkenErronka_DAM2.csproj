@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abestiak\frmAbestiaDatuak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abestiak\frmAbestiaDatuak.Designer.cs">
+      <DependentUpon>frmAbestiaDatuak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Artistak\frmArtistaAukeratu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Abestiak\frmAbestiaDatuak.resx">
+      <DependentUpon>frmAbestiaDatuak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Artistak\frmArtistaAukeratu.resx">
       <DependentUpon>frmArtistaAukeratu.cs</DependentUpon>
     </EmbeddedResource>

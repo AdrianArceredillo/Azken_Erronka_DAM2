@@ -20,3 +20,4 @@ C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS
 C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.Edukia.frmEdukiaArtista.resources
 C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.csproj.CopyComplete
 C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.Artistak.frmArtistaAukeratu.resources
+C:\Users\aarce\OneDrive\Documentos\DAM2\Azken_Erronka_DAM2\Azken_Erronka_DAM2\VS Proiektua\AzkenErronka_DAM2\AzkenErronka_DAM2\obj\Debug\AzkenErronka_DAM2.Abestiak.frmAbestiaDatuak.resources
