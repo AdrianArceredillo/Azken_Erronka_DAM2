@@ -666,6 +666,7 @@
             // 
             this.btnAbestiGuztiak.BackColor = System.Drawing.Color.Yellow;
             this.btnAbestiGuztiak.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAbestiGuztiak.Enabled = false;
             this.btnAbestiGuztiak.Image = ((System.Drawing.Image)(resources.GetObject("btnAbestiGuztiak.Image")));
             this.btnAbestiGuztiak.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbestiGuztiak.Name = "btnAbestiGuztiak";
@@ -677,6 +678,7 @@
             // 
             this.btnDesautatuAbestiDenak.BackColor = System.Drawing.Color.Blue;
             this.btnDesautatuAbestiDenak.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDesautatuAbestiDenak.Enabled = false;
             this.btnDesautatuAbestiDenak.Image = ((System.Drawing.Image)(resources.GetObject("btnDesautatuAbestiDenak.Image")));
             this.btnDesautatuAbestiDenak.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDesautatuAbestiDenak.Name = "btnDesautatuAbestiDenak";
@@ -688,6 +690,7 @@
             // 
             this.btnRefrescar.BackColor = System.Drawing.Color.Pink;
             this.btnRefrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRefrescar.Enabled = false;
             this.btnRefrescar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefrescar.Image")));
             this.btnRefrescar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefrescar.Name = "btnRefrescar";
@@ -705,6 +708,7 @@
             // 
             this.btn_AbestiBerria.BackColor = System.Drawing.Color.Black;
             this.btn_AbestiBerria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_AbestiBerria.Enabled = false;
             this.btn_AbestiBerria.Image = ((System.Drawing.Image)(resources.GetObject("btn_AbestiBerria.Image")));
             this.btn_AbestiBerria.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_AbestiBerria.Name = "btn_AbestiBerria";
@@ -717,6 +721,7 @@
             // 
             this.btn_AbestiaEditatu.BackColor = System.Drawing.Color.Gray;
             this.btn_AbestiaEditatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_AbestiaEditatu.Enabled = false;
             this.btn_AbestiaEditatu.Image = ((System.Drawing.Image)(resources.GetObject("btn_AbestiaEditatu.Image")));
             this.btn_AbestiaEditatu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_AbestiaEditatu.Name = "btn_AbestiaEditatu";
@@ -729,6 +734,7 @@
             // 
             this.btnAbestiaEzabatu.BackColor = System.Drawing.Color.Red;
             this.btnAbestiaEzabatu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAbestiaEzabatu.Enabled = false;
             this.btnAbestiaEzabatu.Image = ((System.Drawing.Image)(resources.GetObject("btnAbestiaEzabatu.Image")));
             this.btnAbestiaEzabatu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbestiaEzabatu.Name = "btnAbestiaEzabatu";

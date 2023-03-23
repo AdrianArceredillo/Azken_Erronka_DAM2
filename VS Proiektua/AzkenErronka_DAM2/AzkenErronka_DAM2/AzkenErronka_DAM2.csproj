@@ -84,6 +84,7 @@
     <Compile Include="frmNagusia.Designer.cs">
       <DependentUpon>frmNagusia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klaseak\Abestia.cs" />
     <Compile Include="Klaseak\Artista.cs" />
     <Compile Include="Klaseak\ArtistaMota.cs" />
     <Compile Include="Klaseak\Erabiltzaileak.cs" />

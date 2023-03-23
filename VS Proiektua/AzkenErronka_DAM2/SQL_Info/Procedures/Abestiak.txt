@@ -102,7 +102,61 @@ Abestiak ' + @parametro;
 execute (@query);
 
 
+----------------------------------------------------------------------------------
+--------------------------------------------------- maxAbestiaCodigo (+ kondizioa)
+----------------------------------------------------------------------------------
 
+
+use MusikaBilduma
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[maxAbestiaCodigo] (@parametro varchar(2000)) 
+AS
+select MAX(KodAbestia) from Abestiak;
+
+
+----------------------------------------------------------------------------------
+------------------------------------------------------ new_abestia_2 (+ kondizioa)
+----------------------------------------------------------------------------------
+
+
+USE [MusikaBilduma]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[new_abestia_2] (
+
+@kodabestia int, 
+@abestiaIzena varchar(200), 
+@egileaKodea int, 
+@albumaKodea int, 
+@abestiMota varchar(100),
+@generoa int,
+@collab1 int,
+@collab2 int,
+@collab3 int,
+@deskribapena varchar(500),
+@urtea int
+) 
+
+AS
+
+BEGIN
+   IF NOT EXISTS (SELECT * FROM Abestiak 
+                   WHERE KodAbestia = @kodabestia
+                   AND AbestiaIzena = @abestiaIzena
+                   AND EgileaKodea = @egileaKodea
+				   AND AlbumaKodea = @albumaKodea)
+   BEGIN
+       INSERT INTO Abestiak (KodAbestia, AbestiaIzena,EgileaKodea,AlbumaKodea,AbestiMota,Generoa,Collab1,Collab2,Collab3,Deskribapena, urtea)
+       VALUES (@kodabestia, @abestiaIzena, @egileaKodea,@albumaKodea,@abestiMota,@generoa,@collab1,@collab2,@collab3, @deskribapena, @urtea)
+   END
+END
 
 
 

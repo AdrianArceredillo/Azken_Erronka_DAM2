@@ -87,7 +87,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(799, 428);
+            this.btnAceptar.Location = new System.Drawing.Point(663, 381);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 1;
@@ -103,6 +103,7 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Atzera";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtAbestiaKodea
             // 

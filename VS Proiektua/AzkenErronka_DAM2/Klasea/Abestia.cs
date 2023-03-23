@@ -13,6 +13,7 @@ namespace Klasea
 
         #region "DECLARACIONES"
         Conexion conexion = new Conexion();
+        public static int prueba_enviar = 0;
         #endregion
 
 
@@ -285,9 +286,9 @@ namespace Klasea
                         row["Albuma"] = reader.GetString(3);
                         row["Mota"] = reader.GetString(4);
                         //++++++++
-                        row["EgileaKodea"] = reader.GetInt32(0);
-                        row["AlbumaKodea"] = reader.GetInt32(0);
-                        row["AbestiMota"] = reader.GetInt32(0);
+                        row["EgileaKodea"] = reader.GetInt32(5);
+                        row["AlbumaKodea"] = reader.GetInt32(6);
+                        row["AbestiMota"] = reader.GetString(7);
                         //++++++++
                         table.Rows.Add(row);
                     }
@@ -302,6 +303,10 @@ namespace Klasea
             conexion.cerrar_conexion(con);
             return dsAbestiak;
         }
+
+
+        
+
 
 
         #endregion
